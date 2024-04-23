@@ -12,7 +12,7 @@ description varchar(2555)
 
 desc categories;
 
-INSERT INTO categories (name, description) VALUES ("Rajith","My Name");
+INSERT INTO categories (name, description) VALUES ("CategoryName","CategoryDescription");
 
 select * from categories;
 
