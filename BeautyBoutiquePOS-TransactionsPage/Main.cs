@@ -90,7 +90,11 @@ namespace BeautyBoutiquePOS_TransactionsPage
             windowPnl.Controls.Add(Customers);
         }
 
-
-
+        private void btnCategories_Click(object sender, EventArgs e)
+        {
+            ClearContentArea();
+            var Categories = new Categories();
+            windowPnl.Controls.Add(Categories);
+        }
     }
 }
