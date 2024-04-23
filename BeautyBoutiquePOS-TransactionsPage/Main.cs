@@ -19,8 +19,7 @@ namespace BeautyBoutiquePOS_TransactionsPage
         public Main()
         {
             InitializeComponent();
-
-
+            this.WindowState = FormWindowState.Maximized;
 
 
             //For right side rounded menu buttons:
@@ -70,6 +69,10 @@ namespace BeautyBoutiquePOS_TransactionsPage
                 button.Region = new Region(path);
             }
         }
+        private void ClearContentArea()
+        {
+            windowPnl.Controls.Clear();
+        }
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
@@ -78,9 +81,16 @@ namespace BeautyBoutiquePOS_TransactionsPage
             windowPnl.Controls.Add(Product);
         }
 
-        private void ClearContentArea()
+        
+
+        private void btnCustomers_Click(object sender, EventArgs e)
         {
-            windowPnl.Controls.Clear();
+            ClearContentArea();
+            var Customers = new Customers();
+            windowPnl.Controls.Add(Customers);
         }
+
+
+
     }
 }

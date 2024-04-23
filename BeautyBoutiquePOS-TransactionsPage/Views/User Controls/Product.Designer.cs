@@ -45,9 +45,10 @@
             // dataGridViewProducts
             // 
             this.dataGridViewProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProducts.Location = new System.Drawing.Point(3, 108);
+            this.dataGridViewProducts.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridViewProducts.Location = new System.Drawing.Point(0, 111);
             this.dataGridViewProducts.Name = "dataGridViewProducts";
-            this.dataGridViewProducts.Size = new System.Drawing.Size(718, 544);
+            this.dataGridViewProducts.Size = new System.Drawing.Size(1214, 544);
             this.dataGridViewProducts.TabIndex = 30;
             // 
             // richTextBox1
@@ -62,10 +63,11 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.pictureBox11);
             this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Location = new System.Drawing.Point(434, 62);
+            this.panel1.Location = new System.Drawing.Point(903, 59);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(286, 33);
             this.panel1.TabIndex = 31;
@@ -102,7 +104,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(244, 5);
+            this.label1.Location = new System.Drawing.Point(515, 2);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 37);
             this.label1.TabIndex = 0;
@@ -112,21 +114,23 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.Controls.Add(this.label1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(723, 44);
+            this.panel2.Size = new System.Drawing.Size(1214, 44);
             this.panel2.TabIndex = 32;
             // 
             // Product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.dataGridViewProducts);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
             this.Name = "Product";
-            this.Size = new System.Drawing.Size(723, 655);
+            this.Size = new System.Drawing.Size(1214, 655);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();

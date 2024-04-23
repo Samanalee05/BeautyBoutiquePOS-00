@@ -208,6 +208,7 @@
             this.btnCustomers.TabIndex = 5;
             this.btnCustomers.Text = "Customers";
             this.btnCustomers.UseVisualStyleBackColor = false;
+            this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
             // 
             // btnInventory
             // 
@@ -282,10 +283,12 @@
             // 
             // windowPnl
             // 
+            this.windowPnl.AutoSize = true;
             this.windowPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.windowPnl.Location = new System.Drawing.Point(319, 0);
+            this.windowPnl.Dock = System.Windows.Forms.DockStyle.Right;
+            this.windowPnl.Location = new System.Drawing.Point(1274, 0);
             this.windowPnl.Name = "windowPnl";
-            this.windowPnl.Size = new System.Drawing.Size(958, 691);
+            this.windowPnl.Size = new System.Drawing.Size(0, 691);
             this.windowPnl.TabIndex = 3;
             // 
             // panel1
@@ -340,6 +343,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
