@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BeautyBoutiquePOS_TransactionsPage.Class;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,60 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 {
     public partial class newCustomer : Form
     {
-        public newCustomer()
+        private Customers customers;
+
+        public newCustomer(Customers customers)
         {
             InitializeComponent();
+
+            this.customers = customers;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string nic = textBoxNIC.Text;
+            string name = textBoxName.Text;
+            double age = Convert.ToDouble(textBoxAge.Text);
+            string address = textBoxAddress.Text;
+            string contact = textBoxContact.Text;
+            string email = textBoxEmail.Text;
+            string career = textBoxCareer.Text;
+
+            string query = "INSERT INTO customers (nic, name, age, address, contact, email, Career) VALUES (@NIC, @Name, @Age, @Address, @Contact, @Email, @Career)";
+
+            using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
+            {
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@NIC", nic);
+                    command.Parameters.AddWithValue("@Name", name);
+                    command.Parameters.AddWithValue("@Age", age);
+                    command.Parameters.AddWithValue("@Address", address);
+                    command.Parameters.AddWithValue("@Contact", contact);
+                    command.Parameters.AddWithValue("@Email", email);
+                    command.Parameters.AddWithValue("@Career", career);
+
+                    try
+                    {
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Customer saved successfully.");
+                            customers.LoadCustomers();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to save data.");
+                        }
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+            }
         }
     }
 }
