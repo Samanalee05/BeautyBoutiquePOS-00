@@ -114,6 +114,12 @@
     <Compile Include="Views\User Controls\Categories.Designer.cs">
       <DependentUpon>Categories.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\User Controls\Checkout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\User Controls\Checkout.Designer.cs">
+      <DependentUpon>Checkout.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\User Controls\Customers.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -131,6 +137,12 @@
     </Compile>
     <Compile Include="Views\User Controls\Sub Views\newCategory.Designer.cs">
       <DependentUpon>newCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User Controls\Sub Views\newCheckout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\User Controls\Sub Views\newCheckout.Designer.cs">
+      <DependentUpon>newCheckout.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\User Controls\Sub Views\newCustomer.cs">
       <SubType>Form</SubType>
@@ -160,6 +172,9 @@
     <EmbeddedResource Include="Views\User Controls\Categories.resx">
       <DependentUpon>Categories.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\User Controls\Checkout.resx">
+      <DependentUpon>Checkout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\User Controls\Customers.resx">
       <DependentUpon>Customers.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\User Controls\Sub Views\newCategory.resx">
       <DependentUpon>newCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\User Controls\Sub Views\newCheckout.resx">
+      <DependentUpon>newCheckout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\User Controls\Sub Views\newCustomer.resx">
       <DependentUpon>newCustomer.cs</DependentUpon>

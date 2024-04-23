@@ -267,6 +267,7 @@
             this.btnCheckout.TabIndex = 1;
             this.btnCheckout.Text = "Checkout";
             this.btnCheckout.UseVisualStyleBackColor = false;
+            this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
             // 
             // btnHome
             // 
