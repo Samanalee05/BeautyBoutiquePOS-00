@@ -12,9 +12,9 @@ using System.Drawing.Drawing2D;
 
 namespace BeautyBoutiquePOS_TransactionsPage
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
-        public Form1()
+        public Main()
         {
             InitializeComponent();
 
@@ -23,7 +23,7 @@ namespace BeautyBoutiquePOS_TransactionsPage
 
             //For right side rounded menu buttons:
             btnHome.Paint += RoundButton_Paint;
-            btnSales.Paint += RoundButton_Paint;
+            btnCheckout.Paint += RoundButton_Paint;
             btnProducts.Paint += RoundButton_Paint;
             btnCategories.Paint += RoundButton_Paint;
             btnInventory.Paint += RoundButton_Paint;
