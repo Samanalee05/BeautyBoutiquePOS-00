@@ -223,6 +223,7 @@
             this.btnInventory.TabIndex = 4;
             this.btnInventory.Text = "Inventory";
             this.btnInventory.UseVisualStyleBackColor = false;
+            this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
             // 
             // btnCategories
             // 

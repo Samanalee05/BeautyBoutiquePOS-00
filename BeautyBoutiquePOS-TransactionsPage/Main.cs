@@ -103,5 +103,12 @@ namespace BeautyBoutiquePOS_TransactionsPage
             var Checkout = new Checkout();
             windowPnl.Controls.Add(Checkout);
         }
+
+        private void btnInventory_Click(object sender, EventArgs e)
+        {
+            ClearContentArea();
+            var Inventory = new Inventory();
+            windowPnl.Controls.Add(Inventory);
+        }
     }
 }
