@@ -117,5 +117,10 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             cashForm.ShowDialog();
             this.cashForm1 = cashForm;
         }
+
+        private void cardBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

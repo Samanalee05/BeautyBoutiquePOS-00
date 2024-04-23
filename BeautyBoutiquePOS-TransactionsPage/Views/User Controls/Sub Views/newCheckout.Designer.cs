@@ -179,6 +179,7 @@
             this.cardBtn.TabStop = true;
             this.cardBtn.Text = "Card";
             this.cardBtn.UseVisualStyleBackColor = true;
+            this.cardBtn.Click += new System.EventHandler(this.cardBtn_Click);
             // 
             // cashBtn
             // 
