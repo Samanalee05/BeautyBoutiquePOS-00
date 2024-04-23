@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 using System.Drawing.Drawing2D;
 
+using BeautyBoutiquePOS_TransactionsPage.Views.User_Controls;
+
 namespace BeautyBoutiquePOS_TransactionsPage
 {
     public partial class Main : Form
@@ -67,6 +69,18 @@ namespace BeautyBoutiquePOS_TransactionsPage
 
                 button.Region = new Region(path);
             }
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            ClearContentArea();
+            var Product = new Product();
+            windowPnl.Controls.Add(Product);
+        }
+
+        private void ClearContentArea()
+        {
+            windowPnl.Controls.Clear();
         }
     }
 }
