@@ -23,12 +23,12 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             UserControlStyles styles = new UserControlStyles();
             styles.CustomizeDataGridView(dataGridViewProducts);
             styles.RoundCornerPanels(panel1, 10);
-            styles.RoundedBtn(button1);
+            //styles.RoundedBtn(button1);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            newProduct productForm = new newProduct();
+            newProduct productForm = new newProduct(this);
             productForm.ShowDialog();
         }
 

@@ -64,7 +64,7 @@
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(11, 735);
+            this.pictureBox9.Location = new System.Drawing.Point(10, 624);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(40, 40);
@@ -76,7 +76,7 @@
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(11, 669);
+            this.pictureBox8.Location = new System.Drawing.Point(10, 558);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(40, 40);
@@ -88,7 +88,7 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(11, 602);
+            this.pictureBox7.Location = new System.Drawing.Point(10, 491);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(40, 40);
@@ -100,7 +100,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(11, 537);
+            this.pictureBox6.Location = new System.Drawing.Point(10, 426);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(40, 40);
@@ -112,7 +112,7 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(11, 471);
+            this.pictureBox5.Location = new System.Drawing.Point(10, 360);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(40, 40);
@@ -124,7 +124,7 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(11, 406);
+            this.pictureBox4.Location = new System.Drawing.Point(10, 295);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(40, 40);
@@ -136,7 +136,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(11, 339);
+            this.pictureBox3.Location = new System.Drawing.Point(10, 228);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 40);
@@ -148,7 +148,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(11, 273);
+            this.pictureBox2.Location = new System.Drawing.Point(10, 162);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 40);
@@ -159,10 +159,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BeautyBoutiquePOS_TransactionsPage.Properties.Resources.Magenta_Beauty___Fashion_Free_Logo_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(72, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(86, -14);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(172, 193);
+            this.pictureBox1.Size = new System.Drawing.Size(172, 162);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -173,7 +173,7 @@
             this.btnUsers.FlatAppearance.BorderSize = 0;
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsers.ForeColor = System.Drawing.Color.Maroon;
-            this.btnUsers.Location = new System.Drawing.Point(0, 729);
+            this.btnUsers.Location = new System.Drawing.Point(0, 616);
             this.btnUsers.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnUsers.Name = "btnUsers";
             this.btnUsers.Size = new System.Drawing.Size(275, 55);
@@ -187,7 +187,7 @@
             this.btnReports.FlatAppearance.BorderSize = 0;
             this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReports.ForeColor = System.Drawing.Color.Maroon;
-            this.btnReports.Location = new System.Drawing.Point(0, 663);
+            this.btnReports.Location = new System.Drawing.Point(0, 550);
             this.btnReports.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnReports.Name = "btnReports";
             this.btnReports.Size = new System.Drawing.Size(275, 55);
@@ -201,7 +201,7 @@
             this.btnCustomers.FlatAppearance.BorderSize = 0;
             this.btnCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomers.ForeColor = System.Drawing.Color.Maroon;
-            this.btnCustomers.Location = new System.Drawing.Point(0, 597);
+            this.btnCustomers.Location = new System.Drawing.Point(0, 484);
             this.btnCustomers.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(275, 55);
@@ -215,7 +215,7 @@
             this.btnInventory.FlatAppearance.BorderSize = 0;
             this.btnInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventory.ForeColor = System.Drawing.Color.Maroon;
-            this.btnInventory.Location = new System.Drawing.Point(0, 531);
+            this.btnInventory.Location = new System.Drawing.Point(0, 418);
             this.btnInventory.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnInventory.Name = "btnInventory";
             this.btnInventory.Size = new System.Drawing.Size(275, 55);
@@ -229,7 +229,7 @@
             this.btnCategories.FlatAppearance.BorderSize = 0;
             this.btnCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCategories.ForeColor = System.Drawing.Color.Maroon;
-            this.btnCategories.Location = new System.Drawing.Point(0, 465);
+            this.btnCategories.Location = new System.Drawing.Point(0, 352);
             this.btnCategories.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnCategories.Name = "btnCategories";
             this.btnCategories.Size = new System.Drawing.Size(275, 55);
@@ -243,7 +243,7 @@
             this.btnProducts.FlatAppearance.BorderSize = 0;
             this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProducts.ForeColor = System.Drawing.Color.Maroon;
-            this.btnProducts.Location = new System.Drawing.Point(0, 399);
+            this.btnProducts.Location = new System.Drawing.Point(0, 286);
             this.btnProducts.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.Size = new System.Drawing.Size(275, 55);
@@ -258,7 +258,7 @@
             this.btnCheckout.FlatAppearance.BorderSize = 0;
             this.btnCheckout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckout.ForeColor = System.Drawing.Color.Maroon;
-            this.btnCheckout.Location = new System.Drawing.Point(0, 333);
+            this.btnCheckout.Location = new System.Drawing.Point(0, 220);
             this.btnCheckout.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnCheckout.Name = "btnCheckout";
             this.btnCheckout.Size = new System.Drawing.Size(275, 55);
@@ -272,7 +272,7 @@
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.ForeColor = System.Drawing.Color.Maroon;
-            this.btnHome.Location = new System.Drawing.Point(0, 267);
+            this.btnHome.Location = new System.Drawing.Point(0, 154);
             this.btnHome.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(275, 55);
@@ -282,9 +282,10 @@
             // 
             // windowPnl
             // 
-            this.windowPnl.Location = new System.Drawing.Point(320, 0);
+            this.windowPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.windowPnl.Location = new System.Drawing.Point(319, 0);
             this.windowPnl.Name = "windowPnl";
-            this.windowPnl.Size = new System.Drawing.Size(1581, 1033);
+            this.windowPnl.Size = new System.Drawing.Size(958, 691);
             this.windowPnl.TabIndex = 3;
             // 
             // panel1
@@ -311,7 +312,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(320, 1033);
+            this.panel1.Size = new System.Drawing.Size(320, 691);
             this.panel1.TabIndex = 2;
             // 
             // Main
@@ -319,7 +320,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.ClientSize = new System.Drawing.Size(1274, 691);
             this.Controls.Add(this.windowPnl);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Consolas", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
