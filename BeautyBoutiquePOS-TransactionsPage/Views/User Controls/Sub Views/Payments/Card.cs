@@ -12,7 +12,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views.Payme
 {
     public partial class Card : Form
     {
-        public Card()
+        public Card(decimal ammount)
         {
             InitializeComponent();
 

@@ -32,7 +32,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
+            this.labelCustomer = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textGross = new System.Windows.Forms.TextBox();
@@ -46,7 +46,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelDate = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -88,15 +88,15 @@
             this.button3.Text = "Change Customer Type";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // label14
+            // labelCustomer
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(283, 101);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(64, 17);
-            this.label14.TabIndex = 54;
-            this.label14.Text = "Consumer";
+            this.labelCustomer.AutoSize = true;
+            this.labelCustomer.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Italic | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCustomer.Location = new System.Drawing.Point(283, 101);
+            this.labelCustomer.Name = "labelCustomer";
+            this.labelCustomer.Size = new System.Drawing.Size(64, 17);
+            this.labelCustomer.TabIndex = 54;
+            this.labelCustomer.Text = "Consumer";
             // 
             // label13
             // 
@@ -238,21 +238,21 @@
             this.label10.TabIndex = 7;
             this.label10.Text = "BeautyBoutiquePOS";
             // 
-            // label9
+            // labelDate
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(909, 26);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(106, 25);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "2024/04/22";
+            this.labelDate.AutoSize = true;
+            this.labelDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDate.Location = new System.Drawing.Point(842, 25);
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(106, 25);
+            this.labelDate.TabIndex = 6;
+            this.labelDate.Text = "2024/04/22";
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(751, 18);
+            this.panel2.Location = new System.Drawing.Point(653, 18);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(142, 38);
             this.panel2.TabIndex = 5;
@@ -270,7 +270,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.labelDate);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(-5, -1);
             this.panel1.Name = "panel1";
@@ -331,7 +331,7 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.labelCustomer);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.textGross);
@@ -368,7 +368,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label labelCustomer;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textGross;
@@ -382,7 +382,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Panel panel1;
