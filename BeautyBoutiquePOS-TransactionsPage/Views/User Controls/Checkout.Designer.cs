@@ -46,7 +46,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(560, 10);
+            this.label1.Location = new System.Drawing.Point(539, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 37);
             this.label1.TabIndex = 0;
@@ -69,7 +69,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1276, 62);
+            this.panel2.Size = new System.Drawing.Size(1211, 62);
             this.panel2.TabIndex = 22;
             // 
             // panel1
@@ -77,7 +77,7 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.pictureBox11);
             this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Location = new System.Drawing.Point(942, 85);
+            this.panel1.Location = new System.Drawing.Point(845, 76);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(286, 33);
             this.panel1.TabIndex = 21;
@@ -98,9 +98,9 @@
             // 
             this.checkoutGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.checkoutGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.checkoutGridView.Location = new System.Drawing.Point(0, 129);
+            this.checkoutGridView.Location = new System.Drawing.Point(0, 124);
             this.checkoutGridView.Name = "checkoutGridView";
-            this.checkoutGridView.Size = new System.Drawing.Size(1276, 553);
+            this.checkoutGridView.Size = new System.Drawing.Size(1211, 553);
             this.checkoutGridView.TabIndex = 20;
             // 
             // button1
@@ -129,7 +129,7 @@
             this.Controls.Add(this.checkoutGridView);
             this.Controls.Add(this.button1);
             this.Name = "Checkout";
-            this.Size = new System.Drawing.Size(1276, 682);
+            this.Size = new System.Drawing.Size(1211, 677);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

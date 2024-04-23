@@ -191,6 +191,8 @@
             this.cashBtn.TabStop = true;
             this.cashBtn.Text = "Cash";
             this.cashBtn.UseVisualStyleBackColor = true;
+            this.cashBtn.CheckedChanged += new System.EventHandler(this.cashBtn_CheckedChanged);
+            this.cashBtn.Click += new System.EventHandler(this.cashBtn_Click);
             // 
             // label2
             // 
@@ -261,6 +263,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(182, 29);
             this.textBox1.TabIndex = 43;
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
             // 
             // panel1
             // 
@@ -281,6 +284,7 @@
             this.button2.TabIndex = 37;
             this.button2.Text = "Checkout";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // dataGridView1
             // 
