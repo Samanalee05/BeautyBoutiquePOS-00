@@ -18,14 +18,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Class
 
         public static string GetConnectionString()
         {
-            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-            builder.Server = Server;
-            builder.Port = Port;
-            builder.Database = Database;
-            builder.UserID = Username;
-            builder.Password = Password;
 
-            return builder.ConnectionString;
+            return $"Server={Server};Port={Port};Database={Database};Uid={Username};Pwd={Password};";
         }
     }
 }
