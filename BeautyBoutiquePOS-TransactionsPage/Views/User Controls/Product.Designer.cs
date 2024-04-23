@@ -123,7 +123,7 @@
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(128, 74);
+            this.pictureBox10.Location = new System.Drawing.Point(128, 68);
             this.pictureBox10.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(23, 23);

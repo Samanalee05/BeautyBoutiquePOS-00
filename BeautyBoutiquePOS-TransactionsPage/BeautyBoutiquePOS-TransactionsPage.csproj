@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\DatabaseConnection.cs" />
+    <Compile Include="Class\User Control Styles.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

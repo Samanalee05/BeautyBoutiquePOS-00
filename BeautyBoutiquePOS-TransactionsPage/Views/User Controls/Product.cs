@@ -20,7 +20,10 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
         {
             InitializeComponent();
             LoadProductData();
-            CustomizeDataGridView();
+            UserControlStyles styles = new UserControlStyles();
+            styles.CustomizeDataGridView(dataGridViewProducts);
+            styles.RoundCornerPanels(panel1, 10);
+            styles.RoundedBtn(button1);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -55,24 +58,6 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
                     }
                 }
             }
-        }
-        private void CustomizeDataGridView()
-        {
-            dataGridViewProducts.BorderStyle = BorderStyle.None;
-            dataGridViewProducts.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
-            dataGridViewProducts.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewProducts.DefaultCellStyle.SelectionBackColor = Color.DarkTurquoise;
-            dataGridViewProducts.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            dataGridViewProducts.BackgroundColor = Color.White;
-
-            dataGridViewProducts.EnableHeadersVisualStyles = false;
-            dataGridViewProducts.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewProducts.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(20, 25, 72);
-            dataGridViewProducts.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
-            dataGridViewProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-            dataGridViewProducts.RowTemplate.Height = 40;
         }
     }
 }

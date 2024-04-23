@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,14 +10,22 @@ namespace BeautyBoutiquePOS_TransactionsPage.Class
     internal class DatabaseConnection
     {
         private const string Server = "localhost";
+        private const int Port = 3307;
         private const string Database = "test";
         private const string Username = "root";
-        private const string Password = "root1234";
+        private const string Password = "";
 
 
         public static string GetConnectionString()
         {
-            return $"Server={Server};Database={Database};Uid={Username};Pwd={Password};";
+            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
+            builder.Server = Server;
+            builder.Port = Port;
+            builder.Database = Database;
+            builder.UserID = Username;
+            builder.Password = Password;
+
+            return builder.ConnectionString;
         }
     }
 }
