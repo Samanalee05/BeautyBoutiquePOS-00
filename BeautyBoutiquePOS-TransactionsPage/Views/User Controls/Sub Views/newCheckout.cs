@@ -39,7 +39,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-            addToCart productForm = new addToCart();
+            addToCart productForm = new addToCart("checkout");
             productForm.ShowDialog();
         }
 

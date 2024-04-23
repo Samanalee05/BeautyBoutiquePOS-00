@@ -16,12 +16,14 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
     {
         DataTable dataTable1;
         DataView dataView1;
-        public addToCart()
+        private string form1;
+        public addToCart(string form)
         {
             InitializeComponent();
             UpdateDataGridView();
             UserControlStyles styles = new UserControlStyles();
             styles.CustomizeDataGridView(productGridView);
+            this.form1 = form;
         }
 
         private void textProduct_TextChanged(object sender, EventArgs e)

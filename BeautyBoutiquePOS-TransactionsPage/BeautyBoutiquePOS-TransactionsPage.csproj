@@ -144,6 +144,12 @@
     <Compile Include="Views\User Controls\Sub Views\addToCart.Designer.cs">
       <DependentUpon>addToCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\User Controls\Sub Views\grForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\User Controls\Sub Views\grForm.Designer.cs">
+      <DependentUpon>grForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\User Controls\Sub Views\newCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\User Controls\Sub Views\addToCart.resx">
       <DependentUpon>addToCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\User Controls\Sub Views\grForm.resx">
+      <DependentUpon>grForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\User Controls\Sub Views\newCategory.resx">
       <DependentUpon>newCategory.cs</DependentUpon>

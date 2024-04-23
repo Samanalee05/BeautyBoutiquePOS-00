@@ -19,6 +19,10 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
         {
             InitializeComponent();
             LoadNewOrders();
+            LoadDataIntoDataGridView();
+            UserControlStyles styles = new UserControlStyles();
+            styles.CustomizeDataGridView(dataGridView2);
+            styles.CustomizeDataGridView(dataGridView1);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -55,6 +59,42 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading new orders: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            grForm frm = new grForm(this);
+            frm.ShowDialog();
+        }
+
+        public void LoadDataIntoDataGridView()
+        {
+            try
+            {
+
+                string queryString = "SELECT * FROM gr";
+
+                using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
+                {
+                    connection.Open();
+
+                    using (MySqlCommand command = new MySqlCommand(queryString, connection))
+                    {
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                        {
+                            DataTable dataTable = new DataTable();
+
+                            adapter.Fill(dataTable);
+
+                            dataGridView1.DataSource = dataTable;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading data into DataGridView: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
