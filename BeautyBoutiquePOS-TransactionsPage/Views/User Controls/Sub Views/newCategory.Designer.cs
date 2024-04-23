@@ -73,6 +73,7 @@
             this.saveBtn.TabIndex = 19;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // label3
             // 
