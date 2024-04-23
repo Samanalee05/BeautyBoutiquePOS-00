@@ -13,7 +13,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Class
         private const int Port = 3306;
         private const string Database = "test";
         private const string Username = "root";
-        private const string Password = "root1234";
+        private const string Password = "";
 
 
         public static string GetConnectionString()
