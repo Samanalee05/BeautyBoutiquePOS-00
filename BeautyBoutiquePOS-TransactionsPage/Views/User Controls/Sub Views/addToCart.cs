@@ -21,6 +21,14 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         {
             InitializeComponent();
             UpdateDataGridView();
+
+            DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
+            editButtonColumn.HeaderText = "Select";
+            editButtonColumn.Text = "Select";
+            editButtonColumn.Name = "SelectButton";
+            editButtonColumn.UseColumnTextForButtonValue = true;
+            productGridView.Columns.Add(editButtonColumn);
+
             UserControlStyles styles = new UserControlStyles();
             styles.CustomizeDataGridView(productGridView);
             this.form1 = form;
@@ -72,6 +80,9 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
                         productGridView.DataSource = dataTable;
                         dataTable1 = dataTable;
+
+                        productGridView.CellContentClick += dataGridView1_CellContentClick;
+                        ;
                     }
                     catch (MySqlException ex)
                     {
@@ -80,6 +91,82 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                 }
             }
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == productGridView.Columns["SelectButton"].Index)
+                {
+
+                    DataGridViewRow row = productGridView.Rows[e.RowIndex];
+
+                    Console.WriteLine(row.Cells[4].Value);
+
+                    using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
+                    {
+                        connection.Open();
+
+                        int quantity;
+
+                        if (!int.TryParse(textQTY.Text, out quantity))
+                        {
+                            MessageBox.Show("Please enter a valid integer value for quantity.");
+                            return;
+                        }
+                        else
+                        {
+                            quantity = Convert.ToInt32(textQTY.Text);
+                        }
+
+                        if (quantity <= 0)
+                        {
+                            MessageBox.Show("Please enter a valid quantity.");
+                            return;
+                        }
+
+
+
+                        if (CheckStockQuantity(row.Cells[2].Value.ToString(), quantity))
+                        {
+                            decimal discountPrice = CalculateDiscountPrice(row.Cells[2].Value.ToString());
+                            decimal totalPrice = discountPrice * quantity;
+
+
+                            string query = "INSERT INTO productsLine (id ,name, description, qty, discount, price , total) VALUES (@Id ,@Name, @Description, @Qty, @Discount,@Price , @Total)";
+                            using (MySqlCommand command = new MySqlCommand(query, connection))
+                            {
+                                command.Parameters.AddWithValue("@Id", row.Cells[1].Value);
+                                command.Parameters.AddWithValue("@Name", row.Cells[2].Value);
+                                command.Parameters.AddWithValue("@Description", row.Cells[3].Value);
+                                command.Parameters.AddWithValue("@Qty", Convert.ToInt32(textQTY.Text));
+                                command.Parameters.AddWithValue("@Discount", row.Cells[5].Value);
+                                command.Parameters.AddWithValue("@Price", row.Cells[6].Value);
+                                command.Parameters.AddWithValue("@Total", totalPrice);
+                                command.ExecuteNonQuery();
+                                
+                            }
+
+                            if (Application.OpenForms["newCheckout"] is newCheckout checkoutForm)
+                            {
+                                checkoutForm.RefreshDataGrid();
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("newCheckout form is not open.");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Insufficient stock quantity for the selected product.");
+                            return;
+                        }
+
+                    }
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

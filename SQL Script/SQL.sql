@@ -64,6 +64,8 @@ total double,
 discount double
 );
 
+drop table checkout;
+
 select * from checkout;
 
 create table productsLine( 
@@ -76,6 +78,10 @@ price float,
 total float
 );
 
+select * from productsLine;
+
+drop table productsLine;
+
 create table checkoutLine( 
 id int auto_increment primary key,
 date varchar(255),
@@ -84,6 +90,8 @@ total double,
 discount double,
 itemQTY double
 );
+
+drop table checkoutLine;
 
 drop table productsLine;
 
