@@ -20,7 +20,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             InitializeComponent();
 
             LoadCheckoutData();
-            
+            LoadCustomerJoinData();
         }
 
         private void LoadCheckoutData()
@@ -76,6 +76,62 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
                 }
             }
         }
+
+        private void LoadCustomerJoinData()
+        {
+            string query = "SELECT date_join, COUNT(*) AS customerCount FROM customers GROUP BY date_join ORDER BY date_join ASC";
+
+            using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
+            {
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        DataTable dataTable = new DataTable();
+
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                        {
+                            adapter.Fill(dataTable);
+                        }
+
+                        chart1.Series.Clear();
+
+                        chart1.Series.Add("CustomerJoinCount");
+
+                        chart1.Series["CustomerJoinCount"].XValueMember = "date_join";
+                        chart1.Series["CustomerJoinCount"].YValueMembers = "customerCount";
+                        chart1.DataSource = dataTable;
+
+
+                        chart1.Series.Clear();
+                        Series series = new Series("Customers");
+
+
+                        series.ChartType = SeriesChartType.Column;
+
+                        series["PixelPointWidth"] = "20";
+
+
+                        series.XValueMember = "date_join";
+                        series.YValueMembers = "customerCount";
+                        chart1.DataSource = dataTable;
+                        chart1.Series.Add(series);
+
+                        chart1.ChartAreas[0].AxisX.Title = "Date";
+                        chart1.ChartAreas[0].AxisY.Title = "Customer Count";
+                        chart1.DataBind();
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+
 
     }
 }

@@ -302,7 +302,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             // Retrieve price and discount from the database
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
             {
-                string query = "SELECT price, discount FROM products WHERE name = @ProductName";
+                string query = "SELECT price, discount_percentage FROM products WHERE name = @ProductName";
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
@@ -327,7 +327,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                 }
             }
 
-            decimal discountPrice = price - (price * discount);
+            decimal discountPrice =price - ((price/100) * discount) ;
+
             return discountPrice;
         }
     }

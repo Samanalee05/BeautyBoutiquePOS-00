@@ -28,8 +28,10 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             UserControlStyles styles = new UserControlStyles();
             styles.CustomizeDataGridView(dataGridView1);
             DateTime currentDate = DateTime.Today;
-            labelDate.Text = currentDate.ToString("yyyy ,MMMM,dd");
+            labelDate.Text = currentDate.ToString("yyyy , MMMM , dd");
             this.checkout1 = checkout;
+
+            RefreshDataGrid();
         }
 
         private void newCheckout_Load(object sender, EventArgs e)
@@ -174,7 +176,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
             {
                 connection.Open();
-                string query = "INSERT INTO checkoutLine (date, customer, total, discount, itemQTY) VALUES (@Date, @Customer, @Total, @Discount, @ItemQty)";
+                string query = "INSERT INTO checkoutLine (date, customer, total, discount_percentage, itemQTY) VALUES (@Date, @Customer, @Total, @Discount, @ItemQty)";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Date", formattedDate);

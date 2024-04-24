@@ -21,7 +21,7 @@ id int auto_increment primary key,
 name varchar(255),
 description varchar(255),
 qty double default 0,
-discount double default 0,
+discount_percentage double default 0,
 price float,
 category varchar(255)
 );
@@ -29,12 +29,13 @@ category varchar(255)
 drop table products;
 desc products;
 
-INSERT INTO products (name, description, qty, discount, price) VALUES
-('Product 1', 'Description of Product 1', 100, 0.05, 10.99),
-('Product 2', 'Description of Product 2', 150, 0.1, 20.49),
-('Product 3', 'Description of Product 3', 80, 0.0, 15.99),
-('Product 4', 'Description of Product 4', 200, 0.2, 8.75),
-('Product 5', 'Description of Product 5', 120, 0.15, 25.99);
+INSERT INTO products (name, description, qty, discount_percentage, price, category) VALUES
+('Product A', 'Description for Product A', 10, 5.00, 50.00, 'Category 1'),
+('Product B', 'Description for Product B', 20, 0.00, 30.00, 'Category 2'),
+('Product C', 'Description for Product C', 15, 10.00, 40.00, 'Category 1'),
+('Product D', 'Description for Product D', 8, 3.00, 70.00, 'Category 2'),
+('Product E', 'Description for Product E', 12, 0.00, 25.00, 'Category 3');
+
 
 
 select * from products;
@@ -54,6 +55,7 @@ drop table customers;
 
 INSERT INTO customers (nic, name, age, address, contact, email, Career, date_join) 
 VALUES 
+('NIC123457', 'John Doe', 30, '123 Main St', '123-456-7890', 'john.doe@example.com', 'Developer', '2024-04-18'),
 ('NIC123456', 'John Doe', 30, '123 Main St', '123-456-7890', 'john.doe@example.com', 'Developer', '2024-04-23'),
 ('NIC789012', 'Jane Smith', 25, '456 Elm St', '987-654-3210', 'jane.smith@example.com', 'Designer', '2024-04-23'),
 ('NIC345678', 'Michael Brown', 35, '789 Oak St', '456-789-0123', 'michael.brown@example.com', 'Manager', '2024-04-22'),
@@ -95,7 +97,7 @@ id int auto_increment primary key,
 date varchar(255),
 customer varchar(255),
 total double,
-discount double,
+discount_percentage double,
 itemQTY double
 );
 
