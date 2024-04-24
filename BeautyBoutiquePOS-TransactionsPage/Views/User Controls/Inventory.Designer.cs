@@ -81,9 +81,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 103);
+            this.label1.Location = new System.Drawing.Point(4, 99);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 25);
+            this.label1.Size = new System.Drawing.Size(144, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Pending Orders";
             // 
@@ -93,7 +93,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(10, 383);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 25);
+            this.label2.Size = new System.Drawing.Size(127, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Goods Recive";
             // 
