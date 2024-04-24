@@ -31,6 +31,8 @@ namespace BeautyBoutiquePOS_TransactionsPage
             btnCustomers.Paint += RoundButton_Paint;
             btnReports.Paint += RoundButton_Paint;
             btnUsers.Paint += RoundButton_Paint;
+
+            this.FormClosing += MainForm_FormClosing;
         }
 
 
@@ -118,6 +120,14 @@ namespace BeautyBoutiquePOS_TransactionsPage
             ClearContentArea();
             var Home = new Home();
             windowPnl.Controls.Add(Home);
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Application.Exit();
+            }
         }
     }
 }
