@@ -242,7 +242,7 @@
             // 
             this.labelDate.AutoSize = true;
             this.labelDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDate.Location = new System.Drawing.Point(842, 25);
+            this.labelDate.Location = new System.Drawing.Point(846, 22);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(106, 25);
             this.labelDate.TabIndex = 6;
@@ -252,7 +252,7 @@
             // 
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Location = new System.Drawing.Point(653, 18);
+            this.panel2.Location = new System.Drawing.Point(654, 14);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(142, 38);
             this.panel2.TabIndex = 5;
@@ -272,9 +272,10 @@
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.labelDate);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(-5, -1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1021, 68);
+            this.panel1.Size = new System.Drawing.Size(1014, 68);
             this.panel1.TabIndex = 42;
             // 
             // button2

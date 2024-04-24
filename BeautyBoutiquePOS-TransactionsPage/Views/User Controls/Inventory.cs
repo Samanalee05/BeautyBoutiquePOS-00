@@ -22,7 +22,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             LoadDataIntoDataGridView();
             UserControlStyles styles = new UserControlStyles();
             styles.CustomizeDataGridView(dataGridView2);
-            styles.CustomizeDataGridView(dataGridView1);
+            //styles.CustomizeDataGridView(dataGridView1);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
         {
             try
             {
-                string queryString = "SELECT * FROM newOrder";
+                string queryString = "SELECT * FROM inventory";
 
                 using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
                 {
@@ -87,7 +87,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 
                             adapter.Fill(dataTable);
 
-                            dataGridView1.DataSource = dataTable;
+                            //dataGridView1.DataSource = dataTable;
                         }
                     }
                 }

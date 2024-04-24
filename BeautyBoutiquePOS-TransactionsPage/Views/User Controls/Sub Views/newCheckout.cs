@@ -109,10 +109,71 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
         }
 
+        private void DeleteAllProductsLineDataAndUpdateProductQty()
+        {
+
+            using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
+            {
+                connection.Open();
+                MySqlTransaction transaction = connection.BeginTransaction();
+
+                try
+                {
+                    string updateQuery = @"
+                UPDATE products p
+                INNER JOIN productsLine pl ON p.id = pl.id
+                SET p.qty = p.qty - pl.qty;
+            ";
+
+                    using (MySqlCommand updateCommand = new MySqlCommand(updateQuery, connection, transaction))
+                    {
+                        int rowsAffected = updateCommand.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("All data from productsLine table deleted successfully.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No data found in productsLine table.");
+                        }
+
+
+                    }
+
+                    string deleteQuery = "DELETE FROM productsLine";
+                    using (MySqlCommand deleteCommand = new MySqlCommand(deleteQuery, connection, transaction))
+                    {
+                        int rowsAffected = deleteCommand.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("All data from productsLine table deleted successfully.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No data found in productsLine table.");
+                        }
+                    }
+
+                    transaction.Commit();
+                }
+                catch (MySqlException ex)
+                {
+                    transaction.Rollback();
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+
         private void button2_Click(object sender, EventArgs e)
         {
             textGross.Text = this.cashForm1.balance.ToString();
-            DeleteAllProductsLineData();
+
+            //DeleteAllProductsLineData();
+
+            DeleteAllProductsLineDataAndUpdateProductQty();
             checkoutButton_Click(sender, e);
             this.checkout1.LoadCheckoutRecordsForToday();
         }

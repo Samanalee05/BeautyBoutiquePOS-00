@@ -159,5 +159,25 @@ CREATE TABLE gr (
     received_date DATE
 );
 
+CREATE TABLE inventory (
+    itemcode INT  PRIMARY KEY,
+    QTY DOUBLE DEFAULT 0,
+    discount_percentage DOUBLE DEFAULT 0,
+    selling_price FLOAT,
+    cost FLOAT,
+    total float
+);
+
+drop table inventory;
+
+INSERT INTO inventory (itemcode, QTY, discount_percentage, selling_price, cost) VALUES
+(1001, 50, 0.1, 50.00, 40.00),
+(1002, 100, 0.15, 100.00, 80.00),
+(1003, 75, 0.2, 75.00, 60.00),
+(1004, 120, 0.25, 120.00, 90.00),
+(1005, 90, 0.18, 90.00, 70.00);
+
+
+
 
 
