@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BeautyBoutiquePOS_TransactionsPage.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace BeautyBoutiquePOS_TransactionsPage
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new Login());
         }
     }
 }

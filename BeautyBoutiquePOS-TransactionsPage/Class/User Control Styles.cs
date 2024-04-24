@@ -79,5 +79,23 @@ namespace BeautyBoutiquePOS_TransactionsPage.Class
             path.CloseFigure();
             control.Region = new Region(path);
         }
+
+        public void ApplyTextBoxStyles(TextBox textBox)
+        {
+            Color borderColor = Color.Gray;
+
+            textBox.BackColor = Color.LightGray;
+            textBox.BorderStyle = BorderStyle.FixedSingle;
+            textBox.Font = new Font("Arial", 10, FontStyle.Bold);
+            textBox.TextAlign = HorizontalAlignment.Center;
+            textBox.Paint += (sender, e) =>
+            {
+                ControlPaint.DrawBorder(e.Graphics, textBox.ClientRectangle,
+                                        Color.DarkGray, 1, ButtonBorderStyle.Solid,
+                                        Color.DarkGray, 1, ButtonBorderStyle.Solid,
+                                        Color.DarkGray, 1, ButtonBorderStyle.Solid,
+                                        Color.DarkGray, 1, ButtonBorderStyle.Solid);
+            };
+        }
     }
 }

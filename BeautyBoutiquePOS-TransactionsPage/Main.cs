@@ -16,7 +16,7 @@ namespace BeautyBoutiquePOS_TransactionsPage
 {
     public partial class Main : Form
     {
-        public Main()
+        public Main(Views.Login login)
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
