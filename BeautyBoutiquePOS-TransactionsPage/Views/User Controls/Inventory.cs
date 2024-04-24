@@ -23,7 +23,36 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             UserControlStyles styles = new UserControlStyles();
             styles.CustomizeDataGridView(dataGridView2);
             //styles.CustomizeDataGridView(dataGridView1);
+
+            DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
+            editButtonColumn.HeaderText = "Edit";
+            editButtonColumn.Text = "Edit";
+            editButtonColumn.Name = "EditButton";
+            editButtonColumn.UseColumnTextForButtonValue = true;
+            dataGridView2.Columns.Add(editButtonColumn);
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView2.Columns["EditButton"].Index && e.RowIndex >= 0)
+            {
+                int rowIndex = e.RowIndex;
+                DataGridViewRow selectedRow = dataGridView2.Rows[rowIndex];
+
+
+                string[] rowDataArray = new string[selectedRow.Cells.Count];
+                for (int i = 0; i < selectedRow.Cells.Count; i++)
+                {
+                    rowDataArray[i] = selectedRow.Cells[i].Value.ToString();
+                }
+
+                editForm editForm = new editForm(this, rowDataArray);
+                editForm.ShowDialog();
+            }
+        }
+
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -52,6 +81,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
                             adapter.Fill(dataTable);
 
                             dataGridView2.DataSource = dataTable;
+
+                            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
                         }
                     }
                 }
@@ -62,11 +93,6 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            grForm frm = new grForm(this);
-            frm.ShowDialog();
-        }
 
         public void LoadDataIntoDataGridView()
         {

@@ -82,7 +82,6 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                         dataTable1 = dataTable;
 
                         productGridView.CellContentClick += dataGridView1_CellContentClick;
-                        ;
                     }
                     catch (MySqlException ex)
                     {
