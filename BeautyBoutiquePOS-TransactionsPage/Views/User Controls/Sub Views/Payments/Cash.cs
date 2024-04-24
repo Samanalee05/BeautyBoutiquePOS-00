@@ -54,7 +54,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views.Payme
             decimal value = 0;
 
 
-            if (textBox2.Text == null)
+            if (textBox2.Text == "")
             {
                 if (!string.IsNullOrEmpty(textBox1.Text) && decimal.TryParse(textBox1.Text, out value))
                 {

@@ -141,7 +141,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             double discountTotal = 0;
 
             DateTime currentDate = DateTime.Now;
-            string formattedDate = currentDate.ToString("yyyy-MM-dd HH:mm:ss");
+            string formattedDate = currentDate.ToString("yyyy-MM-dd");
 
 
             string customerName = labelCustomer.Text;

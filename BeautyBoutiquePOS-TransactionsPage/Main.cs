@@ -39,7 +39,9 @@ namespace BeautyBoutiquePOS_TransactionsPage
         {
 
 
-
+            ClearContentArea();
+            var Home = new Home();
+            windowPnl.Controls.Add(Home);
 
 
             /* Use to check client height:
@@ -109,6 +111,13 @@ namespace BeautyBoutiquePOS_TransactionsPage
             ClearContentArea();
             var Inventory = new Inventory();
             windowPnl.Controls.Add(Inventory);
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            ClearContentArea();
+            var Home = new Home();
+            windowPnl.Controls.Add(Home);
         }
     }
 }

@@ -91,6 +91,8 @@ discount double,
 itemQTY double
 );
 
+select * from checkoutLine;
+
 drop table checkoutLine;
 
 drop table productsLine;
