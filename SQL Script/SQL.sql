@@ -46,11 +46,19 @@ age double,
 address varchar(255),
 contact varchar(255),
 email varchar(255),
-Career varchar(255)
+Career varchar(255),
+date_join date
 );
 
 drop table customers;
 
+INSERT INTO customers (nic, name, age, address, contact, email, Career, date_join) 
+VALUES 
+('NIC123456', 'John Doe', 30, '123 Main St', '123-456-7890', 'john.doe@example.com', 'Developer', '2024-04-23'),
+('NIC789012', 'Jane Smith', 25, '456 Elm St', '987-654-3210', 'jane.smith@example.com', 'Designer', '2024-04-23'),
+('NIC345678', 'Michael Brown', 35, '789 Oak St', '456-789-0123', 'michael.brown@example.com', 'Manager', '2024-04-22'),
+('NIC901234', 'Emily Johnson', 28, '101 Maple St', '789-012-3456', 'emily.johnson@example.com', 'Engineer', '2024-04-22'),
+('NIC567890', 'Sarah Clark', 32, '202 Pine St', '012-345-6789', 'sarah.clark@example.com', 'Analyst', '2024-04-21');
 
 
 select * from customers;

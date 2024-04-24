@@ -32,8 +32,10 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             string contact = textBoxContact.Text;
             string email = textBoxEmail.Text;
             string career = textBoxCareer.Text;
+            DateTime joinDate = DateTime.Now;
 
-            string query = "INSERT INTO customers (nic, name, age, address, contact, email, Career) VALUES (@NIC, @Name, @Age, @Address, @Contact, @Email, @Career)";
+            string query = "INSERT INTO customers (nic, name, age, address, contact, email, Career, date_join) " +
+                               "VALUES (@NIC, @Name, @Age, @Address, @Contact, @Email, @Career, @JoinDate)";
 
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
             {
@@ -46,6 +48,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                     command.Parameters.AddWithValue("@Contact", contact);
                     command.Parameters.AddWithValue("@Email", email);
                     command.Parameters.AddWithValue("@Career", career);
+                    command.Parameters.AddWithValue("@JoinDate", joinDate);
 
                     try
                     {
