@@ -91,6 +91,38 @@ discount double,
 itemQTY double
 );
 
+INSERT INTO checkoutLine (date, customer, total, discount, itemQTY) VALUES
+('2024-04-01', 'John Doe', 100.00, 0.00, 3),
+('2024-04-01', 'Alice Smith', 150.00, 10.00, 2),
+('2024-04-02', 'Bob Johnson', 200.00, 20.00, 4),
+('2024-04-02', 'Emily Davis', 120.00, 5.00, 1),
+('2024-04-02', 'Michael Brown', 180.00, 15.00, 3),
+('2024-04-03', 'Sarah Wilson', 90.00, 0.00, 2),
+('2024-04-03', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-03', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-03', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-03', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-03', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-04', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-04', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-04', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-04', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-04', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-04', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-04', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-04', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-04', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-04', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-05', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-05', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-06', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-06', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-06', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-06', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-06', 'David Martinez', 250.00, 25.00, 5),
+('2024-04-06', 'David Martinez', 250.00, 25.00, 5);
+
+
 select * from checkoutLine;
 
 drop table checkoutLine;

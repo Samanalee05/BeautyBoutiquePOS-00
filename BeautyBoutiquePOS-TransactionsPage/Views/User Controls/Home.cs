@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 {
@@ -19,11 +20,12 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             InitializeComponent();
 
             LoadCheckoutData();
+            
         }
 
         private void LoadCheckoutData()
         {
-            string query = "SELECT date, COUNT(*) AS checkoutCount FROM checkoutLine GROUP BY date";
+            string query = "SELECT date, COUNT(*) AS checkoutCount FROM checkoutLine GROUP BY date ORDER BY date ASC";
 
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
             {
@@ -42,11 +44,29 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 
                         chart2.Series.Clear();
 
-                        chart2.Series.Add("Checkouts");
+                        chart2.Series.Add("Sales");
 
-                        chart2.Series["Checkouts"].XValueMember = "date";
-                        chart2.Series["Checkouts"].YValueMembers = "checkoutCount";
+                        chart2.Series["Sales"].XValueMember = "date";
+                        chart2.Series["Sales"].YValueMembers = "checkoutCount";
                         chart2.DataSource = dataTable;
+
+                        chart2.Series.Clear();
+                        Series series = new Series("Sales");
+
+
+                        series.ChartType = SeriesChartType.Column;
+
+                        series["PixelPointWidth"] = "20";
+
+
+                        series.XValueMember = "date";
+                        series.YValueMembers = "checkoutCount";
+                        chart2.DataSource = dataTable;
+                        chart2.Series.Add(series);
+
+                        chart2.ChartAreas[0].AxisX.Title = "Date";
+                        chart2.ChartAreas[0].AxisY.Title = "Checkout Count";
+
                         chart2.DataBind();
                     }
                     catch (MySqlException ex)
