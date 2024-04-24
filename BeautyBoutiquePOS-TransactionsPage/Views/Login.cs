@@ -28,5 +28,11 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views
             mainForm.ShowDialog();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Signup signup = new Signup();
+            signup.ShowDialog();
+        }
     }
 }
