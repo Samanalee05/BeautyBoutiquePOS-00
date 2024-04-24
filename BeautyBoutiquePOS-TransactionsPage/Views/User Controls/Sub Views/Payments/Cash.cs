@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views.Payments
 {
@@ -50,32 +51,48 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views.Payme
             label20.Text = text20.Text;
 
             decimal sum = 0;
+            decimal value = 0;
 
-            decimal value5000 = 0, value1000 = 0, value500 = 0, value100 = 0, value50 = 0, value20 = 0;
 
-            if (!string.IsNullOrEmpty(text5000.Text) && decimal.TryParse(text5000.Text, out value5000))
+            if (textBox2.Text == null)
             {
-                sum += value5000 * 5000;
-            }
-            if (!string.IsNullOrEmpty(text1000.Text) && decimal.TryParse(text1000.Text, out value1000))
+                if (!string.IsNullOrEmpty(textBox1.Text) && decimal.TryParse(textBox1.Text, out value))
+                {
+                    sum = value;
+                }
+
+                decimal value5000 = 0, value1000 = 0, value500 = 0, value100 = 0, value50 = 0, value20 = 0;
+
+                if (!string.IsNullOrEmpty(text5000.Text) && decimal.TryParse(text5000.Text, out value5000))
+                {
+                    sum += value5000 * 5000;
+                }
+                if (!string.IsNullOrEmpty(text1000.Text) && decimal.TryParse(text1000.Text, out value1000))
+                {
+                    sum += value1000 * 1000;
+                }
+                if (!string.IsNullOrEmpty(text500.Text) && decimal.TryParse(text500.Text, out value500))
+                {
+                    sum += value500 * 500;
+                }
+                if (!string.IsNullOrEmpty(text100.Text) && decimal.TryParse(text100.Text, out value100))
+                {
+                    sum += value100 * 100;
+                }
+                if (!string.IsNullOrEmpty(text50.Text) && decimal.TryParse(text50.Text, out value50))
+                {
+                    sum += value50 * 50;
+                }
+                if (!string.IsNullOrEmpty(text20.Text) && decimal.TryParse(text20.Text, out value20))
+                {
+                    sum += value20 * 20;
+                }
+            } else
             {
-                sum += value1000 * 1000;
-            }
-            if (!string.IsNullOrEmpty(text500.Text) && decimal.TryParse(text500.Text, out value500))
-            {
-                sum += value500 * 500;
-            }
-            if (!string.IsNullOrEmpty(text100.Text) && decimal.TryParse(text100.Text, out value100))
-            {
-                sum += value100 * 100;
-            }
-            if (!string.IsNullOrEmpty(text50.Text) && decimal.TryParse(text50.Text, out value50))
-            {
-                sum += value50 * 50;
-            }
-            if (!string.IsNullOrEmpty(text20.Text) && decimal.TryParse(text20.Text, out value20))
-            {
-                sum += value20 * 20;
+                if (!string.IsNullOrEmpty(textBox2.Text) && decimal.TryParse(textBox2.Text, out value))
+                {
+                    sum = value;
+                } 
             }
 
             if (sum == 0)

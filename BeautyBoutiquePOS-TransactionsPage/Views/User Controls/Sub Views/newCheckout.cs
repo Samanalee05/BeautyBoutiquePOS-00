@@ -92,11 +92,11 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("All data from productsLine table deleted successfully.");
+                            //MessageBox.Show("All data from productsLine table deleted successfully.");
                         }
                         else
                         {
-                            MessageBox.Show("No data found in productsLine table.");
+                            //MessageBox.Show("No data found in productsLine table.");
                         }
                     }
                     catch (MySqlException ex)
