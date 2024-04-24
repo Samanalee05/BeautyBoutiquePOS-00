@@ -54,7 +54,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(333, 211);
+            this.label2.Location = new System.Drawing.Point(333, 186);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(90, 25);
             this.label2.TabIndex = 23;
@@ -64,7 +64,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(333, 155);
+            this.label1.Location = new System.Drawing.Point(333, 130);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 25);
             this.label1.TabIndex = 22;
@@ -72,14 +72,14 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(186, 239);
+            this.textBox2.Location = new System.Drawing.Point(186, 214);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(381, 20);
             this.textBox2.TabIndex = 21;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(186, 183);
+            this.textBox1.Location = new System.Drawing.Point(186, 158);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(381, 20);
             this.textBox1.TabIndex = 20;
@@ -88,7 +88,7 @@
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(315, 280);
+            this.button1.Location = new System.Drawing.Point(315, 255);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(127, 23);
             this.button1.TabIndex = 19;
