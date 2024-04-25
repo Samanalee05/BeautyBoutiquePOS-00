@@ -199,5 +199,15 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBoxItemCode.Text = "";
+            textBoxDiscount.Text = "";
+            textBoxQty.Text = "";
+            textBoxSellingPrice.Text = "";
+            costTextBox.Text = "";
+            textBoxTotal.Text = "";
+        }
     }
 }

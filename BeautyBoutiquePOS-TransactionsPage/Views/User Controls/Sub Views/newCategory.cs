@@ -66,5 +66,11 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBoxCategoryName.Text = "";
+            textBoxCategoryDescription.Text = "";
+        }
     }
 }

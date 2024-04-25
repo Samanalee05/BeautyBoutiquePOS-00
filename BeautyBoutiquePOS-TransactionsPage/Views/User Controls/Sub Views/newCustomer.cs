@@ -72,5 +72,16 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBoxName.Text = "";
+            textBoxNIC.Text = "";
+            textBoxAddress.Text = "";
+            textBoxEmail.Text = "";
+            textBoxContact.Text = "";
+            textBoxAge.Text = "";
+            textBoxCareer.Text = "";
+        }
     }
 }

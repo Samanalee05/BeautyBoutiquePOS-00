@@ -112,5 +112,14 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         {
             AddProductToDatabase();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtProductName.Text = "";
+            txtDescription.Text = "";
+            txtPrice.Text = "";
+            txtCategory.Text = "";
+            txtDiscount.Text = "";
+        }
     }
 }

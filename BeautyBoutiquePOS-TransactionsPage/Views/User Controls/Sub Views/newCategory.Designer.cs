@@ -34,6 +34,7 @@
             this.saveBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxCategoryName = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxCategoryDescription
@@ -67,7 +68,7 @@
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(593, 388);
+            this.saveBtn.Location = new System.Drawing.Point(592, 381);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(196, 57);
             this.saveBtn.TabIndex = 19;
@@ -87,17 +88,29 @@
             // 
             // textBoxCategoryName
             // 
+            this.textBoxCategoryName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxCategoryName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxCategoryName.Location = new System.Drawing.Point(267, 124);
             this.textBoxCategoryName.Name = "textBoxCategoryName";
             this.textBoxCategoryName.Size = new System.Drawing.Size(297, 33);
             this.textBoxCategoryName.TabIndex = 17;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(368, 381);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(196, 57);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // newCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxCategoryDescription);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
@@ -119,5 +132,6 @@
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxCategoryName;
+        private System.Windows.Forms.Button button1;
     }
 }
