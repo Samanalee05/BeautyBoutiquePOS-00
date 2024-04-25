@@ -21,9 +21,10 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             InitializeComponent();
 
             this.productForm = productForm;
-            txtCategory.Items.AddRange(new string[] { "Electronics", "Clothing", "Books", "Beauty", "Home Decor" });
             this.productForm = productForm;
+            LoadCategories();
         }
+
 
         private void AddProductToDatabase()
         {
@@ -70,6 +71,40 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                         MessageBox.Show("Error: " + ex.Message);
                     }
                 }
+            }
+        }
+
+        private void LoadCategories()
+        {
+
+            MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
+
+            string query = "SELECT name FROM categories;";
+
+            MySqlCommand command = new MySqlCommand(query, connection);
+
+            try
+            {
+                connection.Open();
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            txtCategory.Items.Add(reader.GetString("name"));
+                        }
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error loading categories: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
             }
         }
 
