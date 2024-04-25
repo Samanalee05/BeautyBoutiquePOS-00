@@ -60,7 +60,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(211, 60);
             this.button1.TabIndex = 36;
-            this.button1.Text = "Save";
+            this.button1.Text = "Update";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -164,7 +164,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Item Code :";
             // 
-            // grForm
+            // editForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,9 +173,8 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.button1);
-            this.Name = "grForm";
+            this.Name = "editForm";
             this.Text = "grForm";
-            this.Load += new System.EventHandler(this.grForm_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
