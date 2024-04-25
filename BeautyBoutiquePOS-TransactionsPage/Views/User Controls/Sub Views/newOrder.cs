@@ -115,10 +115,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         {
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
 
-            string updateQuery = @"
-        UPDATE products p
-        INNER JOIN inventory i ON p.id = i.itemcode
-        SET p.qty = p.qty + i.QTY;";
+            string updateQuery = @"UPDATE products pINNER JOIN inventory i ON p.id = i.itemcode SET p.qty = p.qty + i.QTY;";
 
             using (MySqlCommand command = new MySqlCommand(updateQuery, connection))
             {
