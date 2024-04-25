@@ -49,7 +49,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Error :"+ex);
             }
         }
 

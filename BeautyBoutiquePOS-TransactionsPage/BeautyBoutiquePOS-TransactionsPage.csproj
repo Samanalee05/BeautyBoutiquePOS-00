@@ -199,6 +199,12 @@
     <Compile Include="Views\User Controls\Sub Views\newProduct.Designer.cs">
       <DependentUpon>newProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\User Controls\Sub Views\newUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\User Controls\Sub Views\newUser.Designer.cs">
+      <DependentUpon>newUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\User Controls\Sub Views\Payments\Card.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,12 @@
     </Compile>
     <Compile Include="Views\User Controls\Sub Views\Payments\Cash.Designer.cs">
       <DependentUpon>Cash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User Controls\Users.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\User Controls\Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -269,11 +281,17 @@
     <EmbeddedResource Include="Views\User Controls\Sub Views\newProduct.resx">
       <DependentUpon>newProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\User Controls\Sub Views\newUser.resx">
+      <DependentUpon>newUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\User Controls\Sub Views\Payments\Card.resx">
       <DependentUpon>Card.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\User Controls\Sub Views\Payments\Cash.resx">
       <DependentUpon>Cash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\User Controls\Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -21,17 +21,38 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         Cash cashForm1 = new Cash(0);
         Card cardForm1 = new Card(0);
         private Checkout checkout1;
+        private String userType;
 
-        public newCheckout(Checkout checkout)
+
+        public newCheckout(Checkout checkout, string userType1)
         {
+
+
             InitializeComponent();
+
+            this.userType = userType1;
+
+            labelUserName.Text = userType;
+
             UserControlStyles styles = new UserControlStyles();
             styles.CustomizeDataGridView(dataGridView1);
             DateTime currentDate = DateTime.Today;
             labelDate.Text = currentDate.ToString("yyyy , MMMM , dd");
             this.checkout1 = checkout;
 
+
             RefreshDataGrid();
+            DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
+            editButtonColumn.HeaderText = "Delete";
+            editButtonColumn.Text = "Delete";
+            editButtonColumn.Name = "DeleteButton";
+            editButtonColumn.UseColumnTextForButtonValue = true;
+            dataGridView1.Columns.Add(editButtonColumn);
+
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+
+
+
         }
 
         private void newCheckout_Load(object sender, EventArgs e)
@@ -58,6 +79,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                 }
             }
 
+
+
             CalculateNetGrossAmount();
         }
 
@@ -77,36 +100,6 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             netammountText.Text = netGrossAmount.ToString();
 
             netGross = netGrossAmount;
-        }
-
-        private void DeleteAllProductsLineData()
-        {
-            string query = "DELETE FROM productsLine";
-
-            using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
-            {
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
-                    try
-                    {
-                        connection.Open();
-                        int rowsAffected = command.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
-                        {
-                            //MessageBox.Show("All data from productsLine table deleted successfully.");
-                        }
-                        else
-                        {
-                            //MessageBox.Show("No data found in productsLine table.");
-                        }
-                    }
-                    catch (MySqlException ex)
-                    {
-                        MessageBox.Show("Error: " + ex.Message);
-                    }
-                }
-            }
         }
 
         private void DeleteAllProductsLineDataAndUpdateProductQty()
@@ -169,10 +162,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textGross.Text = this.cashForm1.balance.ToString();
-
-            //DeleteAllProductsLineData();
-
+            textGross.Text = cashForm1.balance.ToString();
             DeleteAllProductsLineDataAndUpdateProductQty();
             checkoutButton_Click(sender, e);
             this.checkout1.LoadCheckoutRecordsForToday();
@@ -257,6 +247,60 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                             MessageBox.Show("Error.");
                         }
                 }
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["DeleteButton"].Index)
+            {
+
+                try
+                {
+                    int id = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["id"].Value);
+                    DeleteProductLine(id);
+
+                } catch {
+                    MessageBox.Show("Select Valid Row!");
+                }
+                
+
+
+            }
+        }
+
+        private void DeleteProductLine(int id)
+        {
+            MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
+
+            string query = "DELETE FROM productsLine WHERE id = @id;";
+
+            MySqlCommand command = new MySqlCommand(query, connection);
+            command.Parameters.AddWithValue("@id", id);
+
+            try
+            {
+                connection.Open();
+
+                int rowsAffected = command.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    //MessageBox.Show("Product line deleted successfully.");
+                    RefreshDataGrid();
+                    CalculateNetGrossAmount();
+                }
+                else
+                {
+                   // MessageBox.Show("No rows were deleted.");
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Error deleting product line: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
             }
         }
 

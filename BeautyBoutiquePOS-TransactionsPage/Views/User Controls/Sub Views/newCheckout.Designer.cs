@@ -44,7 +44,7 @@
             this.cashBtn = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.labelUserName = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.labelDate = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -216,15 +216,15 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // label8
+            // labelUserName
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(40, 7);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 25);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Username";
+            this.labelUserName.AutoSize = true;
+            this.labelUserName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUserName.Location = new System.Drawing.Point(40, 7);
+            this.labelUserName.Name = "labelUserName";
+            this.labelUserName.Size = new System.Drawing.Size(97, 25);
+            this.labelUserName.TabIndex = 0;
+            this.labelUserName.Text = "Username";
             // 
             // label10
             // 
@@ -251,7 +251,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.labelUserName);
             this.panel2.Location = new System.Drawing.Point(654, 14);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(142, 38);
@@ -381,7 +381,7 @@
         private System.Windows.Forms.RadioButton cashBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelUserName;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.Panel panel2;

@@ -180,6 +180,7 @@
             this.btnUsers.TabIndex = 7;
             this.btnUsers.Text = "Users";
             this.btnUsers.UseVisualStyleBackColor = false;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // btnReports
             // 

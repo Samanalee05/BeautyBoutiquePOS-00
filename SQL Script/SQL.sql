@@ -177,6 +177,22 @@ INSERT INTO inventory (itemcode, QTY, discount_percentage, selling_price, cost) 
 (1004, 120, 0.25, 120.00, 90.00),
 (1005, 90, 0.18, 90.00, 70.00);
 
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nic VARCHAR(20),
+    name VARCHAR(100),
+    age INT,
+    address VARCHAR(255),
+    contact VARCHAR(20),
+    type VARCHAR(50),
+    username VARCHAR(50),
+    password VARCHAR(100),
+    date_join DATE
+);
+
+drop table users;
+
+
 
 
 

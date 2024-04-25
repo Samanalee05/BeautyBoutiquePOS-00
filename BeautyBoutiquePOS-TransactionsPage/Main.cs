@@ -16,10 +16,14 @@ namespace BeautyBoutiquePOS_TransactionsPage
 {
     public partial class Main : Form
     {
-        public Main(Views.Login login)
+        private String userType;
+
+        public Main(string userType1)
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+
+            this.userType = userType1;
 
 
             //For right side rounded menu buttons:
@@ -80,39 +84,70 @@ namespace BeautyBoutiquePOS_TransactionsPage
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-            ClearContentArea();
-            var Product = new Product();
-            windowPnl.Controls.Add(Product);
+
+            if (this.userType == "Admin")
+            {
+                ClearContentArea();
+                var Product = new Product();
+                windowPnl.Controls.Add(Product);
+            } else
+            {
+                MessageBox.Show("permission denied!");
+            }
         }
 
         
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            ClearContentArea();
-            var Customers = new Customers();
-            windowPnl.Controls.Add(Customers);
+            if(this.userType == "Admin")
+            {
+                ClearContentArea();
+                var Customers = new Customers();
+                windowPnl.Controls.Add(Customers);
+            }
+            else
+            {
+                MessageBox.Show("permission denied!");
+            }
+
         }
 
         private void btnCategories_Click(object sender, EventArgs e)
         {
-            ClearContentArea();
-            var Categories = new Categories();
-            windowPnl.Controls.Add(Categories);
+            if (this.userType == "Admin")
+            {
+
+                ClearContentArea();
+                var Categories = new Categories();
+                windowPnl.Controls.Add(Categories);
+            }
+            else
+            {
+                MessageBox.Show("permission denied!");
+            }
         }
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
             ClearContentArea();
-            var Checkout = new Checkout();
+            var Checkout = new Checkout(userType);
             windowPnl.Controls.Add(Checkout);
         }
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
-            ClearContentArea();
-            var Inventory = new Inventory();
-            windowPnl.Controls.Add(Inventory);
+            if (this.userType == "Admin")
+            {
+                ClearContentArea();
+                var Inventory = new Inventory();
+                windowPnl.Controls.Add(Inventory);
+            }
+            else
+            {
+                MessageBox.Show("permission denied!");
+            }
+
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -127,6 +162,20 @@ namespace BeautyBoutiquePOS_TransactionsPage
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 Application.Exit();
+            }
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            if (this.userType == "Admin")
+            {
+                ClearContentArea();
+                var Users = new Users();
+                windowPnl.Controls.Add(Users);
+            }
+            else
+            {
+                MessageBox.Show("permission denied!");
             }
         }
     }

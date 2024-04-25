@@ -16,18 +16,23 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 {
     public partial class Checkout : UserControl
     {
-        public Checkout()
+        private string userType;
+
+        public Checkout(string userType1)
         {
             InitializeComponent();
+            this.userType = userType1;
             LoadCheckoutRecordsForToday();
             UserControlStyles styles = new UserControlStyles();
             styles.CustomizeDataGridView(checkoutGridView);
             styles.RoundCornerPanels(panel1, 10);
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            newCheckout checkoutForm = new newCheckout(this);
+            newCheckout checkoutForm = new newCheckout(this,this.userType);
             checkoutForm.ShowDialog();
         }
 
