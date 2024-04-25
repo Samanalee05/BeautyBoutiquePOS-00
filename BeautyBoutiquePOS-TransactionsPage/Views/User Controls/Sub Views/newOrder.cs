@@ -85,13 +85,18 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                         int rowsAffected = command.ExecuteNonQuery();
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Data inserted successfully.");
-                            UpdateProductQuantity();
+                            if (checkProductExists())
+                            {
+                                MessageBox.Show("Data inserted successfully.");
+                                this.InventoryForm.LoadNewOrders();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Failed to insert data.");
+                            }
+
                         }
-                        else
-                        {
-                            MessageBox.Show("Failed to insert data.");
-                        }
+
                     }
                     catch (MySqlException ex)
                     {
@@ -113,14 +118,32 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
         private void UpdateProductQuantity()
         {
+            double qty = Convert.ToDouble(textBoxQty.Text);
+
+            if (!decimal.TryParse(textBoxSellingPrice.Text, out decimal price))
+            {
+                MessageBox.Show("Invalid cost value.");
+                return;
+            }
+
+            if (!decimal.TryParse(textBoxDiscount.Text, out decimal newDiscountPercentage))
+            {
+                MessageBox.Show("Invalid discount value.");
+                return;
+            }
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
 
-            string updateQuery = @"UPDATE products pINNER JOIN inventory i ON p.id = i.itemcode SET p.qty = p.qty + i.QTY;";
+            string updateQuery = @"UPDATE products p INNER JOIN inventory i ON p.id = i.itemcode SET p.qty = p.qty + @Qty, p.discount_percentage = @newDiscountPercentage, p.price = @newPrice;";
 
             using (MySqlCommand command = new MySqlCommand(updateQuery, connection))
             {
                 try
                 {
+
+                    command.Parameters.AddWithValue("@newDiscountPercentage", newDiscountPercentage);
+                    command.Parameters.AddWithValue("@newPrice", price);
+                    command.Parameters.AddWithValue("@Qty", qty);
+
                     connection.Open();
                     int rowsAffected = command.ExecuteNonQuery();
                     if (rowsAffected > 0)
@@ -142,6 +165,39 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                     connection.Close();
                 }
             }
+        }
+
+
+        private Boolean checkProductExists()
+        {
+            int itemcode = Convert.ToInt32(textBoxItemCode.Text);
+
+            MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
+
+            string query = "SELECT * FROM   products WHERE id = @productId;";
+
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                connection.Open();
+
+                command.Parameters.AddWithValue("@productId", itemcode);
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        UpdateProductQuantity();
+
+                        return true;
+                    } else
+                    {
+                        MessageBox.Show("Add Product To Product Table First!");
+
+                        return false;
+                    }
+                }
+            }
+
         }
     }
 }

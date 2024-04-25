@@ -160,7 +160,7 @@ CREATE TABLE gr (
 );
 
 CREATE TABLE inventory (
-    itemcode INT  PRIMARY KEY,
+    itemcode INT,
     QTY DOUBLE DEFAULT 0,
     discount_percentage DOUBLE DEFAULT 0,
     selling_price FLOAT,
