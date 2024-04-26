@@ -30,7 +30,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             DateTime lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
 
             string query = "SELECT date, COUNT(*) AS checkoutCount " +
-                           "FROM checkoutLine " +
+                           "FROM checkoutline " +
                            "WHERE date >= @FirstDayOfMonth AND date <= @LastDayOfMonth " +
                            "GROUP BY date " +
                            "ORDER BY date ASC";

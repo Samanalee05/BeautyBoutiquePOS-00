@@ -37,7 +37,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             string category = txtCategory.SelectedItem.ToString();
 
 
-            string query = "INSERT INTO products (name, description, qty, discount, price, category) VALUES (@Name, @Description, @Qty, @Discount, @Price, @Category)";
+            string query = "INSERT INTO products (name, description, qty, discount_percentage, price, category) VALUES (@Name, @Description, @Qty, @Discount, @Price, @Category)";
 
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
             {

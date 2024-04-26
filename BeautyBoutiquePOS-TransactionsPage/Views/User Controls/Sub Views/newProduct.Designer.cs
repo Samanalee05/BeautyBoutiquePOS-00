@@ -113,9 +113,9 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(4, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 21);
+            this.label2.Size = new System.Drawing.Size(102, 21);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Desciption :";
+            this.label2.Text = "Description :";
             // 
             // panel3
             // 
