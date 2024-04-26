@@ -47,9 +47,9 @@
             this.customerGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.customerGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.customerGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.customerGridView.Location = new System.Drawing.Point(0, 130);
+            this.customerGridView.Location = new System.Drawing.Point(0, 206);
             this.customerGridView.Name = "customerGridView";
-            this.customerGridView.Size = new System.Drawing.Size(1214, 525);
+            this.customerGridView.Size = new System.Drawing.Size(1214, 874);
             this.customerGridView.TabIndex = 25;
             // 
             // label1
@@ -57,12 +57,12 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(468, 0);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(403, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 37);
+            this.label1.Size = new System.Drawing.Size(431, 65);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Add Customers";
+            this.label1.Text = "ADD  CUSTOMERS";
             // 
             // pictureBox11
             // 
@@ -88,12 +88,12 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1214, 44);
+            this.panel2.Size = new System.Drawing.Size(1214, 115);
             this.panel2.TabIndex = 27;
             // 
             // panel1
@@ -101,7 +101,7 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.pictureBox11);
             this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Location = new System.Drawing.Point(905, 73);
+            this.panel1.Location = new System.Drawing.Point(897, 146);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(286, 33);
             this.panel1.TabIndex = 26;
@@ -114,7 +114,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.button1.ForeColor = System.Drawing.Color.Maroon;
-            this.button1.Location = new System.Drawing.Point(37, 64);
+            this.button1.Location = new System.Drawing.Point(34, 143);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(167, 42);
@@ -134,7 +134,7 @@
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.Name = "Customers";
-            this.Size = new System.Drawing.Size(1214, 655);
+            this.Size = new System.Drawing.Size(1214, 1080);
             ((System.ComponentModel.ISupportInitialize)(this.customerGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.panel2.ResumeLayout(false);

@@ -57,7 +57,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 
                         Series series = new Series("Sales");
                         series.ChartType = SeriesChartType.Column;
-                        series["PixelPointWidth"] = "20";
+                        series["PixelPointWidth"] = "17";
                         series.XValueMember = "date";
                         series.YValueMembers = "checkoutCount";
                         chart2.Series.Add(series);
@@ -108,7 +108,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 
                         Series series = new Series("Customers");
                         series.ChartType = SeriesChartType.Column;
-                        series["PixelPointWidth"] = "20";
+                        series["PixelPointWidth"] = "17";
                         series.XValueMember = "date_join";
                         series.YValueMembers = "customerCount";
                         chart1.Series.Add(series);

@@ -112,6 +112,5 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
                 connection.Close();
             }
         }
-
     }
 }

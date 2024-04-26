@@ -22,7 +22,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             LoadProductData();
             UserControlStyles styles = new UserControlStyles();
             styles.CustomizeDataGridView(dataGridViewProducts);
-            styles.RoundCornerPanels(panel1, 10);
+            styles.RoundCornerPanels(panel3, 10);
             //styles.RoundedBtn(button1);
 
             DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();

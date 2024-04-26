@@ -46,20 +46,20 @@
             // 
             this.dataGridViewCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewCategories.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridViewCategories.Location = new System.Drawing.Point(0, 124);
+            this.dataGridViewCategories.Location = new System.Drawing.Point(0, 206);
             this.dataGridViewCategories.Name = "dataGridViewCategories";
-            this.dataGridViewCategories.Size = new System.Drawing.Size(1211, 553);
+            this.dataGridViewCategories.Size = new System.Drawing.Size(1211, 874);
             this.dataGridViewCategories.TabIndex = 25;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(511, 13);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(413, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 37);
+            this.label1.Size = new System.Drawing.Size(392, 65);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Categories";
+            this.label1.Text = "ADD CATEGORIE";
             // 
             // pictureBox11
             // 
@@ -85,12 +85,12 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1211, 62);
+            this.panel2.Size = new System.Drawing.Size(1211, 115);
             this.panel2.TabIndex = 27;
             // 
             // panel1
@@ -98,7 +98,7 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.pictureBox11);
             this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Location = new System.Drawing.Point(917, 76);
+            this.panel1.Location = new System.Drawing.Point(897, 146);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(286, 33);
             this.panel1.TabIndex = 26;
@@ -110,7 +110,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.button1.ForeColor = System.Drawing.Color.Maroon;
-            this.button1.Location = new System.Drawing.Point(23, 72);
+            this.button1.Location = new System.Drawing.Point(34, 143);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(275, 42);
@@ -129,7 +129,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
             this.Name = "Categories";
-            this.Size = new System.Drawing.Size(1211, 677);
+            this.Size = new System.Drawing.Size(1211, 1080);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategories)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             this.panel2.ResumeLayout(false);
