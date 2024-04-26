@@ -24,6 +24,17 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             styles.CustomizeDataGridView(dataGridViewProducts);
             styles.RoundCornerPanels(panel1, 10);
             //styles.RoundedBtn(button1);
+
+            DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
+            deleteButtonColumn.Name = "Delete";
+            deleteButtonColumn.HeaderText = "Delete";
+            deleteButtonColumn.Text = "Delete";
+            deleteButtonColumn.UseColumnTextForButtonValue = true;
+            dataGridViewProducts.Columns.Add(deleteButtonColumn);
+            deleteButtonColumn.Width = 100;
+
+
+            dataGridViewProducts.CellContentClick += dataGridViewProducts_CellContentClick;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,5 +70,48 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
                 }
             }
         }
+
+        private void dataGridViewProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridViewProducts.Columns["Delete"].Index && e.RowIndex >= 0)
+            {
+                int productId = Convert.ToInt32(dataGridViewProducts.Rows[e.RowIndex].Cells["id"].Value);
+
+                DeleteProduct(productId);
+            }
+        }
+
+        private void DeleteProduct(int productId)
+        {
+            MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
+            string deleteQuery = "DELETE FROM products WHERE id = @ProductId";
+            using (MySqlCommand command = new MySqlCommand(deleteQuery, connection))
+            {
+                command.Parameters.AddWithValue("@ProductId", productId);
+                try
+                {
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Product deleted successfully.");
+                        LoadProductData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No rows were deleted.");
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Error deleting product: " + ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+
     }
 }

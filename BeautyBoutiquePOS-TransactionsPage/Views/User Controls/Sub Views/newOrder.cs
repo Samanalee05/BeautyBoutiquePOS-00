@@ -119,7 +119,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         private void UpdateProductQuantity()
         {
             double qty = Convert.ToDouble(textBoxQty.Text);
-            int itemcode = Convert.ToInt32(textBoxItemCode.Text); // Assuming textBoxItemCode contains the item code
+            int itemcode = Convert.ToInt32(textBoxItemCode.Text);
 
             if (!decimal.TryParse(textBoxSellingPrice.Text, out decimal price))
             {
@@ -135,11 +135,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
 
-            string updateQuery = @"
-        UPDATE products p 
-        INNER JOIN inventory i ON p.id = i.itemcode 
-        SET p.qty = p.qty + @Qty, p.discount_percentage = @newDiscountPercentage, p.price = @newPrice
-        WHERE i.itemcode = @ItemCode;"; // Add a condition to update only the relevant product
+            string updateQuery = @"UPDATE products p INNER JOIN inventory i ON p.id = i.itemcode SET p.qty = p.qty + @Qty, p.discount_percentage = @newDiscountPercentage, p.price = @newPrice WHERE i.itemcode = @ItemCode;";
 
             using (MySqlCommand command = new MySqlCommand(updateQuery, connection))
             {
@@ -148,13 +144,13 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                     command.Parameters.AddWithValue("@newDiscountPercentage", newDiscountPercentage);
                     command.Parameters.AddWithValue("@newPrice", price);
                     command.Parameters.AddWithValue("@Qty", qty);
-                    command.Parameters.AddWithValue("@ItemCode", itemcode); // Add parameter for item code
+                    command.Parameters.AddWithValue("@ItemCode", itemcode);
 
                     connection.Open();
                     int rowsAffected = command.ExecuteNonQuery();
                     if (rowsAffected > 0)
                     {
-                        MessageBox.Show("Product quantities updated successfully.");
+                        //MessageBox.Show("Product quantities updated successfully.");
                         this.Close();
                     }
                     else
