@@ -100,16 +100,10 @@ namespace BeautyBoutiquePOS_TransactionsPage
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            if(this.userType == "Admin")
-            {
-                ClearContentArea();
-                var Customers = new Customers();
-                windowPnl.Controls.Add(Customers);
-            }
-            else
-            {
-                MessageBox.Show("permission denied!");
-            }
+
+            ClearContentArea();
+            var Customers = new Customers();
+            windowPnl.Controls.Add(Customers);
 
         }
 

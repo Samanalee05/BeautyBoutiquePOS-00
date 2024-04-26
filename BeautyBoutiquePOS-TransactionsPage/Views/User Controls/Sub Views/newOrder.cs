@@ -119,6 +119,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         private void UpdateProductQuantity()
         {
             double qty = Convert.ToDouble(textBoxQty.Text);
+            int itemcode = Convert.ToInt32(textBoxItemCode.Text); // Assuming textBoxItemCode contains the item code
 
             if (!decimal.TryParse(textBoxSellingPrice.Text, out decimal price))
             {
@@ -131,18 +132,23 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                 MessageBox.Show("Invalid discount value.");
                 return;
             }
+
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
 
-            string updateQuery = @"UPDATE products p INNER JOIN inventory i ON p.id = i.itemcode SET p.qty = p.qty + @Qty, p.discount_percentage = @newDiscountPercentage, p.price = @newPrice;";
+            string updateQuery = @"
+        UPDATE products p 
+        INNER JOIN inventory i ON p.id = i.itemcode 
+        SET p.qty = p.qty + @Qty, p.discount_percentage = @newDiscountPercentage, p.price = @newPrice
+        WHERE i.itemcode = @ItemCode;"; // Add a condition to update only the relevant product
 
             using (MySqlCommand command = new MySqlCommand(updateQuery, connection))
             {
                 try
                 {
-
                     command.Parameters.AddWithValue("@newDiscountPercentage", newDiscountPercentage);
                     command.Parameters.AddWithValue("@newPrice", price);
                     command.Parameters.AddWithValue("@Qty", qty);
+                    command.Parameters.AddWithValue("@ItemCode", itemcode); // Add parameter for item code
 
                     connection.Open();
                     int rowsAffected = command.ExecuteNonQuery();
@@ -166,6 +172,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                 }
             }
         }
+
 
 
         private Boolean checkProductExists()

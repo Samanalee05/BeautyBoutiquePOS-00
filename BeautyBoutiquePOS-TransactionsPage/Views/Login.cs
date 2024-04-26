@@ -57,42 +57,48 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views
             }
         }
 
-        private string GetUserType(string username, string password)
+        private string GetUserType(string username, string password)// Remove on Release
         {
 
-            string userType = "";
-
-            MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
-
-            string query = "SELECT type FROM users WHERE username = @Username AND password = @Password";
-
-            MySqlCommand command = new MySqlCommand(query, connection);
-
-            command.Parameters.AddWithValue("@Username", username);
-            command.Parameters.AddWithValue("@Password", password);
-
-            try
-            {
-                connection.Open();
-
-                object result = command.ExecuteScalar();
-
-                if (result != null)
-                {
-                    userType = result.ToString();
-                }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("Error retrieving user type: " + ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-            return userType;
+            return "Admin";
         }
+
+        //private string GetUserType(string username, string password)
+        //{
+
+        //    string userType = "";
+
+        //    MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
+
+        //    string query = "SELECT type FROM users WHERE username = @Username AND password = @Password";
+
+        //    MySqlCommand command = new MySqlCommand(query, connection);
+
+        //    command.Parameters.AddWithValue("@Username", username);
+        //    command.Parameters.AddWithValue("@Password", password);
+
+        //    try
+        //    {
+        //        connection.Open();
+
+        //        object result = command.ExecuteScalar();
+
+        //        if (result != null)
+        //        {
+        //            userType = result.ToString();
+        //        }
+        //    }
+        //    catch (MySqlException ex)
+        //    {
+        //        MessageBox.Show("Error retrieving user type: " + ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        connection.Close();
+        //    }
+
+        //    return userType;
+        //}
 
 
     }

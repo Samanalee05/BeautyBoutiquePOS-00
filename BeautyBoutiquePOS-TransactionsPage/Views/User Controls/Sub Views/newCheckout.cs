@@ -112,11 +112,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
                 try
                 {
-                    string updateQuery = @"
-                UPDATE products p
-                INNER JOIN productsLine pl ON p.id = pl.id
-                SET p.qty = p.qty - pl.qty;
-            ";
+                    string updateQuery = @"UPDATE products p INNER JOIN productsLine pl ON p.id = pl.id SET p.qty = p.qty - pl.qty;";
 
                     using (MySqlCommand updateCommand = new MySqlCommand(updateQuery, connection, transaction))
                     {
@@ -124,11 +120,11 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("All data from productsLine table deleted successfully.");
+                            //MessageBox.Show("Product QTY updateed.");
                         }
                         else
                         {
-                            MessageBox.Show("No data found in productsLine table.");
+                            MessageBox.Show("Product QTY update fail.");
                         }
 
 
@@ -141,7 +137,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("All data from productsLine table deleted successfully.");
+                            //MessageBox.Show("All data from productsLine table deleted successfully.");
                         }
                         else
                         {
