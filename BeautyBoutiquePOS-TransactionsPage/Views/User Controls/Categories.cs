@@ -22,6 +22,16 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             styles.CustomizeDataGridView(dataGridViewCategories);
             styles.RoundCornerPanels(panel1, 10);
             LoadCategories();
+
+            DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
+            deleteButtonColumn.Name = "Delete";
+            deleteButtonColumn.HeaderText = "Delete";
+            deleteButtonColumn.Text = "Delete";
+            deleteButtonColumn.UseColumnTextForButtonValue = true;
+            dataGridViewCategories.Columns.Add(deleteButtonColumn);
+            deleteButtonColumn.Width = 100;
+
+            dataGridViewCategories.CellContentClick += dataGridViewCellContentClick;
         }
 
         public void LoadCategories()
@@ -54,6 +64,48 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
                     {
                         MessageBox.Show("Error: " + ex.Message);
                     }
+                }
+            }
+        }
+
+        private void dataGridViewCellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridViewCategories.Columns["Delete"].Index && e.RowIndex >= 0)
+            {
+                String categoriesName = Convert.ToString(dataGridViewCategories.Rows[e.RowIndex].Cells["name"].Value);
+
+                Delete(categoriesName);
+            }
+        }
+
+        private void Delete(String categoriesName)
+        {
+            MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
+            string deleteQuery = "DELETE FROM categories WHERE name = @CategoriesName";
+            using (MySqlCommand command = new MySqlCommand(deleteQuery, connection))
+            {
+                command.Parameters.AddWithValue("@CategoriesName", categoriesName);
+                try
+                {
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Categorie deleted successfully.");
+                        LoadCategories();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No rows were deleted.");
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Error deleting Categorie: " + ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
                 }
             }
         }
