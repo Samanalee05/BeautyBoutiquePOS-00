@@ -29,6 +29,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             editButtonColumn.Name = "EditButton";
             editButtonColumn.UseColumnTextForButtonValue = true;
             dataGridView2.Columns.Add(editButtonColumn);
+
+            editButtonColumn.Width = 100;
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)

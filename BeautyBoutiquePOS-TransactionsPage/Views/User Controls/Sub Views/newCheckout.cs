@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 
 namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
@@ -300,6 +301,26 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
 
+            string deleteQuery = "DELETE FROM productsLine";
+            using (MySqlCommand deleteCommand = new MySqlCommand(deleteQuery, connection))
+            {
+                connection.Open();
+                int rowsAffected = deleteCommand.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    RefreshDataGrid();
+                    //MessageBox.Show("All data from productsLine table deleted successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("No data found in productsLine table.");
+                }
+            }
+        }
     }
 }
