@@ -23,7 +23,7 @@ jobs:
 
     - name: Publish
       run: |
-        dotnet publish  BeautyBoutiquePOS-00\BeautyBoutiquePOS-TransactionsPage\BeautyBoutiquePOS-TransactionsPage.csproj.user --configuration Release --output ${{ github.workspace }}/publish
+        dotnet publish BeautyBoutiquePOS-TransactionsPage\BeautyBoutiquePOS-TransactionsPage.csproj.user --configuration Release --output ${{ github.workspace }}/publish
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
