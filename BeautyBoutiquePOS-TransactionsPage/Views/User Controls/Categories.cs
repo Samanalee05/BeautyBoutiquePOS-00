@@ -15,6 +15,10 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 {
     public partial class Categories : UserControl
     {
+
+        DataTable dataTable1;
+        DataView dataView1;
+
         public Categories()
         {
             InitializeComponent();
@@ -32,6 +36,30 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             deleteButtonColumn.Width = 100;
 
             dataGridViewCategories.CellContentClick += dataGridViewCellContentClick;
+        }
+
+        private void filterData()
+        {
+            string filter = richTextBox1.Text;
+            if (!string.IsNullOrEmpty(filter))
+            {
+                DataView dv = new DataView(dataTable1);
+
+                if (int.TryParse(filter, out int idFilter))
+                {
+                    dv.RowFilter = string.Format("id = {0}", idFilter);
+                }
+                else
+                {
+                    dv.RowFilter = string.Format("name LIKE '%{0}%'", filter);
+                }
+                dataGridViewCategories.DataSource = dv;
+                dataView1 = dv;
+            }
+            else
+            {
+                dataGridViewCategories.DataSource = dataTable1;
+            }
         }
 
         public void LoadCategories()
@@ -59,6 +87,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 
 
                         dataGridViewCategories.DataSource = dataTable;
+                        dataTable1 = dataTable;
                     }
                     catch (MySqlException ex)
                     {
@@ -116,6 +145,9 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             categoryForm.ShowDialog();
         }
 
-
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            filterData();
+        }
     }
 }
