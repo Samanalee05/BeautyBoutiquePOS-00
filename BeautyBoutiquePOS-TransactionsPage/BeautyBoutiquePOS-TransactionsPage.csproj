@@ -173,6 +173,12 @@
     <Compile Include="Views\User Controls\Product.Designer.cs">
       <DependentUpon>Product.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\User Controls\Reports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\User Controls\Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\User Controls\Sub Views\addToCart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\User Controls\Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\User Controls\Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\User Controls\Sub Views\addToCart.resx">
       <DependentUpon>addToCart.cs</DependentUpon>

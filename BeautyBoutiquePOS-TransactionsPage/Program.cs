@@ -19,7 +19,7 @@ namespace BeautyBoutiquePOS_TransactionsPage
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            DatabaseMigration.MigrateDatabase();
+            //DatabaseMigration.MigrateDatabase();
 
             Application.Run(new Login());
         }

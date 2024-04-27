@@ -107,7 +107,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
                         chart1.Series.Clear();
 
                         Series series = new Series("Customers");
-                        series.ChartType = SeriesChartType.Column;
+                        series.ChartType = SeriesChartType.StackedColumn;
                         series["PixelPointWidth"] = "17";
                         series.XValueMember = "date_join";
                         series.YValueMembers = "customerCount";

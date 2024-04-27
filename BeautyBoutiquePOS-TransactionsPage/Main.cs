@@ -262,6 +262,16 @@ namespace BeautyBoutiquePOS_TransactionsPage
 
         private void btnReports_Click(object sender, EventArgs e)
         {
+            if (this.userType == "Admin" || this.userType == "Manager")
+            {
+                ClearContentArea();
+                var Reports = new Reports();
+                windowPnl.Controls.Add(Reports);
+            }
+            else
+            {
+                MessageBox.Show("permission denied!");
+            }
 
         }
     }
