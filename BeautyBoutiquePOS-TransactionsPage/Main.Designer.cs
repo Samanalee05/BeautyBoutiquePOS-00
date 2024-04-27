@@ -181,6 +181,8 @@
             this.btnUsers.Text = "Users";
             this.btnUsers.UseVisualStyleBackColor = false;
             this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
+            this.btnUsers.MouseEnter += new System.EventHandler(this.btnUsers_MouseEnter);
+            this.btnUsers.MouseLeave += new System.EventHandler(this.btnUsers_MouseLeave);
             // 
             // btnReports
             // 
@@ -195,6 +197,8 @@
             this.btnReports.TabIndex = 6;
             this.btnReports.Text = "Reports";
             this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.MouseEnter += new System.EventHandler(this.btnReports_MouseEnter);
+            this.btnReports.MouseLeave += new System.EventHandler(this.btnReports_MouseLeave);
             // 
             // btnCustomers
             // 
@@ -210,6 +214,8 @@
             this.btnCustomers.Text = "Customers";
             this.btnCustomers.UseVisualStyleBackColor = false;
             this.btnCustomers.Click += new System.EventHandler(this.btnCustomers_Click);
+            this.btnCustomers.MouseEnter += new System.EventHandler(this.btnCustomers_MouseEnter);
+            this.btnCustomers.MouseLeave += new System.EventHandler(this.btnCustomers_MouseLeave);
             // 
             // btnInventory
             // 
@@ -225,6 +231,8 @@
             this.btnInventory.Text = "Inventory";
             this.btnInventory.UseVisualStyleBackColor = false;
             this.btnInventory.Click += new System.EventHandler(this.btnInventory_Click);
+            this.btnInventory.MouseEnter += new System.EventHandler(this.btnInventory_MouseEnter);
+            this.btnInventory.MouseLeave += new System.EventHandler(this.btnInventory_MouseLeave);
             // 
             // btnCategories
             // 
@@ -240,6 +248,8 @@
             this.btnCategories.Text = "Categories";
             this.btnCategories.UseVisualStyleBackColor = false;
             this.btnCategories.Click += new System.EventHandler(this.btnCategories_Click);
+            this.btnCategories.MouseEnter += new System.EventHandler(this.btnCategories_MouseEnter);
+            this.btnCategories.MouseLeave += new System.EventHandler(this.btnCategories_MouseLeave);
             // 
             // btnProducts
             // 
@@ -255,6 +265,8 @@
             this.btnProducts.Text = "Products";
             this.btnProducts.UseVisualStyleBackColor = false;
             this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
+            this.btnProducts.MouseEnter += new System.EventHandler(this.btnProducts_MouseEnter);
+            this.btnProducts.MouseLeave += new System.EventHandler(this.btnProducts_MouseLeave);
             // 
             // btnCheckout
             // 
@@ -270,6 +282,8 @@
             this.btnCheckout.Text = "Checkout";
             this.btnCheckout.UseVisualStyleBackColor = false;
             this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
+            this.btnCheckout.MouseEnter += new System.EventHandler(this.btnCheckout_MouseEnter);
+            this.btnCheckout.MouseLeave += new System.EventHandler(this.btnCheckout_MouseLeave);
             // 
             // btnHome
             // 
@@ -285,6 +299,8 @@
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            this.btnHome.MouseEnter += new System.EventHandler(this.btnHome_MouseEnter);
+            this.btnHome.MouseLeave += new System.EventHandler(this.btnHome_MouseLeave);
             // 
             // windowPnl
             // 

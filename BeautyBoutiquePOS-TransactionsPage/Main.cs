@@ -172,5 +172,85 @@ namespace BeautyBoutiquePOS_TransactionsPage
                 MessageBox.Show("permission denied!");
             }
         }
+
+        private void btnHome_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox2.BackColor = Color.FromArgb(215, 215, 215);
+        }
+
+        private void btnHome_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2.BackColor = Color.FromArgb(240, 240, 240);
+        }
+
+        private void btnCheckout_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox3.BackColor = Color.FromArgb(215, 215, 215);
+        }
+
+        private void btnCheckout_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox3.BackColor = Color.FromArgb(240, 240, 240);
+        }
+
+        private void btnProducts_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox4.BackColor = Color.FromArgb(215, 215, 215);
+        }
+
+        private void btnProducts_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox4.BackColor = Color.FromArgb(240, 240, 240);
+        }
+
+        private void btnCategories_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox5.BackColor = Color.FromArgb(215, 215, 215);
+        }
+
+        private void btnCategories_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox5.BackColor = Color.FromArgb(240, 240, 240);
+        }
+
+        private void btnInventory_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox6.BackColor = Color.FromArgb(215, 215, 215);
+        }
+
+        private void btnInventory_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox6.BackColor = Color.FromArgb(240, 240, 240);
+        }
+
+        private void btnCustomers_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox7.BackColor = Color.FromArgb(215, 215, 215);
+        }
+
+        private void btnCustomers_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox7.BackColor = Color.FromArgb(240, 240, 240);
+        }
+
+        private void btnReports_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox8.BackColor = Color.FromArgb(215, 215, 215);
+        }
+
+        private void btnReports_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox8.BackColor = Color.FromArgb(240, 240, 240);
+        }
+
+        private void btnUsers_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBox9.BackColor = Color.FromArgb(215, 215, 215);
+        }
+
+        private void btnUsers_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox9.BackColor = Color.FromArgb(240, 240, 240);
+        }
     }
 }
