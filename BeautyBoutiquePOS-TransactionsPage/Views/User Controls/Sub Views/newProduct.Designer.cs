@@ -170,10 +170,11 @@
             // txtCategory
             // 
             this.txtCategory.BackColor = System.Drawing.Color.White;
+            this.txtCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.txtCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCategory.ForeColor = System.Drawing.Color.DimGray;
             this.txtCategory.FormattingEnabled = true;
-            this.txtCategory.Location = new System.Drawing.Point(90, 1);
+            this.txtCategory.Location = new System.Drawing.Point(90, 2);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(253, 29);
             this.txtCategory.TabIndex = 1;

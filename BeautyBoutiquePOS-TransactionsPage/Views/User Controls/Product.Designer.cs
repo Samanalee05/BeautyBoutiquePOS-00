@@ -130,9 +130,9 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.richTextBox2);
-            this.panel3.Location = new System.Drawing.Point(897, 146);
+            this.panel3.Location = new System.Drawing.Point(897, 143);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(286, 33);
+            this.panel3.Size = new System.Drawing.Size(286, 36);
             this.panel3.TabIndex = 33;
             // 
             // pictureBox1

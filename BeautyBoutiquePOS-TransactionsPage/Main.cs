@@ -85,7 +85,7 @@ namespace BeautyBoutiquePOS_TransactionsPage
         private void btnProducts_Click(object sender, EventArgs e)
         {
 
-            if (this.userType == "Admin")
+            if (this.userType == "Admin"  || this.userType == "Manager")
             {
                 ClearContentArea();
                 var Product = new Product();
@@ -100,16 +100,19 @@ namespace BeautyBoutiquePOS_TransactionsPage
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-
-            ClearContentArea();
-            var Customers = new Customers();
-            windowPnl.Controls.Add(Customers);
+            if (this.userType == "Admin" || this.userType == "Cashier")
+            {
+                ClearContentArea();
+                var Customers = new Customers();
+                windowPnl.Controls.Add(Customers);
+            }
 
         }
 
         private void btnCategories_Click(object sender, EventArgs e)
         {
-            if (this.userType == "Admin")
+
+            if (this.userType == "Admin" || this.userType == "Manager")
             {
 
                 ClearContentArea();
@@ -124,14 +127,18 @@ namespace BeautyBoutiquePOS_TransactionsPage
 
         private void btnCheckout_Click(object sender, EventArgs e)
         {
-            ClearContentArea();
-            var Checkout = new Checkout(userType);
-            windowPnl.Controls.Add(Checkout);
+            if (this.userType == "Admin" || this.userType == "Cashier")
+            {
+                ClearContentArea();
+                var Checkout = new Checkout(userType);
+                windowPnl.Controls.Add(Checkout);
+            }
         }
 
         private void btnInventory_Click(object sender, EventArgs e)
         {
-            if (this.userType == "Admin")
+
+            if (this.userType == "Admin" || this.userType == "Manager")
             {
                 ClearContentArea();
                 var Inventory = new Inventory();
@@ -251,6 +258,11 @@ namespace BeautyBoutiquePOS_TransactionsPage
         private void btnUsers_MouseLeave(object sender, EventArgs e)
         {
             pictureBox9.BackColor = Color.FromArgb(240, 240, 240);
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
