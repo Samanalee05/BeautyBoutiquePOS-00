@@ -15,12 +15,15 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views.Payme
     {
         public decimal balance = 0;
         public decimal ammount = 0;
-        public Cash(decimal ammount)
+        private newCheckout NewCheckoutform;
+
+        public Cash(decimal ammount, newCheckout newCheckout)
         {
             InitializeComponent();
 
             lblRs.Text = ammount.ToString();
             this.ammount = ammount;
+            this.NewCheckoutform = newCheckout;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -102,6 +105,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views.Payme
             else
             {
                 balance = sum - ammount;
+                this.NewCheckoutform.balance = balance;
             }
 
             this.Close();

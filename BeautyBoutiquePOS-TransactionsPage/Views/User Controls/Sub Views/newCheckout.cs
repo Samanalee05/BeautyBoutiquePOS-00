@@ -18,9 +18,10 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 {
     public partial class newCheckout : Form
     {
+        public decimal balance;
         private decimal netGross;
-        Cash cashForm1 = new Cash(0);
-        Card cardForm1 = new Card(0);
+        private Cash cashForm1;
+        private Card cardForm1;
         private Checkout checkout1;
         private String userType;
 
@@ -159,7 +160,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textGross.Text = cashForm1.balance.ToString();
+            textGross.Text = balance.ToString();
             DeleteAllProductsLineDataAndUpdateProductQty();
             checkoutButton_Click(sender, e);
             this.checkout1.LoadCheckoutRecordsForToday();
@@ -172,7 +173,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
         private void cashBtn_Click(object sender, EventArgs e)
         {
-            Cash cashForm = new Cash(netGross);
+            Cash cashForm = new Cash(netGross,this);
             cashForm.ShowDialog();
             this.cashForm1 = cashForm;
         }
