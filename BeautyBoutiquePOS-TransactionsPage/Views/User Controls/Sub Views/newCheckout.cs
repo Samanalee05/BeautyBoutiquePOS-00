@@ -38,7 +38,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             UserControlStyles styles = new UserControlStyles();
             styles.CustomizeDataGridView(dataGridView1);
             DateTime currentDate = DateTime.Today;
-            labelDate.Text = currentDate.ToString("yyyy , MMMM , dd");
+            labelDate.Text = currentDate.ToString("yyyy/MM/dd");
             this.checkout1 = checkout;
 
 

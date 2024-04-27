@@ -135,13 +135,12 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
 
-            string updateQuery = @"UPDATE products p INNER JOIN inventory i ON p.id = i.itemcode SET p.qty = p.qty + @Qty, p.discount_percentage = @newDiscountPercentage, p.price = @newPrice WHERE i.itemcode = @ItemCode;";
+            string updateQuery = @"UPDATE products p INNER JOIN inventory i ON p.id = i.itemcode SET p.qty = p.qty + @Qty, p.price = @newPrice WHERE i.itemcode = @ItemCode;";
 
             using (MySqlCommand command = new MySqlCommand(updateQuery, connection))
             {
                 try
                 {
-                    command.Parameters.AddWithValue("@newDiscountPercentage", newDiscountPercentage);
                     command.Parameters.AddWithValue("@newPrice", price);
                     command.Parameters.AddWithValue("@Qty", qty);
                     command.Parameters.AddWithValue("@ItemCode", itemcode);

@@ -16,8 +16,13 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 {
     public partial class Product : UserControl
     {
+
+        DataTable dataTable1;
+        DataView dataView1;
         public Product()
         {
+
+
             InitializeComponent();
             LoadProductData();
             UserControlStyles styles = new UserControlStyles();
@@ -33,8 +38,37 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             dataGridViewProducts.Columns.Add(deleteButtonColumn);
             deleteButtonColumn.Width = 100;
 
+            foreach (DataGridViewColumn column in dataGridViewProducts.Columns)
+            {
+                column.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+
 
             dataGridViewProducts.CellContentClick += dataGridViewProducts_CellContentClick;
+        }
+
+        private void filterData()
+        {
+            string filter = richTextBox2.Text;
+            if (!string.IsNullOrEmpty(filter))
+            {
+                DataView dv = new DataView(dataTable1);
+
+                if (int.TryParse(filter, out int idFilter))
+                {
+                    dv.RowFilter = string.Format("id = {0}", idFilter);
+                }
+                else
+                {
+                    dv.RowFilter = string.Format("name LIKE '%{0}%'", filter);
+                }
+                dataGridViewProducts.DataSource = dv;
+                dataView1 = dv;
+            }
+            else
+            {
+                dataGridViewProducts.DataSource = dataTable1;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -62,6 +96,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
                         }
 
                         dataGridViewProducts.DataSource = dataTable;
+                        dataTable1 = dataTable;
                     }
                     catch (MySqlException ex)
                     {
@@ -113,5 +148,9 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
+        private void richTextBox2_TextChanged(object sender, EventArgs e)
+        {
+            filterData();
+        }
     }
 }
