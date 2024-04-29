@@ -60,7 +60,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views
         private string GetUserType(string username, string password)// Remove on Release
         {
 
-            return "Admin";
+            return "Manager";
         }
 
         //private string GetUserType(string username, string password)

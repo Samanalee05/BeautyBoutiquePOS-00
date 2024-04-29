@@ -84,11 +84,10 @@ namespace BeautyBoutiquePOS_TransactionsPage
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
-
             if (this.userType == "Admin"  || this.userType == "Manager")
             {
                 ClearContentArea();
-                var Product = new Product();
+                var Product = new Product(this.userType);
                 windowPnl.Controls.Add(Product);
             } else
             {

@@ -19,9 +19,12 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 
         DataTable dataTable1;
         DataView dataView1;
-        public Product()
+        private string userType1;
+
+        public Product(string userType)
         {
 
+            this.userType1 = userType;
 
             InitializeComponent();
             LoadProductData();
@@ -112,7 +115,13 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             {
                 int productId = Convert.ToInt32(dataGridViewProducts.Rows[e.RowIndex].Cells["id"].Value);
 
-                DeleteProduct(productId);
+                if (this.userType1 == "Admin")
+                {
+                    DeleteProduct(productId);
+                } else
+                {
+                    MessageBox.Show("permission denied!");
+                }
             }
         }
 
