@@ -99,7 +99,7 @@ namespace BeautyBoutiquePOS_TransactionsPage
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            if (this.userType == "Admin" || this.userType == "Cashier" || this.userType == "Manager")
+            if (this.userType == "Admin" || this.userType == "Manager")
             {
                 ClearContentArea();
                 var Customers = new Customers(this.userType);
@@ -169,10 +169,10 @@ namespace BeautyBoutiquePOS_TransactionsPage
 
         private void btnUsers_Click(object sender, EventArgs e)
         {
-            if (this.userType == "Admin")
+            if (this.userType == "Admin" || this.userType == "Manager")
             {
                 ClearContentArea();
-                var Users = new Users();
+                var Users = new Users(this.userType);
                 windowPnl.Controls.Add(Users);
             }
             else

@@ -15,8 +15,11 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 {
     public partial class Users : UserControl
     {
-        public Users()
+
+        private string userType1;
+        public Users(string userType)
         {
+            this.userType1 = userType;
             InitializeComponent();
 
             UserControlStyles styles = new UserControlStyles();
@@ -44,7 +47,15 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             {
                 String nic = Convert.ToString(dataGridView1.Rows[e.RowIndex].Cells["nic"].Value);
 
-                Delete(nic);
+                if (this.userType1 == "Admin")
+                {
+                    Delete(nic);
+                }
+                else
+                {
+                    MessageBox.Show("permission denied!");
+                }
+
             }
         }
 
