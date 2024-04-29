@@ -113,9 +113,8 @@ namespace BeautyBoutiquePOS_TransactionsPage
 
             if (this.userType == "Admin" || this.userType == "Manager")
             {
-
                 ClearContentArea();
-                var Categories = new Categories();
+                var Categories = new Categories(this.userType);
                 windowPnl.Controls.Add(Categories);
             }
             else

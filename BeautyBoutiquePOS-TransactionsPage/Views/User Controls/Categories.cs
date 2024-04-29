@@ -18,9 +18,12 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 
         DataTable dataTable1;
         DataView dataView1;
+        private string userType1;
 
-        public Categories()
+        public Categories(string userType)
         {
+            this.userType1 = userType;
+
             InitializeComponent();
             UserControlStyles styles = new UserControlStyles();
             styles.CustomizeDataGridView(dataGridViewCategories);
@@ -103,7 +106,15 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             {
                 String categoriesName = Convert.ToString(dataGridViewCategories.Rows[e.RowIndex].Cells["name"].Value);
 
-                Delete(categoriesName);
+                if (this.userType1 == "Admin")
+                {
+                    Delete(categoriesName);
+                }
+                else
+                {
+                    MessageBox.Show("permission denied!");
+                }
+
             }
         }
 
