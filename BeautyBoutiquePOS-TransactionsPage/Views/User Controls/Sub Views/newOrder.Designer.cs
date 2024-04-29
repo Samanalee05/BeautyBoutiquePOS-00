@@ -38,24 +38,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBoxDiscount = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBoxQty = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.textBoxSellingPrice = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.textBoxTotal = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +59,7 @@
             this.textBoxItemCode.Name = "textBoxItemCode";
             this.textBoxItemCode.Size = new System.Drawing.Size(237, 22);
             this.textBoxItemCode.TabIndex = 1;
+            this.textBoxItemCode.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBoxItemCode_MouseClick);
             // 
             // label1
             // 
@@ -103,7 +96,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(590, 87);
+            this.pictureBox1.Location = new System.Drawing.Point(544, 118);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(156, 167);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -115,7 +108,7 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.textBoxItemCode);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(69, 71);
+            this.panel1.Location = new System.Drawing.Point(69, 104);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(343, 32);
             this.panel1.TabIndex = 21;
@@ -136,7 +129,7 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.costTextBox);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(69, 286);
+            this.panel2.Location = new System.Drawing.Point(69, 159);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(343, 32);
             this.panel2.TabIndex = 22;
@@ -152,43 +145,12 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.textBoxDiscount);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(69, 125);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(343, 32);
-            this.panel3.TabIndex = 22;
-            // 
-            // textBoxDiscount
-            // 
-            this.textBoxDiscount.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDiscount.Location = new System.Drawing.Point(102, 5);
-            this.textBoxDiscount.Name = "textBoxDiscount";
-            this.textBoxDiscount.Size = new System.Drawing.Size(237, 22);
-            this.textBoxDiscount.TabIndex = 1;
-            this.textBoxDiscount.TextChanged += new System.EventHandler(this.textBoxDiscount_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(4, 5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 21);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Discount % :";
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.textBoxQty);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(69, 178);
+            this.panel4.Location = new System.Drawing.Point(69, 217);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(343, 32);
             this.panel4.TabIndex = 23;
@@ -214,54 +176,24 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "QTY :";
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.textBoxSellingPrice);
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(69, 233);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(343, 32);
-            this.panel5.TabIndex = 31;
-            // 
-            // textBoxSellingPrice
-            // 
-            this.textBoxSellingPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxSellingPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSellingPrice.Location = new System.Drawing.Point(117, 5);
-            this.textBoxSellingPrice.Name = "textBoxSellingPrice";
-            this.textBoxSellingPrice.Size = new System.Drawing.Size(222, 22);
-            this.textBoxSellingPrice.TabIndex = 1;
-            this.textBoxSellingPrice.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(4, 5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 21);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Selling Price :";
-            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Controls.Add(this.textBoxTotal);
             this.panel6.Controls.Add(this.label6);
-            this.panel6.Location = new System.Drawing.Point(69, 338);
+            this.panel6.Location = new System.Drawing.Point(69, 274);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(343, 32);
             this.panel6.TabIndex = 23;
             // 
             // textBoxTotal
             // 
+            this.textBoxTotal.BackColor = System.Drawing.Color.White;
             this.textBoxTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTotal.Location = new System.Drawing.Point(64, 5);
+            this.textBoxTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTotal.Location = new System.Drawing.Point(64, 4);
             this.textBoxTotal.Name = "textBoxTotal";
-            this.textBoxTotal.Size = new System.Drawing.Size(275, 22);
+            this.textBoxTotal.Size = new System.Drawing.Size(275, 24);
             this.textBoxTotal.TabIndex = 1;
             // 
             // label6
@@ -281,9 +213,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
@@ -291,17 +221,14 @@
             this.Controls.Add(this.btnSave);
             this.Name = "newOrder";
             this.Text = "newOrder";
+            this.Load += new System.EventHandler(this.newOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.ResumeLayout(false);
@@ -319,15 +246,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBoxDiscount;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox textBoxQty;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBoxSellingPrice;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox textBoxTotal;
         private System.Windows.Forms.Label label6;

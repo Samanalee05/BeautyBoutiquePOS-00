@@ -55,7 +55,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             chart2.Series.Clear();
             chart2.ChartAreas.Clear();
 
-            ChartArea chartArea = new ChartArea("ChartArea");
+            ChartArea chartArea = new ChartArea("ChartArea"); 
 
             chart2.ChartAreas.Add(chartArea);
 

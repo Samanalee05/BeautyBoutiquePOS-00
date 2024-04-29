@@ -57,7 +57,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 
         private void button1_Click(object sender, EventArgs e)
         {
-            newOrder newOrderForm = new newOrder(this);
+            newOrder newOrderForm = new newOrder(this, "in");
             newOrderForm.ShowDialog();
         }
 
@@ -94,5 +94,10 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            newOrder newOrderForm = new newOrder(this,"out");
+            newOrderForm.ShowDialog();
+        }
     }
 }
