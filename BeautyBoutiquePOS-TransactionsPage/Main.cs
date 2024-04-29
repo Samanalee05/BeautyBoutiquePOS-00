@@ -99,13 +99,16 @@ namespace BeautyBoutiquePOS_TransactionsPage
 
         private void btnCustomers_Click(object sender, EventArgs e)
         {
-            if (this.userType == "Admin" || this.userType == "Cashier")
+            if (this.userType == "Admin" || this.userType == "Cashier" || this.userType == "Manager")
             {
                 ClearContentArea();
-                var Customers = new Customers();
+                var Customers = new Customers(this.userType);
                 windowPnl.Controls.Add(Customers);
             }
-
+            else
+            {
+                MessageBox.Show("permission denied!");
+            }
         }
 
         private void btnCategories_Click(object sender, EventArgs e)

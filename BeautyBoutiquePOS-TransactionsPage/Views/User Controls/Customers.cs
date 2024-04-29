@@ -17,9 +17,11 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
     {
         DataTable dataTable1;
         DataView dataView1;
+        private string userType1;
 
-        public Customers()
+        public Customers(string userType)
         {
+            this.userType1 = userType;
             InitializeComponent();
 
             LoadCustomers();
@@ -68,7 +70,15 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             {
                 String nic = Convert.ToString(customerGridView.Rows[e.RowIndex].Cells["nic"].Value);
 
-                Delete(nic);
+                if (this.userType1 == "Admin")
+                {
+                    Delete(nic);
+                }
+                else
+                {
+                    MessageBox.Show("permission denied!");
+                }
+
             }
         }
 
