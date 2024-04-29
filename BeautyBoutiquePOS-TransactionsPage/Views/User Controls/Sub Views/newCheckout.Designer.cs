@@ -55,6 +55,10 @@
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxTotalDiscount = new System.Windows.Forms.TextBox();
+            this.textBoxCashResived = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -63,7 +67,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(415, 556);
+            this.button5.Location = new System.Drawing.Point(316, 561);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(164, 31);
             this.button5.TabIndex = 57;
@@ -73,7 +77,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(415, 494);
+            this.button4.Location = new System.Drawing.Point(316, 504);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(164, 31);
             this.button4.TabIndex = 56;
@@ -103,26 +107,27 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(697, 534);
+            this.label13.Location = new System.Drawing.Point(545, 472);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(117, 21);
+            this.label13.Size = new System.Drawing.Size(77, 21);
             this.label13.TabIndex = 53;
-            this.label13.Text = "Gros Ammount";
+            this.label13.Text = "Total Cost";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(703, 486);
+            this.label12.Location = new System.Drawing.Point(545, 541);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(109, 21);
+            this.label12.Size = new System.Drawing.Size(102, 21);
             this.label12.TabIndex = 52;
-            this.label12.Text = "Net Ammount";
+            this.label12.Text = "Cash Recived";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // textGross
             // 
             this.textGross.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textGross.Location = new System.Drawing.Point(818, 531);
+            this.textGross.Location = new System.Drawing.Point(668, 573);
             this.textGross.Name = "textGross";
             this.textGross.Size = new System.Drawing.Size(182, 29);
             this.textGross.TabIndex = 51;
@@ -130,7 +135,7 @@
             // netammountText
             // 
             this.netammountText.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.netammountText.Location = new System.Drawing.Point(818, 483);
+            this.netammountText.Location = new System.Drawing.Point(668, 468);
             this.netammountText.Name = "netammountText";
             this.netammountText.Size = new System.Drawing.Size(182, 29);
             this.netammountText.TabIndex = 50;
@@ -281,9 +286,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(909, 569);
+            this.button2.Location = new System.Drawing.Point(866, 472);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 31);
+            this.button2.Size = new System.Drawing.Size(134, 128);
             this.button2.TabIndex = 37;
             this.button2.Text = "Checkout";
             this.button2.UseVisualStyleBackColor = true;
@@ -325,11 +330,51 @@
             this.label1.TabIndex = 38;
             this.label1.Text = "Customer";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(545, 506);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 21);
+            this.label3.TabIndex = 59;
+            this.label3.Text = "Total Discount";
+            // 
+            // textBoxTotalDiscount
+            // 
+            this.textBoxTotalDiscount.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxTotalDiscount.Location = new System.Drawing.Point(668, 503);
+            this.textBoxTotalDiscount.Name = "textBoxTotalDiscount";
+            this.textBoxTotalDiscount.Size = new System.Drawing.Size(182, 29);
+            this.textBoxTotalDiscount.TabIndex = 58;
+            // 
+            // textBoxCashResived
+            // 
+            this.textBoxCashResived.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textBoxCashResived.Location = new System.Drawing.Point(668, 538);
+            this.textBoxCashResived.Name = "textBoxCashResived";
+            this.textBoxCashResived.Size = new System.Drawing.Size(182, 29);
+            this.textBoxCashResived.TabIndex = 60;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(545, 577);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 21);
+            this.label5.TabIndex = 61;
+            this.label5.Text = "Balance";
+            // 
             // newCheckout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 607);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBoxCashResived);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBoxTotalDiscount);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -393,5 +438,9 @@
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBoxTotalDiscount;
+        private System.Windows.Forms.TextBox textBoxCashResived;
+        private System.Windows.Forms.Label label5;
     }
 }

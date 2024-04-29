@@ -19,6 +19,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
     public partial class newCheckout : Form
     {
         public decimal balance;
+        public decimal cash;
+        public decimal totalDiscount;
         private decimal netGross;
         private Cash cashForm1;
         private Card cardForm1;
@@ -64,7 +66,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-            addToCart productForm = new addToCart("checkout");
+            addToCart productForm = new addToCart("checkout",this);
             productForm.ShowDialog();
         }
 
@@ -90,12 +92,19 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         private void CalculateNetGrossAmount()
         {
             decimal netGrossAmount = 0;
+            decimal totalPrice1 = 0;
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (row.Cells["total"].Value != null && decimal.TryParse(row.Cells["total"].Value.ToString(), out decimal totalPrice))
+                if (row.Cells["price"].Value != null && decimal.TryParse(row.Cells["price"].Value.ToString(), out decimal totalPrice))
                 {
                     netGrossAmount += totalPrice;
+                    totalPrice1 = totalPrice;
+                }
+
+                if (row.Cells["total"].Value != null && decimal.TryParse(row.Cells["total"].Value.ToString(), out decimal total))
+                {
+                    textBoxTotalDiscount.Text = (totalPrice1 - total).ToString();
                 }
             }
 
@@ -322,6 +331,48 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                     MessageBox.Show("No data found in productsLine table.");
                 }
             }
+        }
+
+        public void calculateTotalDiscount()
+        {
+            double totalQty = 0;
+            double discountTotal = 0;
+
+            DateTime currentDate = DateTime.Now;
+            string formattedDate = currentDate.ToString("yyyy-MM-dd");
+
+
+            string customerName = labelCustomer.Text;
+
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells["discount"].Value != null) // Check if the cell value is not null
+                {
+                    double rowDiscount;
+                    if (double.TryParse(row.Cells["discount"].Value.ToString(), out rowDiscount))
+                    {
+                        discountTotal += rowDiscount;
+                        //textBoxTotalDiscount.Text = this.totalDiscount.ToString();
+                        textBoxCashResived.Text = cash.ToString();
+
+                    }
+                }
+
+                if (row.Cells["qty"].Value != null) // Check if the cell value is not null
+                {
+                    double rowQty;
+                    if (double.TryParse(row.Cells["qty"].Value.ToString(), out rowQty))
+                    {
+                        totalQty += rowQty;
+                    }
+                }
+            }
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

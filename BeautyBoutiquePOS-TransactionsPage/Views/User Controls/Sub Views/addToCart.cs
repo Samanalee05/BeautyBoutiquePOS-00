@@ -17,8 +17,12 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         DataTable dataTable1;
         DataView dataView1;
         private string form1;
-        public addToCart(string form)
+        private newCheckout newCheckout1;
+
+        public addToCart(string form, newCheckout newCheckout)
         {
+            this.newCheckout1 = newCheckout;
+
             InitializeComponent();
             UpdateDataGridView();
 
@@ -102,6 +106,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                     DataGridViewRow row = productGridView.Rows[e.RowIndex];
 
                     Console.WriteLine(row.Cells[4].Value);
+
+                   CalculateDiscountPerItem(row.Cells[2].Value.ToString(), row.Cells[5].Value.ToString());
 
                     using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
                     {
@@ -326,9 +332,57 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                 }
             }
 
-            decimal discountPrice =price - ((price/100) * discount) ;
+            decimal discountPrice = price - ((price/100) * discount) ;
+
 
             return discountPrice;
+        }
+
+        private decimal CalculateDiscountPerItem(string productName,string qty)
+        {
+
+            decimal price = 0;
+            decimal discount = 0;
+            decimal pqty = Convert.ToDecimal(qty);
+            decimal discountTotal = 0;
+
+            // Retrieve price and discount from the database
+            using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
+            {
+                string query = "SELECT price, discount_percentage FROM products WHERE name = @ProductName";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@ProductName", productName);
+
+                    try
+                    {
+                        connection.Open();
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                price = reader.GetDecimal(0);
+                                discount = reader.GetDecimal(1);
+
+                                decimal discountPrice = ((price / 100) * discount);
+
+                                discountTotal = discountPrice * pqty;
+
+                                this.newCheckout1.totalDiscount = discountTotal;
+                            }
+                        }
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+            }
+
+
+
+            return discountTotal;
         }
     }
 }

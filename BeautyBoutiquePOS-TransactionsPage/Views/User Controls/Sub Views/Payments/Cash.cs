@@ -106,6 +106,9 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views.Payme
             {
                 balance = sum - ammount;
                 this.NewCheckoutform.balance = balance;
+                this.NewCheckoutform.cash = sum;
+
+                this.NewCheckoutform.calculateTotalDiscount();
             }
 
             this.Close();
