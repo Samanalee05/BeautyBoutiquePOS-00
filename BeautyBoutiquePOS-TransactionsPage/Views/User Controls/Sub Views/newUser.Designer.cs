@@ -37,9 +37,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.textBoxAge = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -57,7 +54,6 @@
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -148,42 +144,12 @@
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.White;
-            this.panel6.Controls.Add(this.textBoxAge);
-            this.panel6.Controls.Add(this.label6);
-            this.panel6.Location = new System.Drawing.Point(54, 237);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(343, 32);
-            this.panel6.TabIndex = 26;
-            // 
-            // textBoxAge
-            // 
-            this.textBoxAge.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAge.Location = new System.Drawing.Point(64, 5);
-            this.textBoxAge.Name = "textBoxAge";
-            this.textBoxAge.Size = new System.Drawing.Size(275, 22);
-            this.textBoxAge.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(4, 5);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 21);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Age :";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.textBoxName);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(54, 10);
+            this.panel1.Location = new System.Drawing.Point(54, 33);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(343, 32);
             this.panel1.TabIndex = 21;
@@ -193,7 +159,7 @@
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.Controls.Add(this.comboBox1);
             this.panel7.Controls.Add(this.label7);
-            this.panel7.Location = new System.Drawing.Point(54, 293);
+            this.panel7.Location = new System.Drawing.Point(54, 264);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(343, 32);
             this.panel7.TabIndex = 27;
@@ -224,7 +190,7 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.textBoxAddress);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(54, 122);
+            this.panel3.Location = new System.Drawing.Point(54, 145);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(343, 32);
             this.panel3.TabIndex = 23;
@@ -232,7 +198,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(637, 369);
+            this.button1.Location = new System.Drawing.Point(632, 369);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 39);
             this.button1.TabIndex = 28;
@@ -244,7 +210,7 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.textBoxNIC);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(54, 63);
+            this.panel2.Location = new System.Drawing.Point(54, 86);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(343, 32);
             this.panel2.TabIndex = 22;
@@ -252,7 +218,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(505, 369);
+            this.btnSave.Location = new System.Drawing.Point(500, 369);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(109, 39);
             this.btnSave.TabIndex = 29;
@@ -274,7 +240,7 @@
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.textBoxContact);
             this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(54, 180);
+            this.panel5.Location = new System.Drawing.Point(54, 203);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(343, 32);
             this.panel5.TabIndex = 25;
@@ -284,7 +250,7 @@
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.usernameTextBox);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(54, 347);
+            this.panel4.Location = new System.Drawing.Point(54, 318);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(343, 32);
             this.panel4.TabIndex = 31;
@@ -314,7 +280,7 @@
             this.panel8.BackColor = System.Drawing.Color.White;
             this.panel8.Controls.Add(this.passwordTextBox);
             this.panel8.Controls.Add(this.label8);
-            this.panel8.Location = new System.Drawing.Point(54, 405);
+            this.panel8.Location = new System.Drawing.Point(54, 376);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(343, 32);
             this.panel8.TabIndex = 32;
@@ -347,7 +313,6 @@
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel3);
@@ -358,8 +323,6 @@
             this.Name = "newUser";
             this.Text = "newUser";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -388,9 +351,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox textBoxAge;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label7;

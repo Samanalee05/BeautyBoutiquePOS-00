@@ -35,14 +35,13 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         {
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
 
-            string query = @"INSERT INTO users (nic, name, age, address, contact, type, username, password, date_join) 
-                     VALUES (@NIC, @Name, @Age, @Address, @Contact, @Type, @Username, @Password, @JoinDate)";
+            string query = @"INSERT INTO users (nic, name, address, contact, type, username, password, date_join) 
+                     VALUES (@NIC, @Name, @Address, @Contact, @Type, @Username, @Password, @JoinDate)";
 
             MySqlCommand command = new MySqlCommand(query, connection);
 
             command.Parameters.AddWithValue("@NIC", textBoxNIC.Text);
             command.Parameters.AddWithValue("@Name", textBoxName.Text);
-            command.Parameters.AddWithValue("@Age", Convert.ToInt32(textBoxAge.Text));
             command.Parameters.AddWithValue("@Address", textBoxAddress.Text);
             command.Parameters.AddWithValue("@Contact", textBoxContact.Text);
             command.Parameters.AddWithValue("@Type", comboBox1.SelectedItem.ToString());
@@ -76,6 +75,5 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                 connection.Close();
             }
         }
-
     }
 }
