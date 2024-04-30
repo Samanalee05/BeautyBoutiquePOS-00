@@ -17,13 +17,18 @@ namespace BeautyBoutiquePOS_TransactionsPage
     public partial class Main : Form
     {
         private String userType;
+        public string username1;
 
-        public Main(string userType1)
+        public Main(string userType1, string username)
         {
+
+            this.username1 = username;
+
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
 
             this.userType = userType1;
+            labelUserName.Text = username;
 
 
             //For right side rounded menu buttons:

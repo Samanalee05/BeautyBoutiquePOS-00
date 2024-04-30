@@ -48,6 +48,7 @@
             this.btnHome = new System.Windows.Forms.Button();
             this.windowPnl = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelUserName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -159,10 +160,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BeautyBoutiquePOS_TransactionsPage.Properties.Resources.Magenta_Beauty___Fashion_Free_Logo_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(2, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(39, 12);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(313, 240);
+            this.pictureBox1.Size = new System.Drawing.Size(221, 158);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
@@ -324,6 +325,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
+            this.panel1.Controls.Add(this.labelUserName);
             this.panel1.Controls.Add(this.pictureBox9);
             this.panel1.Controls.Add(this.pictureBox8);
             this.panel1.Controls.Add(this.pictureBox7);
@@ -347,6 +349,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(320, 1030);
             this.panel1.TabIndex = 2;
+            // 
+            // labelUserName
+            // 
+            this.labelUserName.AutoSize = true;
+            this.labelUserName.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUserName.Location = new System.Drawing.Point(77, 952);
+            this.labelUserName.Name = "labelUserName";
+            this.labelUserName.Size = new System.Drawing.Size(128, 32);
+            this.labelUserName.TabIndex = 17;
+            this.labelUserName.Text = "UserName";
             // 
             // Main
             // 
@@ -373,6 +385,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,6 +412,7 @@
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Panel windowPnl;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelUserName;
     }
 }
 

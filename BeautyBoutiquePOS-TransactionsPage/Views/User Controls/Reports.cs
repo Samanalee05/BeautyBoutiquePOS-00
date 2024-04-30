@@ -1,4 +1,5 @@
 ﻿using BeautyBoutiquePOS_TransactionsPage.Class;
+using BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Report_Views;
 using BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views.Payments;
 using MySql.Data.MySqlClient;
 using System;
@@ -31,6 +32,11 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             newReport  reports  = new newReport();
             reports.ShowDialog();
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new inventoryReportView().ShowDialog();
         }
     }
 }

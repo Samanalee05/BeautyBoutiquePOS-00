@@ -45,7 +45,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views
 
             if (!string.IsNullOrEmpty(userType))
             {
-                Main mainForm = new Main(userType);
+                Main mainForm = new Main(userType,username);
                 mainForm.ShowDialog();
                 this.Hide();
             }

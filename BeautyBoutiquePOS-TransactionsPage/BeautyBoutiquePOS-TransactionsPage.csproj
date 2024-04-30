@@ -222,6 +222,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Data Set\DataSetProducts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetProducts.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +282,12 @@
     </Compile>
     <Compile Include="Views\User Controls\Product.Designer.cs">
       <DependentUpon>Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User Controls\Report Views\inventoryReportView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\User Controls\Report Views\inventoryReportView.Designer.cs">
+      <DependentUpon>inventoryReportView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\User Controls\Report Views\newCheckoutReportView.cs">
       <SubType>Form</SubType>
@@ -382,6 +393,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reports\Checkout.rdlc" />
+    <EmbeddedResource Include="Reports\Inventory.rdlc" />
     <EmbeddedResource Include="Reports\newCheckout.rdlc" />
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -406,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\User Controls\Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\User Controls\Report Views\inventoryReportView.resx">
+      <DependentUpon>inventoryReportView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\User Controls\Report Views\newCheckoutReportView.resx">
       <DependentUpon>newCheckoutReportView.cs</DependentUpon>
@@ -473,6 +488,17 @@
     </None>
     <None Include="Data Set\DataSet2.xss">
       <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Data Set\DataSetProducts.xsc">
+      <DependentUpon>DataSetProducts.xsd</DependentUpon>
+    </None>
+    <None Include="Data Set\DataSetProducts.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetProducts.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data Set\DataSetProducts.xss">
+      <DependentUpon>DataSetProducts.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
