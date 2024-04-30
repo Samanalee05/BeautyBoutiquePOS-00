@@ -26,9 +26,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
             login();
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -60,7 +58,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views
         private string GetUserType(string username, string password)// Remove on Release
         {
 
-            return "Manager";
+            return "Admin";
         }
 
         //private string GetUserType(string username, string password)
