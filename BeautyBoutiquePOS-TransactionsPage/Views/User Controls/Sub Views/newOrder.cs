@@ -16,6 +16,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
     {
         private String function;
         private Inventory InventoryForm;
+        private string productName;
         public newOrder(Inventory inventory, string function1)
         {
             this.InventoryForm = inventory;
@@ -66,13 +67,14 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             float cost = float.Parse(costTextBox.Text);
             float total = float.Parse(textBoxTotal.Text);
 
-            string query = "INSERT INTO `inventory` (`itemcode`, `QTY`, `cost`, `total`, `function`) VALUES (@ItemCode, @Qty, @Cost, @Total, @Function);";
+            string query = "INSERT INTO `inventory` (`itemcode`, `name`, `QTY`, `cost`, `total`, `function`) VALUES (@ItemCode, @Name, @Qty, @Cost, @Total,  @Function);";
 
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
             {
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@ItemCode", itemcode);
+                    command.Parameters.AddWithValue("@Name", productName);
                     command.Parameters.AddWithValue("@Qty", qty);
                     command.Parameters.AddWithValue("@Cost", cost);
                     command.Parameters.AddWithValue("@Total", total);
@@ -231,11 +233,12 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             selectProductForm.ShowDialog();
         }
 
-        public void refreshFormData(String itemCode,String cost)
+        public void refreshFormData(String itemCode,String cost,String name)
         {
             textBoxItemCode.Text = itemCode.ToString();
             //textBoxQty.Text = QTY.ToString();
             costTextBox.Text = cost.ToString();
+            productName = name;
         }
 
         private void newOrder_Load(object sender, EventArgs e)

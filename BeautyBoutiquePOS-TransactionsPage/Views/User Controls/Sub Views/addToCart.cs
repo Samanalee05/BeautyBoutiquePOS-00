@@ -223,6 +223,9 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                             decimal totalPrice = discountPrice * quantity;
 
 
+                            //this.newCheckout1.netAmmount += Convert.ToDecimal(rowData[5].ToString());
+
+
                             string query = "INSERT INTO productsLine (id ,name, description, qty, discount, price , total) VALUES (@Id ,@Name, @Description, @Qty, @Discount,@Price , @Total)";
                             using (MySqlCommand command = new MySqlCommand(query, connection))
                             {

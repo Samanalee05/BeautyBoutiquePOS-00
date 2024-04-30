@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetCheckout" targetNamespace="http://tempuri.org/DataSetCheckout.xsd" xmlns:mstns="http://tempuri.org/DataSetCheckout.xsd" xmlns="http://tempuri.org/DataSetCheckout.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetCheckout" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="DataSetCheckout" msprop:Generator_DataSetName="DataSetCheckout">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CheckoutLine" msprop:Generator_RowEvHandlerName="CheckoutLineRowChangeEventHandler" msprop:Generator_RowDeletedName="CheckoutLineRowDeleted" msprop:Generator_RowDeletingName="CheckoutLineRowDeleting" msprop:Generator_RowEvArgName="CheckoutLineRowChangeEvent" msprop:Generator_TablePropName="CheckoutLine" msprop:Generator_RowChangedName="CheckoutLineRowChanged" msprop:Generator_RowChangingName="CheckoutLineRowChanging" msprop:Generator_TableClassName="CheckoutLineDataTable" msprop:Generator_RowClassName="CheckoutLineRow" msprop:Generator_TableVarName="tableCheckoutLine" msprop:Generator_UserTableName="CheckoutLine">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
+              <xs:element name="date" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_ColumnVarNameInTable="columndate" msprop:Generator_UserColumnName="date" type="xs:string" minOccurs="0" />
+              <xs:element name="customer" msprop:Generator_ColumnPropNameInRow="customer" msprop:Generator_ColumnPropNameInTable="customerColumn" msprop:Generator_ColumnVarNameInTable="columncustomer" msprop:Generator_UserColumnName="customer" type="xs:string" minOccurs="0" />
+              <xs:element name="total" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_UserColumnName="total" type="xs:string" minOccurs="0" />
+              <xs:element name="discount" msprop:Generator_ColumnPropNameInRow="discount" msprop:Generator_ColumnPropNameInTable="discountColumn" msprop:Generator_ColumnVarNameInTable="columndiscount" msprop:Generator_UserColumnName="discount" type="xs:string" minOccurs="0" />
+              <xs:element name="itemQTY" msprop:Generator_ColumnPropNameInRow="itemQTY" msprop:Generator_ColumnPropNameInTable="itemQTYColumn" msprop:Generator_ColumnVarNameInTable="columnitemQTY" msprop:Generator_UserColumnName="itemQTY" type="xs:string" minOccurs="0" />
+              <xs:element name="gross_ammount" msprop:Generator_ColumnPropNameInRow="gross_ammount" msprop:Generator_ColumnPropNameInTable="gross_ammountColumn" msprop:Generator_ColumnVarNameInTable="columngross_ammount" msprop:Generator_UserColumnName="gross_ammount" type="xs:string" minOccurs="0" />
+              <xs:element name="net_ammount" msprop:Generator_ColumnPropNameInRow="net_ammount" msprop:Generator_ColumnPropNameInTable="net_ammountColumn" msprop:Generator_ColumnVarNameInTable="columnnet_ammount" msprop:Generator_UserColumnName="net_ammount" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

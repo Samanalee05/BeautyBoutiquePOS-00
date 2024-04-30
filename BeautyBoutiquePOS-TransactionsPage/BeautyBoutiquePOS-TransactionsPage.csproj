@@ -222,6 +222,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Data Set\DataSetCheckout.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCheckout.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data Set\DataSetProducts.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -294,6 +299,12 @@
     </Compile>
     <Compile Include="Views\User Controls\Report Views\newCheckoutReportView.Designer.cs">
       <DependentUpon>newCheckoutReportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\User Controls\Report Views\salesDataTodayReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\User Controls\Report Views\salesDataTodayReportViewer.Designer.cs">
+      <DependentUpon>salesDataTodayReportViewer.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\User Controls\Reports.cs">
       <SubType>UserControl</SubType>
@@ -395,6 +406,7 @@
     <EmbeddedResource Include="Reports\Checkout.rdlc" />
     <EmbeddedResource Include="Reports\Inventory.rdlc" />
     <EmbeddedResource Include="Reports\newCheckout.rdlc" />
+    <EmbeddedResource Include="Reports\salseToday.rdlc" />
     <EmbeddedResource Include="Views\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -424,6 +436,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\User Controls\Report Views\newCheckoutReportView.resx">
       <DependentUpon>newCheckoutReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\User Controls\Report Views\salesDataTodayReportViewer.resx">
+      <DependentUpon>salesDataTodayReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\User Controls\Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
@@ -488,6 +503,17 @@
     </None>
     <None Include="Data Set\DataSet2.xss">
       <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Data Set\DataSetCheckout.xsc">
+      <DependentUpon>DataSetCheckout.xsd</DependentUpon>
+    </None>
+    <None Include="Data Set\DataSetCheckout.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCheckout.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data Set\DataSetCheckout.xss">
+      <DependentUpon>DataSetCheckout.xsd</DependentUpon>
     </None>
     <None Include="Data Set\DataSetProducts.xsc">
       <DependentUpon>DataSetProducts.xsd</DependentUpon>

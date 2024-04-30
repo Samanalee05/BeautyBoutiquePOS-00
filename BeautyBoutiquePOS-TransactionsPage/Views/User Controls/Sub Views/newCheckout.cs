@@ -23,6 +23,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         public decimal cash;
         public decimal totalDiscount;
         private decimal netGross;
+        public decimal netAmmount;
         private Cash cashForm1;
         private Card cardForm1;
         private Checkout checkout1;
@@ -110,6 +111,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
 
             netammountText.Text = totalPrice1.ToString();
+
+            textBoxNetAmmount.Text = (totalPrice1 + totalDiscount).ToString();
 
             netGross = totalPrice1;
         }
@@ -235,13 +238,13 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
             {
                 connection.Open();
-                string query = "INSERT INTO checkoutLine (date, customer, total, discount_percentage, itemQTY) VALUES (@Date, @Customer, @Total, @Discount, @ItemQty)";
+                string query = "INSERT INTO checkoutLine (date, customer, total, discount, itemQTY) VALUES (@Date, @Customer, @Total, @Discount, @ItemQty)";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Date", formattedDate);
                     command.Parameters.AddWithValue("@Customer", customerName);
                     command.Parameters.AddWithValue("@Total", netGross);
-                    command.Parameters.AddWithValue("@Discount", discountTotal);
+                    command.Parameters.AddWithValue("@Discount", textBoxTotalDiscount.Text);
                     command.Parameters.AddWithValue("@ItemQty", totalQty);
                     int rowsAffected = command.ExecuteNonQuery();
 
@@ -256,7 +259,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                         }
                 }
 
-                string query1 = "INSERT INTO checkout (date, customer, total, discount, itemQTY) VALUES (@Date, @Customer, @Total, @Discount, @ItemQty)";
+                string query1 = "INSERT INTO checkout (date, customer, total, discount, itemQTY ,gross_ammount ,net_ammount) VALUES (@Date, @Customer, @Total, @Discount, @ItemQty ,@GrossAmmount ,@NetAmmount)";
                 using (MySqlCommand command = new MySqlCommand(query1, connection))
                 {
                     command.Parameters.AddWithValue("@Date", formattedDate);
@@ -264,6 +267,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                     command.Parameters.AddWithValue("@Total", netGross);
                     command.Parameters.AddWithValue("@Discount", totalDiscount);
                     command.Parameters.AddWithValue("@ItemQty", totalQty);
+                    command.Parameters.AddWithValue("@GrossAmmount", textBoxNetAmmount.Text);
+                    command.Parameters.AddWithValue("@NetAmmount", netammountText.Text);
                     int rowsAffected = command.ExecuteNonQuery();
 
                     if (rowsAffected > 0)
@@ -401,6 +406,28 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         private void button4_Click(object sender, EventArgs e)
         {
             new newCheckoutReportView().ShowDialog();
+        }
+
+        private void newCheckout_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
+
+            string deleteQuery = "DELETE FROM productsLine";
+            using (MySqlCommand deleteCommand = new MySqlCommand(deleteQuery, connection))
+            {
+                connection.Open();
+                int rowsAffected = deleteCommand.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    RefreshDataGrid();
+                }
+                else
+                {
+                    //MessageBox.Show("No data found in productsLine table.");
+                }
+            }
+
         }
     }
 }

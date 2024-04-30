@@ -94,7 +94,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
                     if (this.formName == "newOrder")
                     {
-                        this.newOrder.refreshFormData(row.Cells[1].Value.ToString(), row.Cells[6].Value.ToString());
+                        this.newOrder.refreshFormData(row.Cells[1].Value.ToString(), row.Cells[6].Value.ToString(), row.Cells[2].Value.ToString());
 
                         this.Close();
                     }
