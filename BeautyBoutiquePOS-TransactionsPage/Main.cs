@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 
 using BeautyBoutiquePOS_TransactionsPage.Views.User_Controls;
+using BeautyBoutiquePOS_TransactionsPage.Views;
 
 namespace BeautyBoutiquePOS_TransactionsPage
 {
@@ -279,6 +280,20 @@ namespace BeautyBoutiquePOS_TransactionsPage
                 MessageBox.Show("permission denied!");
             }
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+            // Hide the main form
+            this.Hide();
+
+            // Show the login form
+            new Login().Show();
         }
     }
 }
