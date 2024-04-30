@@ -1,4 +1,5 @@
 ﻿using BeautyBoutiquePOS_TransactionsPage.Class;
+using BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Report_Views;
 using BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views.Payments;
 using MySql.Data.MySqlClient;
 using System;
@@ -99,18 +100,20 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                 if (row.Cells["price"].Value != null && decimal.TryParse(row.Cells["price"].Value.ToString(), out decimal totalPrice))
                 {
                     netGrossAmount += totalPrice;
-                    totalPrice1 = totalPrice;
                 }
 
                 if (row.Cells["total"].Value != null && decimal.TryParse(row.Cells["total"].Value.ToString(), out decimal total))
                 {
-                    textBoxTotalDiscount.Text = (totalPrice1 - total).ToString();
+                    totalPrice1 += total;
+                    MessageBox.Show("Price :"+ netGrossAmount.ToString());
+                    MessageBox.Show("Total :"+ totalPrice1.ToString());
+                    textBoxTotalDiscount.Text = totalDiscount.ToString();
                 }
             }
 
-            netammountText.Text = netGrossAmount.ToString();
+            netammountText.Text = totalPrice1.ToString();
 
-            netGross = netGrossAmount;
+            netGross = totalPrice1;
         }
 
         private void DeleteAllProductsLineDataAndUpdateProductQty()
@@ -247,12 +250,34 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                     if (rowsAffected > 0)
                         {
                             MessageBox.Show("Checkout successfully.");
-                            this.Close();
+                            
                         }
                         else
                         {
                             MessageBox.Show("Error.");
                         }
+                }
+
+                string query1 = "INSERT INTO checkout (date, customer, total, discount_percentage, itemQTY) VALUES (@Date, @Customer, @Total, @Discount, @ItemQty)";
+                using (MySqlCommand command = new MySqlCommand(query1, connection))
+                {
+                    command.Parameters.AddWithValue("@Date", formattedDate);
+                    command.Parameters.AddWithValue("@Customer", customerName);
+                    command.Parameters.AddWithValue("@Total", netGross);
+                    command.Parameters.AddWithValue("@Discount", discountTotal);
+                    command.Parameters.AddWithValue("@ItemQty", totalQty);
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        new newCheckoutReportView().ShowDialog();
+                        //MessageBox.Show("Checkout successfully.");
+                        this.Close();
+                    }
+                    else
+                    {
+                        //MessageBox.Show("Error.");
+                    }
                 }
             }
         }
@@ -373,6 +398,11 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         private void label12_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new newCheckoutReportView().ShowDialog();
         }
     }
 }

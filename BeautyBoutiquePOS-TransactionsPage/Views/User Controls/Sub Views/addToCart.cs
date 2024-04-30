@@ -369,7 +369,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
                                 discountTotal = discountPrice * pqty;
 
-                                this.newCheckout1.totalDiscount = discountTotal;
+                                this.newCheckout1.totalDiscount += discountTotal;
                             }
                         }
                     }

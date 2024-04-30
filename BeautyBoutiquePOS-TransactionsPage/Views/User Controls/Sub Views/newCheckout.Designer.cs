@@ -83,6 +83,7 @@
             this.button4.TabIndex = 56;
             this.button4.Text = "Change Item QTY";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 

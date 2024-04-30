@@ -21,6 +21,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 
             LoadCheckoutData();
             LoadCustomerJoinData();
+            PopulatePieChart();
+            PopulateAreaChart();
         }
 
         private void LoadCheckoutData()
@@ -127,7 +129,61 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
         }
 
 
+        private void PopulatePieChart()
+        {
+            chart3.Series.Clear();
 
+            Series series = new Series("ProductQuantities");
+            series.ChartType = SeriesChartType.Pie;
+            series["PieLabelStyle"] = "Disabled";
+
+
+
+            using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
+            {
+                string query = "SELECT name, qty, id FROM products";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string productName = reader["name"].ToString();
+                    int quantity = Convert.ToInt32(reader["qty"]);
+                    series.Points.AddXY(productName, quantity);
+                }
+            }
+            chart3.Series.Add(series);
+        }
+
+        private void PopulateAreaChart()
+        {
+            chart4.Series.Clear();
+            chart4.ChartAreas.Clear();
+
+            ChartArea chartArea = new ChartArea("ChartArea");
+
+            chart4.ChartAreas.Add(chartArea);
+
+            Series series = new Series("Total By Day");
+            series.ChartType = SeriesChartType.Area;
+
+            using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
+            {
+                string query = "SELECT date, SUM(total) AS total FROM checkoutLine GROUP BY date";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                connection.Open();
+                MySqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string date = reader["date"].ToString();
+                    double total = Convert.ToDouble(reader["total"]);
+                    series.Points.AddXY(date, total);
+                }
+            }
+            chart4.Series.Add(series);
+        }
 
     }
 }

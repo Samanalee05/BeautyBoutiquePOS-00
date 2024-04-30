@@ -82,7 +82,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 
         public void LoadProductData()
         {
-            string query = "SELECT id, name, description, discount_percentage, price, category FROM products";
+            string query = "SELECT * FROM products";
 
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
             {
