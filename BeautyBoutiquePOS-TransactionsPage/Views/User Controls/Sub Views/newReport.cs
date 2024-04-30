@@ -18,9 +18,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views.Payme
         {
             InitializeComponent();
 
-            //reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
-            //reportViewer1.ZoomPercent = 100;
-            //reportViewer1.ZoomMode = ZoomMode.Percent;
+
+            reportViewer1.ZoomMode = ZoomMode.PageWidth;
         }
 
         private void newReport_Load(object sender, EventArgs e)

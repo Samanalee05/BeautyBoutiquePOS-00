@@ -6,16 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.49479in</Width>
+              <Width>2.67969in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.49479in</Width>
+              <Width>2.67969in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.49479in</Width>
+              <Width>2.67969in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.49479in</Width>
+              <Width>2.67969in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -303,9 +303,9 @@
         </TablixRowHierarchy>
         <DataSetName>Checkout</DataSetName>
         <Top>0.14236in</Top>
-        <Left>0.4566in</Left>
+        <Left>0.09028in</Left>
         <Height>0.85764in</Height>
-        <Width>9.97917in</Width>
+        <Width>10.71875in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -345,7 +345,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.0868in</Top>
-          <Left>3.59722in</Left>
+          <Left>7.57986in</Left>
           <Height>0.32292in</Height>
           <Width>3.22917in</Width>
           <Style>
@@ -383,7 +383,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
           <Top>0.4375in</Top>
-          <Left>3.59722in</Left>
+          <Left>7.57986in</Left>
           <Height>0.27083in</Height>
           <Width>1.54167in</Width>
           <ZIndex>1</ZIndex>
@@ -549,7 +549,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox3</rd:DefaultName>
           <Top>1.11681in</Top>
-          <Left>5.10764in</Left>
+          <Left>8.98264in</Left>
           <Height>0.25in</Height>
           <Width>0.91667in</Width>
           <ZIndex>6</ZIndex>
@@ -584,7 +584,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox4</rd:DefaultName>
           <Top>1.11681in</Top>
-          <Left>6.07986in</Left>
+          <Left>9.95486in</Left>
           <Height>0.25in</Height>
           <Width>0.85417in</Width>
           <ZIndex>7</ZIndex>
@@ -601,7 +601,7 @@
         <Line Name="Line1">
           <Top>1.43625in</Top>
           <Height>0in</Height>
-          <Width>7.15501in</Width>
+          <Width>10.95709in</Width>
           <ZIndex>8</ZIndex>
           <Style>
             <Border>

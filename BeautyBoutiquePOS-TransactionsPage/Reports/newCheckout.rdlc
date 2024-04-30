@@ -11,9 +11,11 @@
               <TextRun>
                 <Value>Beauty Boutique</Value>
                 <Style>
+                  <FontStyle>Italic</FontStyle>
                   <FontFamily>Segoe UI</FontFamily>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
+                  <Color>HotPink</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -23,9 +25,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Left>3.59722in</Left>
+        <Left>5.31597in</Left>
         <Height>0.32292in</Height>
-        <Width>3.22917in</Width>
+        <Width>1.61806in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -60,8 +62,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.3507in</Top>
-        <Left>3.59722in</Left>
+        <Top>0.33681in</Top>
+        <Left>5.31597in</Left>
         <Height>0.27083in</Height>
         <Width>1.54167in</Width>
         <ZIndex>1</ZIndex>
@@ -114,7 +116,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>00000120</Value>
+                <Value>=First(Fields!id.Value, "DataSet2")</Value>
                 <Style>
                   <FontSize>11pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -130,7 +132,7 @@
         <Top>1.03001in</Top>
         <Left>1.0625in</Left>
         <Height>0.25in</Height>
-        <Width>0.85417in</Width>
+        <Width>1.02084in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -181,7 +183,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>30/04/2024</Value>
+                <Value>=First(Fields!date.Value, "DataSet2")</Value>
                 <Style>
                   <FontSize>11pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -197,7 +199,7 @@
         <Top>1.03001in</Top>
         <Left>3.59722in</Left>
         <Height>0.25in</Height>
-        <Width>0.85417in</Width>
+        <Width>0.96875in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -291,22 +293,22 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.23264in</Width>
+              <Width>1.26194in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.23264in</Width>
+              <Width>1.26194in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.23264in</Width>
+              <Width>1.26194in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.23264in</Width>
+              <Width>1.26194in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.23264in</Width>
+              <Width>1.26194in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.23264in</Width>
+              <Width>1.26194in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -442,7 +444,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>discount percentage</Value>
+                              <Value>discount</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -620,21 +622,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="discount_percentage">
+                    <Textbox Name="discount">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!discount_percentage.Value</Value>
+                              <Value>=Fields!discount.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>discount_percentage</rd:DefaultName>
+                      <rd:DefaultName>discount</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -702,21 +704,23 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DataSet1</DataSetName>
-        <Top>1.41889in</Top>
-        <Left>0.0625in</Left>
+        <DataSetName>DataSet2</DataSetName>
+        <Top>1.4675in</Top>
         <Height>0.5in</Height>
-        <Width>7.39583in</Width>
+        <Width>7.57167in</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
+          <BackgroundColor>CornflowerBlue</BackgroundColor>
         </Style>
       </Tablix>
     </ReportItems>
     <Height>3.71875in</Height>
-    <Style />
+    <Style>
+      <BackgroundColor>LightGrey</BackgroundColor>
+    </Style>
   </Body>
   <Width>7.57167in</Width>
   <Page>
@@ -737,7 +741,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="DataSet2">
       <Query>
         <DataSourceName>DataSet2</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -759,8 +763,8 @@
           <DataField>total</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="discount_percentage">
-          <DataField>discount_percentage</DataField>
+        <Field Name="discount">
+          <DataField>discount</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="itemQTY">

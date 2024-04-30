@@ -105,8 +105,6 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                 if (row.Cells["total"].Value != null && decimal.TryParse(row.Cells["total"].Value.ToString(), out decimal total))
                 {
                     totalPrice1 += total;
-                    MessageBox.Show("Price :"+ netGrossAmount.ToString());
-                    MessageBox.Show("Total :"+ totalPrice1.ToString());
                     textBoxTotalDiscount.Text = totalDiscount.ToString();
                 }
             }
@@ -258,13 +256,13 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                         }
                 }
 
-                string query1 = "INSERT INTO checkout (date, customer, total, discount_percentage, itemQTY) VALUES (@Date, @Customer, @Total, @Discount, @ItemQty)";
+                string query1 = "INSERT INTO checkout (date, customer, total, discount, itemQTY) VALUES (@Date, @Customer, @Total, @Discount, @ItemQty)";
                 using (MySqlCommand command = new MySqlCommand(query1, connection))
                 {
                     command.Parameters.AddWithValue("@Date", formattedDate);
                     command.Parameters.AddWithValue("@Customer", customerName);
                     command.Parameters.AddWithValue("@Total", netGross);
-                    command.Parameters.AddWithValue("@Discount", discountTotal);
+                    command.Parameters.AddWithValue("@Discount", totalDiscount);
                     command.Parameters.AddWithValue("@ItemQty", totalQty);
                     int rowsAffected = command.ExecuteNonQuery();
 

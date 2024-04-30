@@ -287,7 +287,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Data_Set {
             
             private global::System.Data.DataColumn columntotal;
             
-            private global::System.Data.DataColumn columndiscount_percentage;
+            private global::System.Data.DataColumn columndiscount;
             
             private global::System.Data.DataColumn columnitemQTY;
             
@@ -358,9 +358,9 @@ namespace BeautyBoutiquePOS_TransactionsPage.Data_Set {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn discount_percentageColumn {
+            public global::System.Data.DataColumn discountColumn {
                 get {
-                    return this.columndiscount_percentage;
+                    return this.columndiscount;
                 }
             }
             
@@ -409,14 +409,14 @@ namespace BeautyBoutiquePOS_TransactionsPage.Data_Set {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public checkoutLineRow AddcheckoutLineRow(string id, string date, string customer, string total, string discount_percentage, string itemQTY) {
+            public checkoutLineRow AddcheckoutLineRow(string id, string date, string customer, string total, string discount, string itemQTY) {
                 checkoutLineRow rowcheckoutLineRow = ((checkoutLineRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         id,
                         date,
                         customer,
                         total,
-                        discount_percentage,
+                        discount,
                         itemQTY};
                 rowcheckoutLineRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowcheckoutLineRow);
@@ -444,7 +444,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Data_Set {
                 this.columndate = base.Columns["date"];
                 this.columncustomer = base.Columns["customer"];
                 this.columntotal = base.Columns["total"];
-                this.columndiscount_percentage = base.Columns["discount_percentage"];
+                this.columndiscount = base.Columns["discount"];
                 this.columnitemQTY = base.Columns["itemQTY"];
             }
             
@@ -459,8 +459,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Data_Set {
                 base.Columns.Add(this.columncustomer);
                 this.columntotal = new global::System.Data.DataColumn("total", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntotal);
-                this.columndiscount_percentage = new global::System.Data.DataColumn("discount_percentage", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndiscount_percentage);
+                this.columndiscount = new global::System.Data.DataColumn("discount", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndiscount);
                 this.columnitemQTY = new global::System.Data.DataColumn("itemQTY", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnitemQTY);
             }
@@ -669,17 +669,17 @@ namespace BeautyBoutiquePOS_TransactionsPage.Data_Set {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string discount_percentage {
+            public string discount {
                 get {
                     try {
-                        return ((string)(this[this.tablecheckoutLine.discount_percentageColumn]));
+                        return ((string)(this[this.tablecheckoutLine.discountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'discount_percentage\' in table \'checkoutLine\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'discount\' in table \'checkoutLine\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablecheckoutLine.discount_percentageColumn] = value;
+                    this[this.tablecheckoutLine.discountColumn] = value;
                 }
             }
             
@@ -749,14 +749,14 @@ namespace BeautyBoutiquePOS_TransactionsPage.Data_Set {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isdiscount_percentageNull() {
-                return this.IsNull(this.tablecheckoutLine.discount_percentageColumn);
+            public bool IsdiscountNull() {
+                return this.IsNull(this.tablecheckoutLine.discountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setdiscount_percentageNull() {
-                this[this.tablecheckoutLine.discount_percentageColumn] = global::System.Convert.DBNull;
+            public void SetdiscountNull() {
+                this[this.tablecheckoutLine.discountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
