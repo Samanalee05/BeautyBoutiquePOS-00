@@ -28,7 +28,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Report_Views
 
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", mysql.Data($"select * from checkout", "checkout").Tables[0]));
-            reportViewer1.LocalReport.ReportPath = $"C:\\Users\\samanla\\Documents\\GitHub\\BeautyBoutiquePOS-00\\BeautyBoutiquePOS-TransactionsPage\\Reports\\newCheckout.rdlc";
+            reportViewer1.LocalReport.ReportPath = @"Reports\\newCheckout.rdlc";
             reportViewer1.RefreshReport();
         }
 
