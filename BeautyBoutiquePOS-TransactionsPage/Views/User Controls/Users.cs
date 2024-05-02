@@ -100,7 +100,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
         {
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
 
-            string query = "SELECT * FROM users";
+            string query = "SELECT id,nic,name,address,contact,type,date_join  FROM users";
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
 
