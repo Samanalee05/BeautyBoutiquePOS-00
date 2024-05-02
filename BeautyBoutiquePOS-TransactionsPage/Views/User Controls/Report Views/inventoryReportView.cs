@@ -21,7 +21,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Report_Views
             reportViewer1.ZoomMode = ZoomMode.PageWidth;
         }
 
-        private void inventoryReportView_Load(object sender, EventArgs e)
+        private void inventoryReportView_Load(object sender, EventArgs e) // load data to inventory data report 
         {
 
             reportViewer1.LocalReport.DataSources.Clear();

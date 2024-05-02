@@ -69,7 +69,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
         public void RefreshDataGrid() // Refresh Data Table 
         {
-            string query = "SELECT * FROM productsLine";
+            string query = "SELECT id,name,description,qty,discount,price,total FROM productsLine";
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
             {
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection))

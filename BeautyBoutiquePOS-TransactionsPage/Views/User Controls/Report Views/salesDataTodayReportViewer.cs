@@ -21,7 +21,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Report_Views
                 
         }
 
-        private void salesDataTodayReportViewer_Load(object sender, EventArgs e)
+        private void salesDataTodayReportViewer_Load(object sender, EventArgs e) // load data to checkoutDataToday report
         {
 
             reportViewer1.LocalReport.DataSources.Clear();

@@ -19,8 +19,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
         {
             InitializeComponent();
 
-            LoadCheckoutData();
             LoadCustomerJoinData();
+            LoadCheckoutData();
             PopulatePieChart();
             PopulateAreaChart();
         }
@@ -81,11 +81,12 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
         private void LoadCustomerJoinData() // load customer join data to chart1 for this month
         {
             DateTime currentDate = DateTime.Now;
-            string currentMonth = currentDate.ToString("yyyy-MM");
+            DateTime firstDayOfMonth = new DateTime(currentDate.Year, currentDate.Month, 1);
+            DateTime lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
 
             string query = "SELECT date_join, COUNT(*) AS customerCount " +
                            "FROM customers " +
-                           "WHERE DATE_FORMAT(date_join, '%Y-%m') = @CurrentMonth " +
+                           "WHERE date_join >= @FirstDayOfMonth AND date_join <= @LastDayOfMonth " + 
                            "GROUP BY date_join " +
                            "ORDER BY date_join ASC";
 
@@ -95,7 +96,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
                 {
                     try
                     {
-                        command.Parameters.AddWithValue("@CurrentMonth", currentMonth);
+                        command.Parameters.AddWithValue("@FirstDayOfMonth", firstDayOfMonth);
+                        command.Parameters.AddWithValue("@LastDayOfMonth", lastDayOfMonth);
 
                         connection.Open();
 
@@ -109,7 +111,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
                         chart1.Series.Clear();
 
                         Series series = new Series("Customers");
-                        series.ChartType = SeriesChartType.StackedColumn;
+                        series.ChartType = SeriesChartType.Column;
                         series["PixelPointWidth"] = "17";
                         series.XValueMember = "date_join";
                         series.YValueMembers = "customerCount";

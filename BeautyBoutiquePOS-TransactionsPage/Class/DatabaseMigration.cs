@@ -10,7 +10,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Class
 {
     internal class DatabaseMigration
     {
-        public static void MigrateDatabase()
+        public static void MigrateDatabase() //use to migrate db to another database
         {
             string[] tableCheckQueries = {
             "CREATE TABLE IF NOT EXISTS`categories`  (`id` int NOT NULL AUTO_INCREMENT,`name` varchar(2555) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,`description` varchar(2555) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,PRIMARY KEY (`id`) USING BTREE) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;",

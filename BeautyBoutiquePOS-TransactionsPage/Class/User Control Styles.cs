@@ -12,7 +12,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Class
 {
     internal class UserControlStyles
     {
-        public void CustomizeDataGridView(DataGridView  dataGridView)
+        public void CustomizeDataGridView(DataGridView  dataGridView) // data grid view styles
         {
             dataGridView.BorderStyle = BorderStyle.None;
             dataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
@@ -31,7 +31,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Class
             dataGridView.RowTemplate.Height = 40;
         }
 
-        public Button RoundedBtn(Button btn)
+        public Button RoundedBtn(Button btn) // btn styles
         {
             Button button = btn;
             using (GraphicsPath GraphPath = new GraphicsPath())
@@ -61,7 +61,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Class
         }
 
 
-        public void RoundCornerPanels(Control control, int cornerRadius)
+        public void RoundCornerPanels(Control control, int cornerRadius)// round corner syles for panels
         {
 
             GraphicsPath path = new GraphicsPath();
@@ -84,7 +84,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Class
             control.Region = new Region(path);
         }
 
-        public void ApplyTextBoxStyles(TextBox textBox)
+        public void ApplyTextBoxStyles(TextBox textBox) // text box styles
         {
             Color borderColor = Color.Gray;
 

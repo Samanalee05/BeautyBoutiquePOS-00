@@ -97,7 +97,7 @@ namespace BeautyBoutiquePOS_TransactionsPage
                 windowPnl.Controls.Add(Product); //load product user form to window panel
             } else
             {
-                MessageBox.Show("permission denied!");
+                MessageBox.Show("permission denied!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -113,7 +113,7 @@ namespace BeautyBoutiquePOS_TransactionsPage
             }
             else
             {
-                MessageBox.Show("permission denied!");
+                MessageBox.Show("permission denied!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -128,7 +128,7 @@ namespace BeautyBoutiquePOS_TransactionsPage
             }
             else
             {
-                MessageBox.Show("permission denied!");
+                MessageBox.Show("permission denied!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -139,6 +139,9 @@ namespace BeautyBoutiquePOS_TransactionsPage
                 ClearContentArea();
                 var Checkout = new Checkout(userType);
                 windowPnl.Controls.Add(Checkout);
+            } else
+            {
+                MessageBox.Show("permission denied!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -153,7 +156,7 @@ namespace BeautyBoutiquePOS_TransactionsPage
             }
             else
             {
-                MessageBox.Show("permission denied!");
+                MessageBox.Show("permission denied!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
@@ -183,7 +186,7 @@ namespace BeautyBoutiquePOS_TransactionsPage
             }
             else
             {
-                MessageBox.Show("permission denied!");
+                MessageBox.Show("permission denied!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -277,7 +280,7 @@ namespace BeautyBoutiquePOS_TransactionsPage
             }
             else
             {
-                MessageBox.Show("permission denied!");
+                MessageBox.Show("permission denied!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }

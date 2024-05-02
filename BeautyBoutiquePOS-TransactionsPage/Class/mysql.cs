@@ -19,7 +19,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Class
         public static DataTable DataTable;
         public static DataSet DataSet;
 
-        public static DataTable GetData(string query)
+        public static DataTable GetData(string query) // get data from mysql db and return data tbl
         {
            DataTable dt = new DataTable();
 
@@ -30,7 +30,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Class
             return dt;
         }
 
-        public static DataSet Data(string query,string tbl)
+        public static DataSet Data(string query,string tbl) // get data from mysql db and return data set
         {
             DataSet ds = new DataSet();
             using (adapter = new MySqlDataAdapter(query,connection))

@@ -38,9 +38,13 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             deleteButtonColumn.HeaderText = "Delete";
             deleteButtonColumn.Text = "Delete";
             deleteButtonColumn.UseColumnTextForButtonValue = true;
+
+
             dataGridViewProducts.Columns.Add(deleteButtonColumn);
             deleteButtonColumn.Width = 100;
             styles.RoundedBtn(button1);
+
+
 
             foreach (DataGridViewColumn column in dataGridViewProducts.Columns)
             {
@@ -114,7 +118,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
         {
             if (e.ColumnIndex == dataGridViewProducts.Columns["Delete"].Index && e.RowIndex >= 0)
             {
-                int productId = Convert.ToInt32(dataGridViewProducts.Rows[e.RowIndex].Cells["id"].Value);
+                string productId = Convert.ToString(dataGridViewProducts.Rows[e.RowIndex].Cells["id"].Value);
 
                 if (this.userType1 == "Admin")
                 {
@@ -126,7 +130,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void DeleteProduct(int productId) // delete product from product table 
+        private void DeleteProduct(string productId) // delete product from product table 
         {
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
             string deleteQuery = "DELETE FROM products WHERE id = @ProductId";

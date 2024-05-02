@@ -16,9 +16,9 @@ namespace BeautyBoutiquePOS_TransactionsPage.Class
         private const string Password = "AVNS_k-Wrpa4HswdWcem3LB_";
 
 
-        public static string GetConnectionString()
+        public static string GetConnectionString() // return mysql connection string created using provided data
         {
-            return $"Server={Server};Port={Port};Database={Database};Uid={Username};Pwd={Password};";
+            return $"Server={Server};Port={Port};Database={Database};Uid={Username};Pwd={Password};"; 
         }
     }
 }

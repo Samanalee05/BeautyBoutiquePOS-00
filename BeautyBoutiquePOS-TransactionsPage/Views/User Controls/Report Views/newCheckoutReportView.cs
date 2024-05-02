@@ -22,7 +22,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Report_Views
             reportViewer1.ZoomMode = ZoomMode.PageWidth;
         }
 
-        private void newCheckoutReportView_Load(object sender, EventArgs e)
+        private void newCheckoutReportView_Load(object sender, EventArgs e) // load checkout data to newCheckout report
         {
             //Textbox8.Text = "inv00003";
 
@@ -32,10 +32,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Report_Views
             reportViewer1.RefreshReport();
         }
 
-        private void newCheckoutReportView_FormClosing(object sender, FormClosingEventArgs e)
+        private void newCheckoutReportView_FormClosing(object sender, FormClosingEventArgs e) // claer checkout tbl after report close
         {
-            
-
             // Create connection
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
             {

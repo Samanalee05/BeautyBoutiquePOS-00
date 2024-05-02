@@ -26,9 +26,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         }
 
 
-        private void AddProductToDatabase() // add product to product tbl
+        private void AddProductToDatabase()
         {
-
             string name = txtProductName.Text;
             string description = txtDescription.Text;
             double qty = 0;
@@ -36,13 +35,44 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             float price = float.Parse(txtPrice.Text);
             string category = txtCategory.SelectedItem.ToString();
 
+            // Retrieve the last product ID from the database
+            string lastProductId;
+            string queryLastId = "SELECT MAX(SUBSTRING(id, 2)) FROM products";
+            using (MySqlConnection connectionLastId = new MySqlConnection(DatabaseConnection.GetConnectionString()))
+            {
+                using (MySqlCommand commandLastId = new MySqlCommand(queryLastId, connectionLastId))
+                {
+                    try
+                    {
+                        connectionLastId.Open();
+                        object result = commandLastId.ExecuteScalar();
+                        if (result != DBNull.Value)
+                        {
+                            int lastId = Convert.ToInt32(result);
+                            lastProductId = "P" + (lastId + 1).ToString("D4");
+                        }
+                        else
+                        {
+                            lastProductId = "P0001";
+                        }
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show("Error retrieving last product ID: " + ex.Message);
+                        return;
+                    }
+                }
+            }
 
-            string query = "INSERT INTO products (name, description, qty, discount_percentage, price, category) VALUES (@Name, @Description, @Qty, @Discount, @Price, @Category)";
+            // Insert the new product with the generated ID into the database
+            string query = "INSERT INTO products (id, name, description, qty, discount_percentage, price, category) " +
+                           "VALUES (@Id, @Name, @Description, @Qty, @Discount, @Price, @Category)";
 
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
             {
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
+                    command.Parameters.AddWithValue("@Id", lastProductId);
                     command.Parameters.AddWithValue("@Name", name);
                     command.Parameters.AddWithValue("@Description", description);
                     command.Parameters.AddWithValue("@Qty", qty);
@@ -73,6 +103,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                 }
             }
         }
+
 
         private void LoadCategories() //load categories data from db 
         {

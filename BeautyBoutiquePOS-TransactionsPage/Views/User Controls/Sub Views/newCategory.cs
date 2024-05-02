@@ -22,31 +22,54 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             InitializeComponent();
         }
 
-        private void saveBtn_Click(object sender, EventArgs e) // save btn click add new categorie to tbl
+        private void saveBtn_Click(object sender, EventArgs e)
         {
             string categoryName = textBoxCategoryName.Text;
             string categoryDescription = textBoxCategoryDescription.Text;
 
+            // Retrieve the last category ID from the database
+            string lastCategoryId;
+            string queryLastId = "SELECT MAX(SUBSTRING(id, 3)) FROM categories";
+            using (MySqlConnection connectionLastId = new MySqlConnection(DatabaseConnection.GetConnectionString()))
+            {
+                using (MySqlCommand commandLastId = new MySqlCommand(queryLastId, connectionLastId))
+                {
+                    try
+                    {
+                        connectionLastId.Open();
+                        object result = commandLastId.ExecuteScalar();
+                        if (result != DBNull.Value)
+                        {
+                            int lastId = Convert.ToInt32(result);
+                            lastCategoryId = "CA" + (lastId + 1).ToString("D4");
+                        }
+                        else
+                        {
+                            lastCategoryId = "CA0001";
+                        }
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show("Error retrieving last category ID: " + ex.Message);
+                        return;
+                    }
+                }
+            }
 
-            string query = "INSERT INTO categories (name, description) VALUES (@Name, @Description)";
-
-
+            // Insert the new category with the generated ID into the database
+            string query = "INSERT INTO categories (id, name, description) VALUES (@Id, @Name, @Description)";
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
             {
-
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-
+                    command.Parameters.AddWithValue("@Id", lastCategoryId);
                     command.Parameters.AddWithValue("@Name", categoryName);
                     command.Parameters.AddWithValue("@Description", categoryDescription);
 
                     try
                     {
                         connection.Open();
-
-
                         int rowsAffected = command.ExecuteNonQuery();
-
 
                         if (rowsAffected > 0)
                         {
@@ -66,6 +89,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                 }
             }
         }
+
 
         private void button1_Click(object sender, EventArgs e) // cancel btn click
         {
