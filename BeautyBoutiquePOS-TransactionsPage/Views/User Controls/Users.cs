@@ -41,7 +41,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             
         }
 
-        private void dataGridViewCellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewCellContentClick(object sender, DataGridViewCellEventArgs e) // delete btn click 
         {
             if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
             {
@@ -59,7 +59,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void Delete(String nic)
+        private void Delete(String nic) // delete user from db
         {
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
             string deleteQuery = "DELETE FROM users WHERE nic = @Nic";
@@ -91,12 +91,12 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // new user btn click
         {
             new newUser(this).Show();
         }
 
-        public void LoadUsers()
+        public void LoadUsers() // load user date from db without user name & password
         {
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
 

@@ -25,7 +25,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             textBoxTotal.ReadOnly = true;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e) // save btn click
         {
             if (this.function == "in")
             {
@@ -39,28 +39,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            CalculateDiscount();
-        }
-
-        private void CalculateDiscount()
-        {
-
-            if (double.TryParse(costTextBox.Text, out double cost) &&
-                double.TryParse(textBoxQty.Text, out double qty))
-            {
-
-                double totalCost = cost * qty;
-
-                textBoxTotal.Text = totalCost.ToString();
-            }
-            else
-            {
-                textBoxTotal.Text = "Invalid input";
-            }
-        }
-        private void InsertInventoryData(string function)
+        private void InsertInventoryData(string function) // insert inventory transaction data to tbl
         {
             int itemcode = Convert.ToInt32(textBoxItemCode.Text);
             double qty = Convert.ToDouble(textBoxQty.Text);
@@ -105,7 +84,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
 
 
-        private void UpdateProductQuantity()
+        private void UpdateProductQuantity() // update product qty from product tble inside db after inventory in
         {
             double qty = Convert.ToDouble(textBoxQty.Text);
             int itemcode = Convert.ToInt32(textBoxItemCode.Text);
@@ -145,7 +124,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
         }
 
-        private void UpdateProductQuantityOut()
+        private void UpdateProductQuantityOut() // update product qty from product tble inside db after inventory out
         {
             double qty = Convert.ToDouble(textBoxQty.Text);
             int itemcode = Convert.ToInt32(textBoxItemCode.Text);
@@ -186,40 +165,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         }
 
 
-
-        private Boolean checkProductExists()
-        {
-            int itemcode = Convert.ToInt32(textBoxItemCode.Text);
-
-            MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
-
-            string query = "SELECT * FROM   products WHERE id = @productId;";
-
-            using (MySqlCommand command = new MySqlCommand(query, connection))
-            {
-                connection.Open();
-
-                command.Parameters.AddWithValue("@productId", itemcode);
-
-                using (MySqlDataReader reader = command.ExecuteReader())
-                {
-                    if (reader.Read())
-                    {
-                        UpdateProductQuantity();
-
-                        return true;
-                    } else
-                    {
-                        MessageBox.Show("Add Product To Product Table First!");
-
-                        return false;
-                    }
-                }
-            }
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // cancel btn click
         {
             textBoxItemCode.Text = "";
             textBoxQty.Text = "";
@@ -227,13 +173,13 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             textBoxTotal.Text = "";
         }
 
-        private void textBoxItemCode_MouseClick(object sender, MouseEventArgs e)
+        private void textBoxItemCode_MouseClick(object sender, MouseEventArgs e) // textBoxItemCode click popup Select Product 
         {
             var selectProductForm = new SelectProduct("newOrder", this);
             selectProductForm.ShowDialog();
         }
 
-        public void refreshFormData(String itemCode,String cost,String name)
+        public void refreshFormData(String itemCode,String cost,String name) // set selected product data to text box
         {
             textBoxItemCode.Text = itemCode.ToString();
             //textBoxQty.Text = QTY.ToString();
@@ -241,14 +187,5 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             productName = name;
         }
 
-        private void newOrder_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxQty_TextChanged(object sender, EventArgs e)
-        {
-            CalculateDiscount();
-        }
     }
 }

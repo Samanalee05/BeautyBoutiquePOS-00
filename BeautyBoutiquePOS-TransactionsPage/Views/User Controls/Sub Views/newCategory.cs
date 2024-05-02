@@ -22,7 +22,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             InitializeComponent();
         }
 
-        private void saveBtn_Click(object sender, EventArgs e)
+        private void saveBtn_Click(object sender, EventArgs e) // save btn click add new categorie to tbl
         {
             string categoryName = textBoxCategoryName.Text;
             string categoryDescription = textBoxCategoryDescription.Text;
@@ -67,7 +67,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // cancel btn click
         {
             textBoxCategoryName.Text = "";
             textBoxCategoryDescription.Text = "";

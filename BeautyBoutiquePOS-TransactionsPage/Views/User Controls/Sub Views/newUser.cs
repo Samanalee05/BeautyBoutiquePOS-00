@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 {
@@ -26,12 +27,12 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             comboBox1.Items.Add("Cashier");
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e) // save btn click
         {
             InsertUser();
         }
 
-        private void InsertUser()
+        private void InsertUser() // add user to bd 
         {
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
 
@@ -74,6 +75,18 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             {
                 connection.Close();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e) // cancel btn click
+        {
+            textBoxNIC.Text = "";
+            textBoxName.Text = "";
+            textBoxAddress.Text = "";
+            textBoxContact.Text = "";
+            comboBox1.Text = "";
+            usernameTextBox.Text = "";
+            passwordTextBox.Text = "";
+
         }
     }
 }

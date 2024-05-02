@@ -80,7 +80,6 @@
             this.costTextBox.Name = "costTextBox";
             this.costTextBox.Size = new System.Drawing.Size(275, 22);
             this.costTextBox.TabIndex = 1;
-            this.costTextBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label2
             // 
@@ -163,7 +162,6 @@
             this.textBoxQty.Name = "textBoxQty";
             this.textBoxQty.Size = new System.Drawing.Size(281, 22);
             this.textBoxQty.TabIndex = 1;
-            this.textBoxQty.TextChanged += new System.EventHandler(this.textBoxQty_TextChanged);
             // 
             // label4
             // 
@@ -221,7 +219,6 @@
             this.Controls.Add(this.btnSave);
             this.Name = "newOrder";
             this.Text = "newOrder";
-            this.Load += new System.EventHandler(this.newOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

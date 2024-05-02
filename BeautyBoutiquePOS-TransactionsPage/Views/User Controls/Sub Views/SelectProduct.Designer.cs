@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.productGridView = new System.Windows.Forms.DataGridView();
             this.textProduct = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,15 +35,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.productGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(698, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 31);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // productGridView
             // 
@@ -61,7 +51,7 @@
             this.textProduct.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textProduct.Location = new System.Drawing.Point(249, 6);
             this.textProduct.Name = "textProduct";
-            this.textProduct.Size = new System.Drawing.Size(427, 28);
+            this.textProduct.Size = new System.Drawing.Size(530, 28);
             this.textProduct.TabIndex = 36;
             this.textProduct.TextChanged += new System.EventHandler(this.textProduct_TextChanged);
             // 
@@ -80,9 +70,9 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.textProduct);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(6, 6);
+            this.panel1.Location = new System.Drawing.Point(9, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(681, 40);
+            this.panel1.Size = new System.Drawing.Size(782, 40);
             this.panel1.TabIndex = 41;
             // 
             // SelectProduct
@@ -91,7 +81,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.productGridView);
             this.Name = "SelectProduct";
             this.Text = "SelectProduct";
@@ -103,8 +92,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView productGridView;
         private System.Windows.Forms.TextBox textProduct;
         private System.Windows.Forms.Label label1;

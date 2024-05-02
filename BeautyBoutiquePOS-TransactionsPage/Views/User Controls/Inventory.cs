@@ -33,35 +33,19 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             editButtonColumn.Width = 100;
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == dataGridView2.Columns["EditButton"].Index && e.RowIndex >= 0)
-            {
-                int rowIndex = e.RowIndex;
-                DataGridViewRow selectedRow = dataGridView2.Rows[rowIndex];
-
-
-                string[] rowDataArray = new string[selectedRow.Cells.Count];
-                for (int i = 0; i < selectedRow.Cells.Count; i++)
-                {
-                    rowDataArray[i] = selectedRow.Cells[i].Value.ToString();
-                }
-
-                editForm editForm = new editForm(this, rowDataArray);
-                editForm.ShowDialog();
-            }
-        }
-
-
-
-
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // in btn click 
         {
             newOrder newOrderForm = new newOrder(this, "in");
             newOrderForm.ShowDialog();
         }
 
-        public void LoadNewOrders()
+        private void button2_Click(object sender, EventArgs e) // out btn click
+        {
+            newOrder newOrderForm = new newOrder(this, "out");
+            newOrderForm.ShowDialog();
+        }
+
+        public void LoadNewOrders() // load inventory trasaction data from db
         {
             try
             {
@@ -83,7 +67,6 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 
                             dataGridView2.DataSource = dataTable;
 
-                            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
                         }
                     }
                 }
@@ -92,12 +75,6 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             {
                 MessageBox.Show("Error loading new orders: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            newOrder newOrderForm = new newOrder(this,"out");
-            newOrderForm.ShowDialog();
         }
     }
 }

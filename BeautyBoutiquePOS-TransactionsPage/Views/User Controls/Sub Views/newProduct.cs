@@ -74,7 +74,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
         }
 
-        private void LoadCategories() //load categories data form db 
+        private void LoadCategories() //load categories data from db 
         {
 
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());

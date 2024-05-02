@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(newCheckout));
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.labelCustomer = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -69,23 +68,13 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(271, 560);
+            this.button5.Location = new System.Drawing.Point(272, 504);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(164, 31);
             this.button5.TabIndex = 57;
             this.button5.Text = "Cancel and Start New";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(271, 495);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(164, 31);
-            this.button4.TabIndex = 56;
-            this.button4.Text = "Change Item QTY";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -125,7 +114,6 @@
             this.label12.Size = new System.Drawing.Size(102, 21);
             this.label12.TabIndex = 52;
             this.label12.Text = "Cash Recived";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // textGross
             // 
@@ -402,7 +390,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxTotalDiscount);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.labelCustomer);
             this.Controls.Add(this.label13);
@@ -425,7 +412,6 @@
             this.Name = "newCheckout";
             this.Text = "newCheckout";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.newCheckout_FormClosing);
-            this.Load += new System.EventHandler(this.newCheckout_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -440,7 +426,6 @@
         #endregion
 
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label labelCustomer;
         private System.Windows.Forms.Label label13;

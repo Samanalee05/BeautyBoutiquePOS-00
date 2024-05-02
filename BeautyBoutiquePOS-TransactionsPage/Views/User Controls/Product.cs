@@ -125,7 +125,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void DeleteProduct(int productId) // delete product form product table 
+        private void DeleteProduct(int productId) // delete product from product table 
         {
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
             string deleteQuery = "DELETE FROM products WHERE id = @ProductId";

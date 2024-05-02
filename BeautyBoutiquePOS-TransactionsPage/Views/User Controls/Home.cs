@@ -156,7 +156,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             chart3.Series.Add(series);
         }
 
-        private void PopulateAreaChart() // load data as total checkout value form checkout tbl to chart 4
+        private void PopulateAreaChart() // load data as total checkout value from checkout tbl to chart 4
         {
             chart4.Series.Clear();
             chart4.ChartAreas.Clear();

@@ -49,7 +49,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
         }
 
-        public void UpdateDataGridView()
+        public void UpdateDataGridView() // load available product from product db to data grid view
         {
             string query = "SELECT * FROM products";
 
@@ -80,7 +80,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
 
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) // select btn click from data gird view
         {
             if (e.RowIndex >= 0)
             {

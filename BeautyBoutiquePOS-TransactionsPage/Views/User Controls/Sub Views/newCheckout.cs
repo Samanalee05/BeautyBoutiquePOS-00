@@ -20,7 +20,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
     public partial class newCheckout : Form
     {
         public decimal balance;
-        public decimal cash;
+        public decimal cash = 0;
         public decimal totalDiscount;
         private decimal netGross;
         public decimal netAmmount;
@@ -61,12 +61,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
         }
 
-        private void newCheckout_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_Click(object sender, EventArgs e)
+        private void textBox1_Click(object sender, EventArgs e) // scan or enter textbox click
         {
             addToCart productForm = new addToCart("checkout",this);
             productForm.ShowDialog();
@@ -91,7 +86,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         }
 
 
-        private void CalculateNetGrossAmount()
+        private void CalculateNetGrossAmount() // calculae related trasactions
         {
             decimal netGrossAmount = 0;
             decimal totalPrice1 = 0;
@@ -117,7 +112,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             netGross = totalPrice1;
         }
 
-        private void DeleteAllProductsLineDataAndUpdateProductQty()
+        private void DeleteAllProductsLineDataAndUpdateProductQty() // delete tempry data form productLine tbl and update produts qty in products tbl in db
         {
 
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
@@ -171,12 +166,20 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // checkout btn click
         {
-            textGross.Text = balance.ToString();
-            DeleteAllProductsLineDataAndUpdateProductQty();
-            checkoutButton_Click(sender, e);
-            this.checkout1.LoadCheckoutRecordsForToday();
+            if(cash > 0)
+            {
+                textGross.Text = balance.ToString();
+                DeleteAllProductsLineDataAndUpdateProductQty();
+                checkoutButton_Click(sender, e);
+                this.checkout1.LoadCheckoutRecordsForToday();
+            }
+            else
+            {
+                MessageBox.Show("Make Payment First!");
+            }
+
         }
 
         private void cashBtn_CheckedChanged(object sender, EventArgs e)
@@ -184,21 +187,21 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
         }
 
-        private void cashBtn_Click(object sender, EventArgs e)
+        private void cashBtn_Click(object sender, EventArgs e) // cash radio btn click
         {
             Cash cashForm = new Cash(netGross,this);
             cashForm.ShowDialog();
             this.cashForm1 = cashForm;
         }
 
-        private void cardBtn_Click(object sender, EventArgs e)
+        private void cardBtn_Click(object sender, EventArgs e) // card radio btn click
         {
             Card cardForm = new Card(netGross);
             cardForm.ShowDialog();
             this.cardForm1 = cardForm;
         }
 
-        private void checkoutButton_Click(object sender, EventArgs e)
+        private void checkoutButton_Click(object sender, EventArgs e) // insert the checkout data to checkoutLine  and checkout tbl inside db
         {
 
             double totalQty = 0;
@@ -285,7 +288,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) // delete btn click new checkout window
         {
             if (e.ColumnIndex == dataGridView1.Columns["DeleteButton"].Index)
             {
@@ -304,7 +307,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
         }
 
-        private void DeleteProductLine(int id)
+        private void DeleteProductLine(int id) // delete related product form productLine 
         {
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
 
@@ -339,7 +342,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e) // empty the productLine tbl inside db one checkout success 
         {
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
 
@@ -361,7 +364,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
         }
 
-        public void calculateTotalDiscount()
+        public void calculateTotalDiscount() // calculate total discount of all product
         {
             double totalQty = 0;
             double discountTotal = 0;
@@ -398,17 +401,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
         }
 
-        private void label12_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            new newCheckoutReportView().ShowDialog();
-        }
-
-        private void newCheckout_FormClosing(object sender, FormClosingEventArgs e)
+        private void newCheckout_FormClosing(object sender, FormClosingEventArgs e) // empty productLine if newCheckout window closed
         {
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
 

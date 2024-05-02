@@ -30,13 +30,13 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // new checkout click
         {
             newCheckout checkoutForm = new newCheckout(this,this.userType);
             checkoutForm.ShowDialog();
         }
 
-        public void LoadCheckoutRecordsForToday()
+        public void LoadCheckoutRecordsForToday() // load all checkout records only for today
         {
             try
             {

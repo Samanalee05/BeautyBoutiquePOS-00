@@ -23,7 +23,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             this.customers = customers;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e) // save btn click add customer tble of db
         {
             string nic = textBoxNIC.Text;
             string name = textBoxName.Text;
@@ -73,7 +73,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // cancel btn click
         {
             textBoxName.Text = "";
             textBoxNIC.Text = "";

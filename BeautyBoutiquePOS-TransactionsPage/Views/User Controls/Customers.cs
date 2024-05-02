@@ -40,7 +40,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             customerGridView.CellContentClick += dataGridViewCellContentClick;
         }
 
-        private void filterData()
+        private void filterData() // filter data grid view data 
         {
             string filter = richTextBox1.Text;
             if (!string.IsNullOrEmpty(filter))
@@ -64,7 +64,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void dataGridViewCellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewCellContentClick(object sender, DataGridViewCellEventArgs e) // delete btn click
         {
             if (e.ColumnIndex == customerGridView.Columns["Delete"].Index && e.RowIndex >= 0)
             {
@@ -82,7 +82,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void Delete(String nic)
+        private void Delete(String nic) // delete customer from db
         {
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
             string deleteQuery = "DELETE FROM customers WHERE nic = @Nic";
@@ -114,13 +114,13 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // new customer btn click 
         {
             newCustomer customerForm = new newCustomer(this);
             customerForm.ShowDialog();
         }
 
-        public void LoadCustomers()
+        public void LoadCustomers() // load all customer from db to data grid view 
         {
             string query = "SELECT * FROM customers";
 
@@ -150,7 +150,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void richTextBox1_TextChanged(object sender, EventArgs e) // search box text entered
         {
             filterData();
         }

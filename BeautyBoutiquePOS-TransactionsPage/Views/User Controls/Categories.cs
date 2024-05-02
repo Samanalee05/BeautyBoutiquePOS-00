@@ -41,7 +41,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             dataGridViewCategories.CellContentClick += dataGridViewCellContentClick;
         }
 
-        private void filterData()
+        private void filterData() // filter categories data grid view data
         {
             string filter = richTextBox1.Text;
             if (!string.IsNullOrEmpty(filter))
@@ -65,7 +65,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        public void LoadCategories()
+        public void LoadCategories() // load all categories data from db
         {
             string query = "SELECT id, name, description FROM categories";
 
@@ -100,7 +100,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void dataGridViewCellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewCellContentClick(object sender, DataGridViewCellEventArgs e) // data grid view delte btn click
         {
             if (e.ColumnIndex == dataGridViewCategories.Columns["Delete"].Index && e.RowIndex >= 0)
             {
@@ -118,7 +118,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void Delete(String categoriesName)
+        private void Delete(String categoriesName) // delete categorie from db
         {
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
             string deleteQuery = "DELETE FROM categories WHERE name = @CategoriesName";
@@ -150,13 +150,13 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // new categorie btn click
         {
             newCategory categoryForm = new newCategory(this);
             categoryForm.ShowDialog();
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void richTextBox1_TextChanged(object sender, EventArgs e) // searchbox text entered
         {
             filterData();
         }
