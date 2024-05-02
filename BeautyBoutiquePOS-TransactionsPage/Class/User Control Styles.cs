@@ -36,22 +36,25 @@ namespace BeautyBoutiquePOS_TransactionsPage.Class
             Button button = btn;
             using (GraphicsPath GraphPath = new GraphicsPath())
             {
-                Rectangle Rect = button.ClientRectangle;
-                Rect.Width--;
-                Rect.Height--;
+                button.BackColor = Color.FromArgb(149, 73, 158); // Background color
+                button.ForeColor = Color.White; // Text color
+                button.Font = new Font("Arial", 12, FontStyle.Bold); // Font
+                button.FlatStyle = FlatStyle.Flat; // Flat style
+                button.FlatAppearance.BorderSize = 1; // Border size
+                button.FlatAppearance.BorderColor = Color.Black; // Border color
+                button.Size = new Size(200, 50);
 
-                GraphPath.AddArc(Rect.X, Rect.Y, 50, 50, 180, 90);
-                GraphPath.AddArc(Rect.X + Rect.Width - 50, Rect.Y, 50, 50, 270, 90);
-                GraphPath.AddArc(Rect.X + Rect.Width - 50, Rect.Y + Rect.Height - 50, 50, 50, 0, 90);
-                GraphPath.AddArc(Rect.X, Rect.Y + Rect.Height - 50, 50, 50, 90, 90);
-                GraphPath.CloseFigure();
+                Image icon = Image.FromFile(@"Resources\\add.png"); 
 
-                button.Region = new Region(GraphPath);
+                // Resize the image
+                int desiredWidth = 30; // Set your desired width
+                int desiredHeight = 30; // Set your desired height
+                Image resizedIcon = new Bitmap(icon, new Size(desiredWidth, desiredHeight));
 
-               
-                //button.BackColor = Color.Blue; 
-                //button.ForeColor = Color.White; 
-                //button.Font = new Font("Arial", 12, FontStyle.Bold);
+                button.Image = resizedIcon;
+                button.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft; // Set icon alignment
+
+                button.Padding = new Padding(10, 0, 0, 0);
 
                 return button;
             }

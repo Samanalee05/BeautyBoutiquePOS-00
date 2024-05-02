@@ -28,6 +28,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             UserControlStyles styles = new UserControlStyles();
             styles.CustomizeDataGridView(dataGridViewCategories);
             styles.RoundCornerPanels(panel1, 10);
+            styles.RoundedBtn(button1);
             LoadCategories();
 
             DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
@@ -39,6 +40,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             deleteButtonColumn.Width = 100;
 
             dataGridViewCategories.CellContentClick += dataGridViewCellContentClick;
+
+            
         }
 
         private void filterData() // filter categories data grid view data

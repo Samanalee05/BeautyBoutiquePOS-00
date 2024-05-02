@@ -36,6 +36,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             deleteButtonColumn.UseColumnTextForButtonValue = true;
             customerGridView.Columns.Add(deleteButtonColumn);
             deleteButtonColumn.Width = 100;
+            styles.RoundedBtn(button1);
 
             customerGridView.CellContentClick += dataGridViewCellContentClick;
         }

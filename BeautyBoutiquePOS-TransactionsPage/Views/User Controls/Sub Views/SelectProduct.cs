@@ -46,7 +46,26 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
         private void textProduct_TextChanged(object sender, EventArgs e)
         {
+            string filter = textProduct.Text;
+            if (!string.IsNullOrEmpty(filter))
+            {
+                DataView dv = new DataView(dataTable1);
 
+                if (int.TryParse(filter, out int idFilter))
+                {
+                    dv.RowFilter = string.Format("id = {0}", idFilter);
+                }
+                else
+                {
+                    dv.RowFilter = string.Format("name LIKE '%{0}%'", filter);
+                }
+                productGridView.DataSource = dv;
+                dataView1 = dv;
+            }
+            else
+            {
+                productGridView.DataSource = dataTable1;
+            }
         }
 
         public void UpdateDataGridView() // load available product from product db to data grid view

@@ -26,6 +26,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             UserControlStyles styles = new UserControlStyles();
             styles.CustomizeDataGridView(checkoutGridView);
             styles.RoundCornerPanels(panel1, 10);
+            styles.RoundedBtn(button1);
 
 
         }

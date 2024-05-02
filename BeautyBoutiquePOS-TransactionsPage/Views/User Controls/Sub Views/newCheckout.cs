@@ -177,7 +177,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
             else
             {
-                MessageBox.Show("Make Payment First!");
+                MessageBox.Show("Make Payment First!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
@@ -299,7 +299,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                     DeleteProductLine(id);
 
                 } catch {
-                    MessageBox.Show("Select Valid Row!");
+                    MessageBox.Show("Select Valid Row!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 
 
@@ -334,7 +334,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show("Error deleting product line: " + ex.Message);
+                MessageBox.Show("Error deleting product line: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

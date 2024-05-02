@@ -40,6 +40,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             deleteButtonColumn.UseColumnTextForButtonValue = true;
             dataGridViewProducts.Columns.Add(deleteButtonColumn);
             deleteButtonColumn.Width = 100;
+            styles.RoundedBtn(button1);
 
             foreach (DataGridViewColumn column in dataGridViewProducts.Columns)
             {
