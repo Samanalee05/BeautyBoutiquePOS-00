@@ -36,6 +36,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             UserControlStyles styles = new UserControlStyles();
             styles.CustomizeDataGridView(productGridView);
             this.form1 = form;
+
+            productGridView.CellContentClick += dataGridView1_CellContentClick;
         }
 
         private void textProduct_TextChanged(object sender, EventArgs e)
@@ -85,7 +87,6 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                         productGridView.DataSource = dataTable;
                         dataTable1 = dataTable;
 
-                        productGridView.CellContentClick += dataGridView1_CellContentClick;
                     }
                     catch (MySqlException ex)
                     {

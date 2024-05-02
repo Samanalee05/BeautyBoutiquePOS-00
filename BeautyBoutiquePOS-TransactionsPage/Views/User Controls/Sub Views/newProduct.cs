@@ -26,7 +26,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         }
 
 
-        private void AddProductToDatabase()
+        private void AddProductToDatabase() // add product to product tbl
         {
 
             string name = txtProductName.Text;
@@ -74,7 +74,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
         }
 
-        private void LoadCategories()
+        private void LoadCategories() //load categories data form db 
         {
 
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
@@ -108,12 +108,12 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e) // save btn click
         {
             AddProductToDatabase();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // cancel btn click
         {
             txtProductName.Text = "";
             txtDescription.Text = "";

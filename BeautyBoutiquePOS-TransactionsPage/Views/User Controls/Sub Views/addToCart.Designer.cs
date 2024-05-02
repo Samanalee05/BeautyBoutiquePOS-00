@@ -28,24 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textQTY = new System.Windows.Forms.TextBox();
             this.productGridView = new System.Windows.Forms.DataGridView();
             this.textProduct = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataSet11 = new BeautyBoutiquePOS_TransactionsPage.Data_Set.DataSet1();
             ((System.ComponentModel.ISupportInitialize)(this.productGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(691, 50);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 31);
-            this.button1.TabIndex = 34;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -69,9 +60,9 @@
             // 
             this.productGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.productGridView.Location = new System.Drawing.Point(0, 95);
+            this.productGridView.Location = new System.Drawing.Point(0, 44);
             this.productGridView.Name = "productGridView";
-            this.productGridView.Size = new System.Drawing.Size(800, 355);
+            this.productGridView.Size = new System.Drawing.Size(800, 406);
             this.productGridView.TabIndex = 31;
             // 
             // textProduct
@@ -92,12 +83,16 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "Prduct Name Or Code";
             // 
+            // dataSet11
+            // 
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // addToCart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textQTY);
             this.Controls.Add(this.productGridView);
@@ -106,18 +101,18 @@
             this.Name = "addToCart";
             this.Text = "addToCart";
             ((System.ComponentModel.ISupportInitialize)(this.productGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textQTY;
         private System.Windows.Forms.DataGridView productGridView;
         private System.Windows.Forms.TextBox textProduct;
         private System.Windows.Forms.Label label1;
+        private Data_Set.DataSet1 dataSet11;
     }
 }

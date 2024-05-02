@@ -83,18 +83,18 @@ namespace BeautyBoutiquePOS_TransactionsPage
                 button.Region = new Region(path);
             }
         }
-        private void ClearContentArea()
+        private void ClearContentArea() // clear the panel where user forms loads 
         {
             windowPnl.Controls.Clear();
         }
 
-        private void btnProducts_Click(object sender, EventArgs e)
+        private void btnProducts_Click(object sender, EventArgs e) // product btn click
         {
             if (this.userType == "Admin"  || this.userType == "Manager")
             {
-                ClearContentArea();
+                ClearContentArea(); // clear the window panel 
                 var Product = new Product(this.userType);
-                windowPnl.Controls.Add(Product);
+                windowPnl.Controls.Add(Product); //load product user form to window panel
             } else
             {
                 MessageBox.Show("permission denied!");
@@ -103,7 +103,7 @@ namespace BeautyBoutiquePOS_TransactionsPage
 
         
 
-        private void btnCustomers_Click(object sender, EventArgs e)
+        private void btnCustomers_Click(object sender, EventArgs e) //customer btn click
         {
             if (this.userType == "Admin" || this.userType == "Manager")
             {
@@ -117,7 +117,7 @@ namespace BeautyBoutiquePOS_TransactionsPage
             }
         }
 
-        private void btnCategories_Click(object sender, EventArgs e)
+        private void btnCategories_Click(object sender, EventArgs e) // category btn click
         {
 
             if (this.userType == "Admin" || this.userType == "Manager")
@@ -132,7 +132,7 @@ namespace BeautyBoutiquePOS_TransactionsPage
             }
         }
 
-        private void btnCheckout_Click(object sender, EventArgs e)
+        private void btnCheckout_Click(object sender, EventArgs e) //checkout btn click
         {
             if (this.userType == "Admin" || this.userType == "Cashier")
             {
@@ -142,7 +142,7 @@ namespace BeautyBoutiquePOS_TransactionsPage
             }
         }
 
-        private void btnInventory_Click(object sender, EventArgs e)
+        private void btnInventory_Click(object sender, EventArgs e) // inventory btn click
         {
 
             if (this.userType == "Admin" || this.userType == "Manager")
@@ -158,14 +158,14 @@ namespace BeautyBoutiquePOS_TransactionsPage
 
         }
 
-        private void btnHome_Click(object sender, EventArgs e)
+        private void btnHome_Click(object sender, EventArgs e) // home btn click
         {
             ClearContentArea();
             var Home = new Home();
             windowPnl.Controls.Add(Home);
         }
 
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e) // if main form close exit the apllcation 
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
@@ -173,7 +173,7 @@ namespace BeautyBoutiquePOS_TransactionsPage
             }
         }
 
-        private void btnUsers_Click(object sender, EventArgs e)
+        private void btnUsers_Click(object sender, EventArgs e) // user btn click
         {
             if (this.userType == "Admin" || this.userType == "Manager")
             {

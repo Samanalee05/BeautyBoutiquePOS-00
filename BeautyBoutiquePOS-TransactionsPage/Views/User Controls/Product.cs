@@ -50,7 +50,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             dataGridViewProducts.CellContentClick += dataGridViewProducts_CellContentClick;
         }
 
-        private void filterData()
+        private void filterData() // filter data inside data grid view
         {
             string filter = richTextBox2.Text;
             if (!string.IsNullOrEmpty(filter))
@@ -74,13 +74,13 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) // new product btn click 
         {
             newProduct productForm = new newProduct(this);
             productForm.ShowDialog();
         }
 
-        public void LoadProductData()
+        public void LoadProductData() //load product data to data grid view 
         {
             string query = "SELECT * FROM products";
 
@@ -109,7 +109,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void dataGridViewProducts_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridViewProducts_CellContentClick(object sender, DataGridViewCellEventArgs e) // delete btn press on data grid view
         {
             if (e.ColumnIndex == dataGridViewProducts.Columns["Delete"].Index && e.RowIndex >= 0)
             {
@@ -125,7 +125,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void DeleteProduct(int productId)
+        private void DeleteProduct(int productId) // delete product form product table 
         {
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
             string deleteQuery = "DELETE FROM products WHERE id = @ProductId";

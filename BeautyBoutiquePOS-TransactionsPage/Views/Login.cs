@@ -24,26 +24,26 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views
             textBox2.PasswordChar = '*';
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e) //login btn press
         {
             login();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) // signup btn press
         {
             Signup signup = new Signup();
             signup.ShowDialog();
         }
 
 
-        private void login()
+        private void login() // check user by using username & password 
         {
             string username = textBox1.Text;
             string password = textBox2.Text;
 
             string userType = GetUserType(username, password);
 
-            if (!string.IsNullOrEmpty(userType))
+            if (!string.IsNullOrEmpty(userType)) // if user exists login and load main form
             {
                 Main mainForm = new Main(userType,username);
                 mainForm.ShowDialog();
@@ -55,48 +55,48 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views
             }
         }
 
-        //private string GetUserType(string username, string password)// Remove on Release
-        //{
-
-        //    return "Admin";
-        // }
-
-        private string GetUserType(string username, string password)
+        private string GetUserType(string username, string password)// Remove on Release
         {
 
-            string userType = "";
-
-            MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
-
-            string query = "SELECT type FROM users WHERE username = @Username AND password = @Password";
-
-            MySqlCommand command = new MySqlCommand(query, connection);
-
-            command.Parameters.AddWithValue("@Username", username);
-            command.Parameters.AddWithValue("@Password", password);
-
-            try
-            {
-                connection.Open();
-
-                object result = command.ExecuteScalar();
-
-                if (result != null)
-                {
-                    userType = result.ToString();
-                }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("Error retrieving user type: " + ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-            return userType;
+            return "Admin";
         }
+
+        //private string GetUserType(string username, string password) // get user type form db 
+        //{
+
+        //    string userType = "";
+
+        //    MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
+
+        //    string query = "SELECT type FROM users WHERE username = @Username AND password = @Password";
+
+        //    MySqlCommand command = new MySqlCommand(query, connection);
+
+        //    command.Parameters.AddWithValue("@Username", username);
+        //    command.Parameters.AddWithValue("@Password", password);
+
+        //    try
+        //    {
+        //        connection.Open();
+
+        //        object result = command.ExecuteScalar();
+
+        //        if (result != null)
+        //        {
+        //            userType = result.ToString();
+        //        }
+        //    }
+        //    catch (MySqlException ex)
+        //    {
+        //        MessageBox.Show("Error retrieving user type: " + ex.Message);
+        //    }
+        //    finally
+        //    {
+        //        connection.Close();
+        //    }
+
+        //    return userType;
+        //}
 
 
     }

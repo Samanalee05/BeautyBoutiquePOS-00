@@ -25,7 +25,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             PopulateAreaChart();
         }
 
-        private void LoadCheckoutData()
+        private void LoadCheckoutData() // load checkout data to chart 2 for this month
         {
             DateTime currentDate = DateTime.Now;
             DateTime firstDayOfMonth = new DateTime(currentDate.Year, currentDate.Month, 1);
@@ -78,7 +78,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
         }
 
 
-        private void LoadCustomerJoinData()
+        private void LoadCustomerJoinData() // load customer join data to chart1 for this month
         {
             DateTime currentDate = DateTime.Now;
             string currentMonth = currentDate.ToString("yyyy-MM");
@@ -129,7 +129,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
         }
 
 
-        private void PopulatePieChart()
+        private void PopulatePieChart() // load product data from inventory to chart 3
         {
             chart3.Series.Clear();
 
@@ -156,7 +156,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             chart3.Series.Add(series);
         }
 
-        private void PopulateAreaChart()
+        private void PopulateAreaChart() // load data as total checkout value form checkout tbl to chart 4
         {
             chart4.Series.Clear();
             chart4.ChartAreas.Clear();

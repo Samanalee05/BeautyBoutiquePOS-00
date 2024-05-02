@@ -72,7 +72,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             productForm.ShowDialog();
         }
 
-        public void RefreshDataGrid()
+        public void RefreshDataGrid() // Refresh Data Table 
         {
             string query = "SELECT * FROM productsLine";
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
