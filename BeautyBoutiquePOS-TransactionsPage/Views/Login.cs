@@ -20,7 +20,6 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views
         {
             InitializeComponent();
 
-
             UserControlStyles styles = new UserControlStyles();
             styles.ApplyTextBoxStyles(textBox1);
             styles.ApplyTextBoxStyles(textBox2);
@@ -48,9 +47,15 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views
 
             if (!string.IsNullOrEmpty(userType)) // if user exists login and load main form
             {
-                Main mainForm = new Main(userType,username);
-                mainForm.ShowDialog();
-                this.Hide();
+                if (userType == "Pending")
+                {
+                    MessageBox.Show("Contact Adming Befor Login!.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                } else
+                {
+                    Main mainForm = new Main(userType, username);
+                    mainForm.ShowDialog();
+                    this.Hide();
+                }
             }
             else
             {
@@ -58,11 +63,11 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views
             }
         }
 
-        //private string GetUserType(string username, string password)// Remove on Release
-        //{
+        /*private string GetUserType(string username, string password) // Remove on Release
+        {
 
-        //    return "Admin";
-        //}
+            return "Admin";
+        }*/
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -74,7 +79,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views
 
         }
 
-        private string GetUserType(string username, string password) // get user type from db 
+        private string GetUserType(string username, string password) // get user type from database
         {
 
             string userType = "";
