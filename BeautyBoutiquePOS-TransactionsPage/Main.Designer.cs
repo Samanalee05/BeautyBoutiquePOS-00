@@ -162,10 +162,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BeautyBoutiquePOS_TransactionsPage.Properties.Resources.Magenta_Beauty___Fashion_Free_Logo_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(25, 12);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(320, 243);
+            this.pictureBox1.Size = new System.Drawing.Size(275, 225);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
