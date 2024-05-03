@@ -20,12 +20,15 @@ namespace BeautyBoutiquePOS_TransactionsPage
         private String userType;
         public string username1;
 
+
+
         public Main(string userType1, string username)
         {
 
             this.username1 = username;
 
             InitializeComponent();
+
             this.WindowState = FormWindowState.Maximized;
 
             this.userType = userType1;

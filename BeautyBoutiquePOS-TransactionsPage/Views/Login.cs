@@ -10,13 +10,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace BeautyBoutiquePOS_TransactionsPage.Views
 {
     public partial class Login : Form
     {
+
         public Login()
         {
             InitializeComponent();
+
 
             UserControlStyles styles = new UserControlStyles();
             styles.ApplyTextBoxStyles(textBox1);
@@ -51,7 +54,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views
             }
             else
             {
-                MessageBox.Show("Invalid username or password.");
+                MessageBox.Show("Invalid username or password.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -61,7 +64,17 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views
         //    return "Admin";
         //}
 
-        private string GetUserType(string username, string password) // get user type form db 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Conatct Your Admin For Help To Reset Password!");
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private string GetUserType(string username, string password) // get user type from db 
         {
 
             string userType = "";
