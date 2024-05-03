@@ -41,22 +41,25 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
 
         private void InsertInventoryData(string function) // insert inventory transaction data to tbl
         {
-            int itemcode = Convert.ToInt32(textBoxItemCode.Text);
+            CalculateTotal();
+
+            string itemcode = Convert.ToString(textBoxItemCode.Text);
             double qty = Convert.ToDouble(textBoxQty.Text);
             float cost = float.Parse(costTextBox.Text);
-            float total = float.Parse(textBoxTotal.Text);
 
-            string query = "INSERT INTO `inventory` (`itemcode`, `name`, `QTY`, `cost`, `total`, `function`) VALUES (@ItemCode, @Name, @Qty, @Cost, @Total,  @Function);";
+            
+
+            string query = "INSERT INTO `inventory` (`id`, `name`, `QTY`, `cost`, `total`, `function`) VALUES (@ItemCode, @Name, @Qty, @Cost, @Total,  @Function);";
 
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
             {
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@ItemCode", itemcode);
+                    command.Parameters.AddWithValue("@ItemCode", textBoxItemCode.Text);
                     command.Parameters.AddWithValue("@Name", productName);
                     command.Parameters.AddWithValue("@Qty", qty);
                     command.Parameters.AddWithValue("@Cost", cost);
-                    command.Parameters.AddWithValue("@Total", total);
+                    command.Parameters.AddWithValue("@Total", textBoxTotal.Text);
                     command.Parameters.AddWithValue("@Function", function);
 
                     try
@@ -77,9 +80,18 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
                     catch (MySqlException ex)
                     {
                         MessageBox.Show("Error: " + ex.Message);
+
                     }
                 }
             }
+        }
+
+        private void CalculateTotal()
+        {
+            double cost = Convert.ToDouble(costTextBox.Text);
+            double qty = Convert.ToDouble(textBoxQty.Text);
+
+            textBoxTotal.Text = Convert.ToString(cost * qty);
         }
 
 
@@ -87,12 +99,12 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         private void UpdateProductQuantity() // update product qty from product tble inside db after inventory in
         {
             double qty = Convert.ToDouble(textBoxQty.Text);
-            int itemcode = Convert.ToInt32(textBoxItemCode.Text);
+            string itemcode = Convert.ToString(textBoxItemCode.Text);
 
 
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
 
-            string updateQuery = @"UPDATE products p INNER JOIN inventory i ON p.id = i.itemcode SET p.qty = p.qty + @Qty WHERE i.itemcode = @ItemCode;";
+            string updateQuery = @"UPDATE products p INNER JOIN inventory i ON p.id = i.id SET p.qty = p.qty + @Qty WHERE i.id = @ItemCode;";
 
             using (MySqlCommand command = new MySqlCommand(updateQuery, connection))
             {
@@ -127,7 +139,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         private void UpdateProductQuantityOut() // update product qty from product tble inside db after inventory out
         {
             double qty = Convert.ToDouble(textBoxQty.Text);
-            int itemcode = Convert.ToInt32(textBoxItemCode.Text);
+            string itemcode = Convert.ToString(textBoxItemCode.Text);
 
 
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
