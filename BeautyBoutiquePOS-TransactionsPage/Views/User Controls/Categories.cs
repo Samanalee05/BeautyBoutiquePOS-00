@@ -31,6 +31,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             styles.RoundedBtn(button1);
             LoadCategories();
 
+            //Add delete button
             DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
             deleteButtonColumn.Name = "Delete";
             deleteButtonColumn.HeaderText = "Delete";
@@ -43,6 +44,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 
             
         }
+
 
         private void filterData() // filter categories data grid view data
         {
@@ -72,7 +74,6 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
         {
             string query = "SELECT id, name, description FROM categories";
 
-
             using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
             {
 
@@ -82,7 +83,6 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
                     {
 
                         connection.Open();
-
 
                         DataTable dataTable = new DataTable();
 
@@ -103,6 +103,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
+
         private void dataGridViewCellContentClick(object sender, DataGridViewCellEventArgs e) // data grid view delte btn click
         {
             if (e.ColumnIndex == dataGridViewCategories.Columns["Delete"].Index && e.RowIndex >= 0)
@@ -120,6 +121,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 
             }
         }
+
 
         private void Delete(String categoriesName) // delete categorie from db
         {
@@ -153,7 +155,8 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void button1_Click(object sender, EventArgs e) // new categorie btn click
+
+        private void button1_Click(object sender, EventArgs e) // new category btn click
         {
             newCategory categoryForm = new newCategory(this);
             categoryForm.ShowDialog();
@@ -163,5 +166,6 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
         {
             filterData();
         }
+
     }
 }
