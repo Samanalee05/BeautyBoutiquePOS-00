@@ -59,9 +59,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(413, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(302, 65);
+            this.label1.Size = new System.Drawing.Size(262, 65);
             this.label1.TabIndex = 0;
-            this.label1.Text = "CATEGORIES";
+            this.label1.Text = "Categories";
             // 
             // pictureBox11
             // 
@@ -124,12 +124,12 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Maroon;
-            this.button1.Location = new System.Drawing.Point(34, 143);
+            this.button1.Location = new System.Drawing.Point(63, 143);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(275, 42);
+            this.button1.Size = new System.Drawing.Size(246, 42);
             this.button1.TabIndex = 23;
-            this.button1.Text = "New Categories";
+            this.button1.Text = "Add New Categories";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

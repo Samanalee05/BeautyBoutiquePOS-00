@@ -47,9 +47,15 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views
 
             if (!string.IsNullOrEmpty(userType)) // if user exists login and load main form
             {
-                Main mainForm = new Main(userType,username);
-                mainForm.ShowDialog();
-                this.Hide();
+                if (userType == "Pending")
+                {
+                    MessageBox.Show("Contact Adming Befor Login!.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                } else
+                {
+                    Main mainForm = new Main(userType, username);
+                    mainForm.ShowDialog();
+                    this.Hide();
+                }
             }
             else
             {
