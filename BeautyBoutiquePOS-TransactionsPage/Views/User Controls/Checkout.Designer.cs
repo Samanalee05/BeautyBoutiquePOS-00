@@ -52,7 +52,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(273, 65);
             this.label1.TabIndex = 0;
-            this.label1.Text = "CHECKOUT";
+            this.label1.Text = "Checkout";
             // 
             // richTextBox1
             // 
