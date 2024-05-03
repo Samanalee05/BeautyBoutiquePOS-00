@@ -51,7 +51,7 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(334, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 40);
+            this.label3.Size = new System.Drawing.Size(106, 40);
             this.label3.TabIndex = 24;
             this.label3.Text = "LOGIN";
             // 
@@ -125,10 +125,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::BeautyBoutiquePOS_TransactionsPage.Properties.Resources.Magenta_Beauty___Fashion_Free_Logo_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(624, 20);
+            this.pictureBox1.Location = new System.Drawing.Point(613, 20);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(178, 193);
+            this.pictureBox1.Size = new System.Drawing.Size(189, 208);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
