@@ -59,18 +59,18 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(413, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(392, 65);
+            this.label1.Size = new System.Drawing.Size(302, 65);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ADD CATEGORIE";
+            this.label1.Text = "CATEGORIES";
             // 
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.White;
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(9, 5);
+            this.pictureBox11.Location = new System.Drawing.Point(9, 3);
             this.pictureBox11.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(13, 13);
+            this.pictureBox11.Size = new System.Drawing.Size(15, 15);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox11.TabIndex = 13;
             this.pictureBox11.TabStop = false;
@@ -100,9 +100,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(372, 29);
+            this.pictureBox1.Location = new System.Drawing.Point(359, 29);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.Size = new System.Drawing.Size(48, 46);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;

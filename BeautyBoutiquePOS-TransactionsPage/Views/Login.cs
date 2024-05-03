@@ -20,7 +20,6 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views
         {
             InitializeComponent();
 
-
             UserControlStyles styles = new UserControlStyles();
             styles.ApplyTextBoxStyles(textBox1);
             styles.ApplyTextBoxStyles(textBox2);
@@ -58,11 +57,11 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views
             }
         }
 
-        //private string GetUserType(string username, string password)// Remove on Release
-        //{
+        /*private string GetUserType(string username, string password) // Remove on Release
+        {
 
-        //    return "Admin";
-        //}
+            return "Admin";
+        }*/
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -74,7 +73,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views
 
         }
 
-        private string GetUserType(string username, string password) // get user type from db 
+        private string GetUserType(string username, string password) // get user type from database
         {
 
             string userType = "";
