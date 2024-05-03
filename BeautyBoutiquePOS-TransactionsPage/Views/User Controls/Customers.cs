@@ -22,6 +22,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
         public Customers(string userType)
         {
             this.userType1 = userType;
+
             InitializeComponent();
 
             LoadCustomers();
@@ -121,7 +122,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             customerForm.ShowDialog();
         }
 
-        public void LoadCustomers() // load all customer from db to data grid view 
+        public void LoadCustomers() // Load all customer from db to data grid view 
         {
             string query = "SELECT * FROM customers";
 
@@ -132,7 +133,6 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
                     try
                     {
                         connection.Open();
-
                         DataTable dataTable = new DataTable();
 
                         using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
