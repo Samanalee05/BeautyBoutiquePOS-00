@@ -35,6 +35,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxCategoryName = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.lbladdnewcategory = new Guna.UI.WinForms.GunaLabel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxCategoryDescription
@@ -50,6 +52,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.lbladdnewcategory);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -105,6 +108,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // lbladdnewcategory
+            // 
+            this.lbladdnewcategory.AutoSize = true;
+            this.lbladdnewcategory.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbladdnewcategory.Location = new System.Drawing.Point(282, 19);
+            this.lbladdnewcategory.Name = "lbladdnewcategory";
+            this.lbladdnewcategory.Size = new System.Drawing.Size(230, 32);
+            this.lbladdnewcategory.TabIndex = 0;
+            this.lbladdnewcategory.Text = "Add New Category";
+            // 
             // newCategory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,6 +132,8 @@
             this.Controls.Add(this.textBoxCategoryName);
             this.Name = "newCategory";
             this.Text = "newCategory";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,5 +148,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxCategoryName;
         private System.Windows.Forms.Button button1;
+        private Guna.UI.WinForms.GunaLabel lbladdnewcategory;
     }
 }
