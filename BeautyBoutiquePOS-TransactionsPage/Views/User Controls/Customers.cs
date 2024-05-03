@@ -89,6 +89,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
         {
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
             string deleteQuery = "DELETE FROM customers WHERE nic = @Nic";
+
             using (MySqlCommand command = new MySqlCommand(deleteQuery, connection))
             {
                 command.Parameters.AddWithValue("@Nic", nic);
@@ -117,7 +118,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void button1_Click(object sender, EventArgs e) // new customer butoon click 
+        private void button1_Click(object sender, EventArgs e) // new customer button click 
         {
             newCustomer customerForm = new newCustomer(this);
             customerForm.ShowDialog();
