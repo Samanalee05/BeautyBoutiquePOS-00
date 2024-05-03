@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxCategoryName = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.lbladdnewcategory = new Guna.UI.WinForms.GunaLabel();
+            this.lbladdnewCategory = new Guna.UI.WinForms.GunaLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +52,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.lbladdnewcategory);
+            this.panel1.Controls.Add(this.lbladdnewCategory);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -108,15 +108,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // lbladdnewcategory
+            // lbladdnewCategory
             // 
-            this.lbladdnewcategory.AutoSize = true;
-            this.lbladdnewcategory.Font = new System.Drawing.Font("Segoe UI Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbladdnewcategory.Location = new System.Drawing.Point(279, 18);
-            this.lbladdnewcategory.Name = "lbladdnewcategory";
-            this.lbladdnewcategory.Size = new System.Drawing.Size(267, 37);
-            this.lbladdnewcategory.TabIndex = 0;
-            this.lbladdnewcategory.Text = "Add New Category";
+            this.lbladdnewCategory.AutoSize = true;
+            this.lbladdnewCategory.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbladdnewCategory.Location = new System.Drawing.Point(244, 9);
+            this.lbladdnewCategory.Name = "lbladdnewCategory";
+            this.lbladdnewCategory.Size = new System.Drawing.Size(306, 45);
+            this.lbladdnewCategory.TabIndex = 0;
+            this.lbladdnewCategory.Text = "Add New Category";
             // 
             // newCategory
             // 
@@ -148,6 +148,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxCategoryName;
         private System.Windows.Forms.Button button1;
-        private Guna.UI.WinForms.GunaLabel lbladdnewcategory;
+        private Guna.UI.WinForms.GunaLabel lbladdnewCategory;
     }
 }
