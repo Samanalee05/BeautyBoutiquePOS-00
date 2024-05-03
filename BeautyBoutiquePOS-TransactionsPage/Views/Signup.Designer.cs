@@ -30,22 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Signup));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtContact = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxNIC = new System.Windows.Forms.TextBox();
+            this.txtNic = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBoxAddress = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -73,14 +73,14 @@
             this.pictureBox2.TabIndex = 46;
             this.pictureBox2.TabStop = false;
             // 
-            // textBox7
+            // txtLastName
             // 
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(94, 5);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(245, 22);
-            this.textBox7.TabIndex = 1;
+            this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Location = new System.Drawing.Point(94, 5);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(245, 22);
+            this.txtLastName.TabIndex = 1;
             // 
             // label15
             // 
@@ -96,21 +96,21 @@
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.White;
-            this.panel14.Controls.Add(this.textBox7);
+            this.panel14.Controls.Add(this.txtLastName);
             this.panel14.Controls.Add(this.label15);
             this.panel14.Location = new System.Drawing.Point(533, 343);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(343, 32);
             this.panel14.TabIndex = 42;
             // 
-            // textBox6
+            // txtContact
             // 
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(126, 5);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(213, 22);
-            this.textBox6.TabIndex = 1;
+            this.txtContact.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContact.Location = new System.Drawing.Point(126, 5);
+            this.txtContact.Name = "txtContact";
+            this.txtContact.Size = new System.Drawing.Size(213, 22);
+            this.txtContact.TabIndex = 1;
             // 
             // label14
             // 
@@ -126,21 +126,21 @@
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.White;
-            this.panel13.Controls.Add(this.textBox6);
+            this.panel13.Controls.Add(this.txtContact);
             this.panel13.Controls.Add(this.label14);
             this.panel13.Location = new System.Drawing.Point(533, 396);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(343, 32);
             this.panel13.TabIndex = 43;
             // 
-            // textBox5
+            // txtPassword
             // 
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(85, 5);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(254, 22);
-            this.textBox5.TabIndex = 1;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(85, 5);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(254, 22);
+            this.txtPassword.TabIndex = 1;
             // 
             // label13
             // 
@@ -156,21 +156,21 @@
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.White;
-            this.panel12.Controls.Add(this.textBox5);
+            this.panel12.Controls.Add(this.txtPassword);
             this.panel12.Controls.Add(this.label13);
             this.panel12.Location = new System.Drawing.Point(533, 455);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(343, 32);
             this.panel12.TabIndex = 44;
             // 
-            // textBoxName
+            // txtFirstName
             // 
-            this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxName.Location = new System.Drawing.Point(96, 5);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(243, 22);
-            this.textBoxName.TabIndex = 1;
+            this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.Location = new System.Drawing.Point(96, 5);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(243, 22);
+            this.txtFirstName.TabIndex = 1;
             // 
             // label8
             // 
@@ -186,21 +186,21 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.textBoxName);
+            this.panel1.Controls.Add(this.txtFirstName);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Location = new System.Drawing.Point(136, 343);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(343, 32);
             this.panel1.TabIndex = 39;
             // 
-            // textBoxNIC
+            // txtNic
             // 
-            this.textBoxNIC.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNIC.Location = new System.Drawing.Point(64, 5);
-            this.textBoxNIC.Name = "textBoxNIC";
-            this.textBoxNIC.Size = new System.Drawing.Size(275, 22);
-            this.textBoxNIC.TabIndex = 1;
+            this.txtNic.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNic.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNic.Location = new System.Drawing.Point(64, 5);
+            this.txtNic.Name = "txtNic";
+            this.txtNic.Size = new System.Drawing.Size(275, 22);
+            this.txtNic.TabIndex = 1;
             // 
             // label2
             // 
@@ -209,28 +209,28 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(4, 5);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 21);
+            this.label2.Size = new System.Drawing.Size(42, 21);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Email :";
+            this.label2.Text = "Nic :";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.textBoxNIC);
+            this.panel2.Controls.Add(this.txtNic);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(136, 396);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(343, 32);
             this.panel2.TabIndex = 40;
             // 
-            // textBoxAddress
+            // txtUsername
             // 
-            this.textBoxAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAddress.Location = new System.Drawing.Point(96, 5);
-            this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(243, 22);
-            this.textBoxAddress.TabIndex = 1;
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(96, 5);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(243, 22);
+            this.txtUsername.TabIndex = 1;
             // 
             // label3
             // 
@@ -246,7 +246,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.textBoxAddress);
+            this.panel3.Controls.Add(this.txtUsername);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(136, 455);
             this.panel3.Name = "panel3";
@@ -336,22 +336,22 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtContact;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBoxNIC;
+        private System.Windows.Forms.TextBox txtNic;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBoxAddress;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label7;
