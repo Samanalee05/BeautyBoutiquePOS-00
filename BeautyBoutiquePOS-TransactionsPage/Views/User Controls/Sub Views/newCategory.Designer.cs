@@ -30,12 +30,12 @@
         {
             this.textBoxCategoryDescription = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbladdnewCategory = new Guna.UI.WinForms.GunaLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.saveBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxCategoryName = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.lbladdnewCategory = new Guna.UI.WinForms.GunaLabel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +58,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 67);
             this.panel1.TabIndex = 21;
+            // 
+            // lbladdnewCategory
+            // 
+            this.lbladdnewCategory.AutoSize = true;
+            this.lbladdnewCategory.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbladdnewCategory.Location = new System.Drawing.Point(244, 9);
+            this.lbladdnewCategory.Name = "lbladdnewCategory";
+            this.lbladdnewCategory.Size = new System.Drawing.Size(306, 45);
+            this.lbladdnewCategory.TabIndex = 0;
+            this.lbladdnewCategory.Text = "Add New Category";
             // 
             // label1
             // 
@@ -107,16 +117,6 @@
             this.button1.Text = "Cancel";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // lbladdnewCategory
-            // 
-            this.lbladdnewCategory.AutoSize = true;
-            this.lbladdnewCategory.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbladdnewCategory.Location = new System.Drawing.Point(244, 9);
-            this.lbladdnewCategory.Name = "lbladdnewCategory";
-            this.lbladdnewCategory.Size = new System.Drawing.Size(306, 45);
-            this.lbladdnewCategory.TabIndex = 0;
-            this.lbladdnewCategory.Text = "Add New Category";
             // 
             // newCategory
             // 
