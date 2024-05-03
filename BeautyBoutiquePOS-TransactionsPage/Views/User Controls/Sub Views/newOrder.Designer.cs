@@ -162,6 +162,7 @@
             this.textBoxQty.Name = "textBoxQty";
             this.textBoxQty.Size = new System.Drawing.Size(281, 22);
             this.textBoxQty.TabIndex = 1;
+            this.textBoxQty.TextChanged += new System.EventHandler(this.textBoxQty_TextChanged);
             // 
             // label4
             // 

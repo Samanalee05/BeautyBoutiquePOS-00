@@ -23,6 +23,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             this.function = function1;
             InitializeComponent();
             textBoxTotal.ReadOnly = true;
+
         }
 
         private void btnSave_Click(object sender, EventArgs e) // save btn click
@@ -89,7 +90,12 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
         private void CalculateTotal()
         {
             double cost = Convert.ToDouble(costTextBox.Text);
-            double qty = Convert.ToDouble(textBoxQty.Text);
+            double qty = 0;
+
+            if (textBoxQty.Text != null || textBoxQty.Text != "")
+            {
+               qty  = Convert.ToDouble(textBoxQty.Text);
+            }
 
             textBoxTotal.Text = Convert.ToString(cost * qty);
         }
@@ -199,5 +205,9 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls.Sub_Views
             productName = name;
         }
 
+        private void textBoxQty_TextChanged(object sender, EventArgs e)
+        {
+            CalculateTotal();
+        }
     }
 }

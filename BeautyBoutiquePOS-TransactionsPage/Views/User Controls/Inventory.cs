@@ -49,7 +49,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
         {
             try
             {
-                string queryString = "SELECT * FROM inventory";
+                string queryString = "SELECT id,name,QTY,cost,total,`function` FROM inventory";
 
                 using (MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString()))
                 {
