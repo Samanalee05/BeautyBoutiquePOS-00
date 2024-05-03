@@ -32,7 +32,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             styles.CustomizeDataGridView(dataGridViewProducts);
             styles.RoundCornerPanels(panel3, 10);
             //styles.RoundedBtn(button1);
-
+//DELETE BUTTON
             DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
             deleteButtonColumn.Name = "Delete";
             deleteButtonColumn.HeaderText = "Delete";
