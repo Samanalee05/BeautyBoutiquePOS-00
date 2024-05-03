@@ -308,7 +308,7 @@
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(275, 55);
             this.btnHome.TabIndex = 0;
-            this.btnHome.Text = "Dash";
+            this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             this.btnHome.MouseEnter += new System.EventHandler(this.btnHome_MouseEnter);
