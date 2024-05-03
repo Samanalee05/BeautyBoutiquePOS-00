@@ -131,9 +131,9 @@
             this.button1.Location = new System.Drawing.Point(34, 143);
             this.button1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 42);
+            this.button1.Size = new System.Drawing.Size(174, 42);
             this.button1.TabIndex = 23;
-            this.button1.Text = "New Customers";
+            this.button1.Text = "Add New Customers";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
