@@ -98,7 +98,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(216, 36);
             this.button1.TabIndex = 33;
-            this.button1.Text = "New User";
+            this.button1.Text = "Add New User";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -110,7 +110,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(282, 65);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ADD USERS";
+            this.label1.Text = "Users";
             // 
             // panel2
             // 
