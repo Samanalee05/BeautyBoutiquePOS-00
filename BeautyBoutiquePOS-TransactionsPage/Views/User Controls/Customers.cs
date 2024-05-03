@@ -30,6 +30,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             styles.CustomizeDataGridView(customerGridView);
             styles.RoundCornerPanels(panel1, 10);
 
+            //Add delete button
             DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
             deleteButtonColumn.Name = "Delete";
             deleteButtonColumn.HeaderText = "Delete";
@@ -66,7 +67,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void dataGridViewCellContentClick(object sender, DataGridViewCellEventArgs e) // delete btn click
+        private void dataGridViewCellContentClick(object sender, DataGridViewCellEventArgs e) // delete butoon click
         {
             if (e.ColumnIndex == customerGridView.Columns["Delete"].Index && e.RowIndex >= 0)
             {
@@ -84,7 +85,7 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void Delete(String nic) // delete customer from db
+        private void Delete(String nic) // delete customer from database
         {
             MySqlConnection connection = new MySqlConnection(DatabaseConnection.GetConnectionString());
             string deleteQuery = "DELETE FROM customers WHERE nic = @Nic";
@@ -116,13 +117,13 @@ namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
             }
         }
 
-        private void button1_Click(object sender, EventArgs e) // new customer btn click 
+        private void button1_Click(object sender, EventArgs e) // new customer butoon click 
         {
             newCustomer customerForm = new newCustomer(this);
             customerForm.ShowDialog();
         }
 
-        public void LoadCustomers() // Load all customer from db to data grid view 
+        public void LoadCustomers() // Load all customer from database to data grid view 
         {
             string query = "SELECT * FROM customers";
 

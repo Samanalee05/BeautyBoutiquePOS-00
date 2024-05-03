@@ -1,4 +1,4 @@
-﻿namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
+namespace BeautyBoutiquePOS_TransactionsPage.Views.User_Controls
 {
     partial class Reports
     {
@@ -46,7 +46,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(229, 65);
             this.label1.TabIndex = 0;
-            this.label1.Text = "REPORTS";
+            this.label1.Text = "Reports";
             // 
             // panel2
             // 
