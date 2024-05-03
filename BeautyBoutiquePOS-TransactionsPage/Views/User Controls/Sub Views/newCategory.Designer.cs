@@ -111,10 +111,10 @@
             // lbladdnewcategory
             // 
             this.lbladdnewcategory.AutoSize = true;
-            this.lbladdnewcategory.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbladdnewcategory.Location = new System.Drawing.Point(282, 19);
+            this.lbladdnewcategory.Font = new System.Drawing.Font("Segoe UI Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbladdnewcategory.Location = new System.Drawing.Point(279, 18);
             this.lbladdnewcategory.Name = "lbladdnewcategory";
-            this.lbladdnewcategory.Size = new System.Drawing.Size(230, 32);
+            this.lbladdnewcategory.Size = new System.Drawing.Size(267, 37);
             this.lbladdnewcategory.TabIndex = 0;
             this.lbladdnewcategory.Text = "Add New Category";
             // 
